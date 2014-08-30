@@ -1,3 +1,4 @@
+var express = require('express');
 
 module.exports = function (app, passport) {
 
@@ -14,14 +15,15 @@ module.exports = function (app, passport) {
 		next();	
 	});
 
-	var Tags = require("./app/models/tags");
+	var Tags = require("../app/models/tags");
 	router.route("/tags")
 		.get(function(req, res) {
-			Tags.find(err, tags) {
+			Tags.find(function(err, tags) {
 				if(err) {
-					res.send({message: "Oops something went wrong please refresh and try!"});
+					res.send({message: "Oops something went wrong please refresh and try!"}); 
+				}
 				res.json(tags);
-			}
+			});
 		});
 
 
