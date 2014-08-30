@@ -14,6 +14,8 @@ var session = require('express-session');
 var configDB = require('./config/database.js');
 
 mongoose.connect(configDB.url);
+require('./config/passport')(passport); // pass passport for configuration
+
 var db = mongoose.connection;
 db.on('error',console.error.bind(console, 'connection error...'));
 db.once('open',function callback(){
