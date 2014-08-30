@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 
 //set views directory for static file serving (CSS and JS) from express
 app.use(express.static(__dirname + "/public"));
+app.set('views', __dirname+'/public');
 app.engine('html', require('ejs').renderFile);
 
 // required for passport
