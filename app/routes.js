@@ -19,12 +19,45 @@ module.exports = function (app, passport) {
 	var Tags = require("../app/models/tags");
 	router.route("/tags")
 		.get(function(req, res) {
-			Tags.find(function(err, tags) {
-				if(err) {
-					res.send({message: "Oops something went wrong please refresh and try!"}); 
+			var allTags = [];
+			async.parallel([
+				function(callback) {
+					Tags.find().distinct('primary_tag', callback);
+					return;
+				}],
+				function(error, primaryTags) {
+					if (error) {
+						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+					};
+					
+					async.forEach(primaryTags[0], 
+						function(primaryTag, callback) {
+							var map = {};
+							async.parallel([
+								function(callback) {
+									map["primary_tag"] = primaryTag;
+									Tags.find({'primary_tag': primaryTag}, 'secondary_tag', callback);
+									return;		
+								}], 
+								function(error, secondaryTags) {
+									if (error) {
+										res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+									};
+									map["secondary_tags"] = secondaryTags[0];
+									allTags.push(map);
+									callback();
+								}
+							);
+						}, function(error) {
+							if (error) {
+								res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+							} else {
+								res.json(allTags);
+							}
+						}
+					);	
 				}
-				res.json(tags);
-			});
+			);
 		});
 
 
