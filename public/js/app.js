@@ -28,3 +28,14 @@ learningModule.config(['$routeProvider', '$locationProvider', function($routePro
 
    //$locationProvider.html5Mode(true);
 }]);
+
+learningModule.controller("SearchController", function($scope, $http) {
+	$http.get('api/tags')
+		.success(function(tags) {
+			$scope.tags = tags;
+			console.log("Success " + tags.toString());
+		})
+		.error(function(data) {
+			console.log("Failure " + data);
+		});
+});
