@@ -4,9 +4,10 @@ var learningModule = angular.module('learningModule',['ngRoute','ngResource']);
 
 learningModule.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
-    $routeProvider.when('/search', {
-        templateUrl: 'partials/searchAssignments.html'
-    })
+    $routeProvider
+        .when('/search', {
+            templateUrl: 'partials/searchAssignments.html'
+        })
         .when('/upload', {
             templateUrl: 'partials/uploadAssignment.html'
         })
@@ -18,6 +19,9 @@ learningModule.config(['$routeProvider', '$locationProvider', function($routePro
         })
         .when('/register',{
             templateUrl: 'partials/signup.html'
+        })
+        .when('/tags/:tagId', {
+            templateUrl: 'partials/tagDetails.html'
         })
         .when('/', {
             templateUrl: 'partials/niloa.html'
@@ -38,4 +42,18 @@ learningModule.controller("SearchController", function($scope, $http) {
 		.error(function(data) {
 			console.log("Failure " + data);
 		});
+
+    $scope.search = function(search_key) {
+        // do nothing right now.
+    }
 });
+
+learningModule.controller("TagsController", function($scope, $routeparams, $http){
+    $http.get('api/tags/'+ $routeparams.tagId)
+        .success(function(tagDetails){
+            console.log(tagDetails);
+        })
+        .error(function(data){
+            console.log("Boo");
+        });
+})
