@@ -60,6 +60,10 @@ module.exports = function (app, passport) {
 			);
 		});
 
+	router.route("tags/:tagId")
+		.get(function(req, res) {
+			console.log(req.params.tagId);
+		});
 
 	app.use("/api", router);
 }
