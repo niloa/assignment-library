@@ -1,8 +1,8 @@
-var learningModule = angular.module('learningModule',['ngRoute','ngResource']);
+var assignmentLibrary = angular.module('assignmentLibrary', ['ngRoute','ngResource']);
 
 //config routes using angular routeProvider
 
-learningModule.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+assignmentLibrary.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 
     $routeProvider
         .when('/search', {
@@ -33,7 +33,7 @@ learningModule.config(['$routeProvider', '$locationProvider', function($routePro
    //$locationProvider.html5Mode(true);
 }]);
 
-learningModule.controller("SearchController", function($scope, $http) {
+assignmentLibrary.controller("SearchController", function($scope, $http) {
 	$http.get('api/tags')
 		.success(function(tags) {
 			$scope.tags = tags;
@@ -48,7 +48,7 @@ learningModule.controller("SearchController", function($scope, $http) {
     }
 });
 
-learningModule.controller("TagsController", function($scope, $routeparams, $http){
+assignmentLibrary.controller("TagsController", function($scope, $routeparams, $http){
     $http.get('api/tags/'+ $routeparams.tagId)
         .success(function(tagDetails){
             console.log(tagDetails);
