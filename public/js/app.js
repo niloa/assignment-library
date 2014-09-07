@@ -21,7 +21,7 @@ learningModule.config(['$routeProvider', '$locationProvider', function($routePro
             templateUrl: 'partials/signup.html'
         })
         .when('/tags/:tagId', {
-            templateUrl: 'partials/tagDetails.html'
+            templateUrl: 'partials/tagdetails.html'
         })
         .when('/', {
             templateUrl: 'partials/niloa.html'
