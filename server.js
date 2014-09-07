@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 
 //set views directory for static file serving (CSS and JS) from express
 app.use(express.static(__dirname + "/public"));
+// setting directory for partials, so in order to link a partial use partials/dqp.html
 app.set('views', __dirname+'/public');
 app.engine('html', require('ejs').renderFile);
 
@@ -41,6 +42,11 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+// writing user details to console, undefined otherwise
+/*app.use(function(req,res, next){
+    console.log(req.user);
+    next();
+});*/
 
 require('./app/routes.js')(app,passport);
 

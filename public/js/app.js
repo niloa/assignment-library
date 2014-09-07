@@ -13,6 +13,9 @@ learningModule.config(['$routeProvider', '$locationProvider', function($routePro
         .when('/dqp',{
             templateUrl: 'partials/DQP.html'
         })
+        .when('/uploadFiles',{
+            templateUrl: 'partials/uploadFiles.html'
+        })
         .when('/login',{
             templateUrl: 'partials/login.html'
         })
@@ -26,5 +29,5 @@ learningModule.config(['$routeProvider', '$locationProvider', function($routePro
            redirectTo: '/'
         });
 
-   //$locationProvider.html5Mode(true);
+   $locationProvider.html5Mode(true);
 }]);
