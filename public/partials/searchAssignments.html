@@ -1,5 +1,20 @@
-<div class="container">
+<div class="container" ng-controller="SearchController as Search">
     <div class="jumbotron">
         <h1>Welcome to Search Assignment</h1>
+    </div>
+    <div class="search">
+    	<form novalidate class="search-form">
+    		Search By: <input type="text" ng-model="search_key"/>
+    		<button ng-click="search()">SEARCH</button>
+    	</form>
+    	<ul class="list-group" ng-repeat="tag in tags">
+			<li>{{tag.primary_tag}}
+				<ul>
+					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse">
+						<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+					</li>
+				</ul>
+			</li>	
+		</ul>
     </div>
 </div>
