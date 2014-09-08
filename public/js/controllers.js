@@ -1,6 +1,6 @@
-var assignmwntLibraryControllers = angular.module('phonecatControllers', []);
+var assignmentLibraryControllers = angular.module('assignmentLibraryControllers', []);
 
-assignmwntLibraryControllers.controller("SearchController", function($scope, $http) {
+assignmentLibraryControllers.controller("SearchController", function($scope, $http) {
 	$http.get('api/tags')
 		.success(function(tags) {
 			$scope.tags = tags;
@@ -15,7 +15,7 @@ assignmwntLibraryControllers.controller("SearchController", function($scope, $ht
     }
 });
 
-assignmwntLibraryControllers.controller("TagsController", function($scope, $routeparams, $http){
+assignmentLibraryControllers.controller("TagsController", function($scope, $routeparams, $http){
     $http.get('api/tags/'+ $routeparams.tagId)
         .success(function(tagDetails){
             console.log(tagDetails);
