@@ -21,7 +21,7 @@
             <a href="" ng-click="isUserLoggedIn()">Upload</a>
         </li>
         <li ng-hide="identity.isAuthenticated()"><a href="/login">Log in</a></li>
-        <li ng-hide="identity.isAuthenticated()"><a href="/register">Sign Up</a></li>
+        <!--<li ng-hide="identity.isAuthenticated()"><a href="/register">Sign Up</a></li>-->
         <li class="pull-right" ng-controller="authenticationController" ng-show="identity.isAuthenticated()">
             <a href="" ng-click="logoutUser()">Sign out</a>
         </li>
