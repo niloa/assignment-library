@@ -15,11 +15,10 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
     }
 });
 
-assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http, $filter, ngTableParams){
-    $http.get('api/tags/'+ $routeParams.tagId)
+assignmentLibraryControllers.controller("TagsController", function($scope, $routeparams, $http){
+    $http.get('api/tags/'+ $routeparams.tagId)
         .success(function(tagDetails){
-        	console.log(tagDetails);
-            $scope.assignmentsForTag = tagDetails;
+            console.log(tagDetails);
         })
         .error(function(data){
             console.log("Boo");

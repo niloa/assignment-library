@@ -12,7 +12,6 @@
         "angular": "latest",
         "angular-resource": "latest",
         "angular-route": "latest",
-        "bootstrap": "latest",
-        "ng-table": "latest"
+        "bootstrap": "latest"
     }
 }
