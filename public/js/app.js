@@ -1,4 +1,4 @@
-var assignmentLibrary = angular.module('assignmentLibrary', [
+var assignmentLibraryModule = angular.module('assignmentLibraryModule', [
     'ngRoute',
     'ngResource',
     'ngTable',
@@ -6,7 +6,7 @@ var assignmentLibrary = angular.module('assignmentLibrary', [
     ]);
 
 //configure routes using angular routeProvider
-assignmentLibrary.config(['$routeProvider', '$locationProvider', 
+assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/search', {
@@ -17,6 +17,9 @@ assignmentLibrary.config(['$routeProvider', '$locationProvider',
             })
             .when('/dqp',{
                 templateUrl: 'partials/DQP.html'
+            })
+            .when('/uploadFiles',{
+                templateUrl: 'partials/uploadFiles.html'
             })
             .when('/login',{
                 templateUrl: 'partials/login.html'
@@ -33,6 +36,5 @@ assignmentLibrary.config(['$routeProvider', '$locationProvider',
             .otherwise({
                redirectTo: '/'
             });
-   //$locationProvider.html5Mode(true);
+   $locationProvider.html5Mode(true);
 }]);
-
