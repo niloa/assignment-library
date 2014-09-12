@@ -1,6 +1,7 @@
 var assignmentLibraryModule = angular.module('assignmentLibraryModule', [
     'ngRoute',
     'ngResource',
+    'ngTable',
     'assignmentLibraryControllers'
     ]);
 
