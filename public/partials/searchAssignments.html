@@ -10,7 +10,7 @@
     	<ul class="list-group" ng-repeat="tag in tags">
 			<li>{{tag.primary_tag}}
 				<ul>
-					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse | filter:search_key">
+					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse">
 						<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
 					</li>
 				</ul>

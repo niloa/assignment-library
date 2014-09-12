@@ -1,9 +1,3 @@
 <div class="container" ng-controller="TagsController as tag">
-    <table ng-table class="table">
-    	<tr ng-repeat="assignment in assignmentsForTag | orderBy:predicate:reverse ">
-            <td data-title="'Name'">
-                <a href="#/tags/{{assignment._id}}">{{assignment.name}}</a>
-            </td>
-        </tr>
-    </table>
+
 </div>
