@@ -17,7 +17,7 @@ module.exports = function (app, passport) {
 	});
 
 	var Tags = require("../app/models/tags");
-	var Tags = require("../app/models/assignments");
+	var Assignments = require("../app/models/assignments");
 	router.route("/tags")
 		.get(function(req, res) {
 			var allTags = [];
@@ -61,17 +61,18 @@ module.exports = function (app, passport) {
 			);
 		});
 
-	router.route("tags/:tagId")
+	router.route("/tags/:tagId")
 		.get(function(req, res) {
 			console.log(req.params.tagId);
 			async.parallel([
 				function(callback) {
-					Assignments.find('name', callback);
+					Assignments.find().select('name').exec(callback);
+					return;
 				}], function(error, assignments) {
 					if (error) {
 						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
 					} else {
-						res.json(assignments);
+						res.json(assignments[0]);
 					}
 				} )
 		});
