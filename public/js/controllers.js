@@ -15,12 +15,12 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
     }
 });
 
-assignmentLibraryControllers.controller("TagsController", function($scope, $routeparams, $http){
-    $http.get('api/tags/'+ $routeparams.tagId)
-        .success(function(tagDetails){
-            console.log(tagDetails);
+assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http){
+    $http.get('api/tags/'+ $routeParams.tagId)
+        .success(function(assignments){
+            $scope.assignments = assignments;
         })
         .error(function(data){
-            console.log("Boo");
+            console.log(data);
         });
-})
+});

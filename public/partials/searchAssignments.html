@@ -1,4 +1,4 @@
-<div class="container" ng-controller="SearchController as Search">
+<div class="container" ng-controller="SearchController">
     <div class="jumbotron">
         <h1>Welcome to Search Assignment</h1>
     </div>
@@ -7,7 +7,7 @@
     		Search By: <input type="text" ng-model="search_key"/>
     		<button ng-click="search()">SEARCH</button>
     	</form>
-    	<ul class="list-group" ng-repeat="tag in tags">
+    	<ul class="list-group col-lg-6" ng-repeat="tag in tags | filter:search_key">
 			<li>{{tag.primary_tag}}
 				<ul>
 					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse">
