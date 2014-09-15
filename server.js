@@ -22,6 +22,72 @@ db.once('open',function callback(){
     console.log('libAuth db opened-value is '+configDB.url);
 });
 
+var Tags = require("./app/models/tags");
+var Assignments = require("./app/models/assignments");
+Tags.find({}).exec(function(err, collection){
+    if(collection.length == 0) {
+        console.log("zero");
+        var t1 = new Tags({primary_tag: "NILOA", secondary_tag: "Sociology"});
+        var t2 = new Tags({primary_tag: "NILOA", secondary_tag: "Philosophy"});
+        var t3 = new Tags({primary_tag: "DQP", secondary_tag: "Mathematics"});
+
+        t1.save();
+        t2.save();
+        t3.save();
+        /*t1.save(function(err) {
+        });*/
+        //var t1 = new Tags({ primary_tag: "NILOA", secondary_tag: "Biology"});
+        //var tt  ={"primary_tag": "NILOA", "secondary_tag": "Biology"};
+        //db.collection('Tags').insert(tt);
+        //Tags.insert({"primary_tag": "NILOA", "secondary_tag": "Biology"});
+        // //Tags.update({"primary_tag": "NILOA", "secondary_tag": "Biology"});
+        // Tags.create({primary_tag: "NILOA", secondary_tag: "Sociology"});
+        // Tags.create({"primary_tag": "NILOA", "secondary_tag": "Philosophy"});
+        // Tags.create({"primary_tag": "DQP", "secondary_tag": "Mathematics"});
+        // Tags.create({"primary_tag": "DQP", "secondary_tag": "Physics"});
+        // Tags.create({"primary_tag": "DQP", "secondary_tag": "Chemistry"});
+    }
+    else
+        console.log("non zero "+collection.length);
+});
+
+Assignments.find({}).exec(function(err, collection){
+    if(collection.length == 0) {
+		var a1 = new Assignments({
+			name : "Assignment1", 
+			description: "Welcome to NILOA", 
+			file_location: "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt",
+			created_at: new Date().getSeconds(),
+			tags: [ {
+				"mapped_id" : "5417149a7e2e1c3b3c000002",
+				"primary_tag": "NILOA",
+				"secondary_tag": "Philosophy",
+			},
+			{
+				"mapped_id" : "5417149a7e2e1c3b3c000001",
+				"primary_tag" : "NILOA",
+				"secondary_tag" : "Sociology",
+			}]
+		});
+		var a2 = new Assignments({
+			name : "Assignment2", 
+			description: "Welcome to NILOA", 
+			file_location: "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt",
+			created_at: new Date().getSeconds(),
+			tags: [{
+				"mapped_id": "5417149a7e2e1c3b3c000003",
+				"primary_tag": "DQP",
+				"secondary_tag": "Mathematics",
+
+			}]
+		});
+		a1.save();
+		a2.save();
+    }
+    else
+        console.log("non zero "+collection.length);
+});
+
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
