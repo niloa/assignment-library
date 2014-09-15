@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Tags = require("./tags");
-
 var assignmentsSchema = new Schema({
 	name: {
 		type: String,

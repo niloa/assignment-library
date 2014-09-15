@@ -74,7 +74,7 @@ module.exports = function (app, passport) {
 					} else {
 						res.json(assignments[0]);
 					}
-				} )
+				});
 		});
 
 	router.route("/assignments/:assignmentId")
@@ -90,7 +90,7 @@ module.exports = function (app, passport) {
 						assignmentDetails[0].file_location = "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt"
 						res.json(assignmentDetails[0]);
 					}
-				} )
+				});
 		});
 
 	app.use("/api", router);
