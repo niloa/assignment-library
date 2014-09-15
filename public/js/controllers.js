@@ -24,3 +24,13 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
             console.log(data);
         });
 });
+
+assignmentLibraryControllers.controller('AssignmentDetailsController', function ($scope, $routeParams, $http, ngDialog) {
+    $http.get('api/assignments/' + $routeParams.assignmentId)
+    .success(function(assignmentDetails) {
+        $scope.assignmentDetails = assignmentDetails;
+    })
+    .error(function(error) {
+        console.log(data);
+    });
+});

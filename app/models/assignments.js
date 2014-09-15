@@ -17,10 +17,14 @@ var assignmentsSchema = new Schema({
 		required: true
 	},
 	created_at: {
-		type: Date,
+		type: Number,
 		required: true
 	},
-	tags: [{type: Schema.Types.ObjectId, ref: 'Tags' }]
+	tags: [{
+		mapped_id: String, 
+		primary_tag: String,
+		secondary_tag: String}]
 });
 
+assignmentsSchema.index({name: 1, created_at: 1}, {unique: true});
 module.exports = mongoose.model('Assignments', assignmentsSchema);

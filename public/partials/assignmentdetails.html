@@ -1,0 +1,11 @@
+<div class="container" ng-controller="AssignmentDetailsController">
+	<div>
+		Name: <label>{{assignmentDetails.name}}</label>
+	</div>
+	<div>
+		Description: <label>{{assignmentDetails.description}}</label>
+	</div>
+	<div>
+		<a ng-href="{{assignmentDetails.file_location}}" target="_blank" download>Download</a>
+	</div>
+</div>
