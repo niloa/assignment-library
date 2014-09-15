@@ -15,13 +15,22 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
     }
 });
 
-assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http, $filter, ngTableParams){
+assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http){
     $http.get('api/tags/'+ $routeParams.tagId)
-        .success(function(tagDetails){
-        	console.log(tagDetails);
-            $scope.assignmentsForTag = tagDetails;
+        .success(function(assignments){
+            $scope.assignments = assignments;
         })
         .error(function(data){
-            console.log("Boo");
+            console.log(data);
         });
-})
+});
+
+assignmentLibraryControllers.controller('AssignmentDetailsController', function ($scope, $routeParams, $http) {
+    $http.get('api/assignments/' + $routeParams.assignmentId)
+    .success(function(assignmentDetails) {
+        $scope.assignmentDetails = assignmentDetails;
+    })
+    .error(function(error) {
+        console.log(data);
+    });
+});

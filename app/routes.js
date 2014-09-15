@@ -18,7 +18,6 @@ module.exports = function (app, passport) {
 
 	var Tags = require("../app/models/tags");
 	var Assignments = require("../app/models/assignments");
-
 	router.route("/tags")
 		.get(function(req, res) {
 			var allTags = [];
@@ -64,16 +63,34 @@ module.exports = function (app, passport) {
 
 	router.route("/tags/:tagId")
 		.get(function(req, res) {
-			async.parallel([ function(callback) {
-				Assignments.find(callback);
-				return;
-			}], function(error, assignments) {
-				if (error) {
-					res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
-				} else {
-					res.json(assignments[0]);
-				}
-			});
+			console.log(req.params.tagId);
+			async.parallel([
+				function(callback) {
+					Assignments.find().where('tags.mapped_id').equals(req.params.tagId).exec(callback);
+					return;
+				}], function(error, assignments) {
+					if (error) {
+						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+					} else {
+						res.json(assignments[0]);
+					}
+				});
+		});
+
+	router.route("/assignments/:assignmentId")
+		.get(function(req, res) {
+			async.parallel([
+				function(callback) {
+					Assignments.findOne().where('_id').equals(req.params.assignmentId).exec(callback);
+					return;
+				}], function(error, assignmentDetails) {
+					if (error) {
+						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+					} else {
+						assignmentDetails[0].file_location = "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt";
+						res.json(assignmentDetails[0]);
+					}
+				});
 		});
 
 	app.use("/api", router);
