@@ -25,7 +25,7 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
         });
 });
 
-assignmentLibraryControllers.controller('AssignmentDetailsController', function ($scope, $routeParams, $http, ngDialog) {
+assignmentLibraryControllers.controller('AssignmentDetailsController', function ($scope, $routeParams, $http) {
     $http.get('api/assignments/' + $routeParams.assignmentId)
     .success(function(assignmentDetails) {
         $scope.assignmentDetails = assignmentDetails;

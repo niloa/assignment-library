@@ -87,7 +87,7 @@ module.exports = function (app, passport) {
 					if (error) {
 						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
 					} else {
-						assignmentDetails[0].file_location = "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt"
+						assignmentDetails[0].file_location = "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt";
 						res.json(assignmentDetails[0]);
 					}
 				});
