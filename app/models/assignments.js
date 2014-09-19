@@ -7,6 +7,9 @@ var assignmentsSchema = new Schema({
 		type: String,
 		required: true
 	},
+    author:{
+        type: String
+    },
 	description: {
 		type: String,
 		required: true
