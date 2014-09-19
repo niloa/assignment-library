@@ -1,6 +1,6 @@
 var assignmentLibraryControllers = angular.module('assignmentLibraryControllers', []);
 
-assignmentLibraryControllers.controller("SearchController", function($scope, $http) {
+assignmentLibraryControllers.controller("SearchController", function($scope, $http, $routeParams, $location, assignmentsListService) {
 	$http.get('api/tags')
 		.success(function(tags) {
 			$scope.tags = tags;
