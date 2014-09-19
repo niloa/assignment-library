@@ -19,6 +19,7 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
     $http.get('api/tags/'+ $routeParams.tagId)
         .success(function(assignments){
             $scope.assignments = assignments;
+
         })
         .error(function(data){
             console.log(data);
