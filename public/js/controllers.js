@@ -15,8 +15,8 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
     }
 });
 
-assignmentLibraryControllers.controller("TagsController", function($scope, $routeparams, $http){
-    $http.get('api/tags/'+ $routeparams.tagId)
+assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http){
+    $http.get('api/tags/'+ $routeParams.tagId)
         .success(function(tagDetails){
             console.log(tagDetails);
         })

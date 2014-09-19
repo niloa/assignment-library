@@ -46,3 +46,44 @@ assignmentLibraryModule.factory('userAuthService', function($http, userIdentityS
         }
     }
 });
+
+assignmentLibraryModule.factory('tagDetailService', function($http, $q){
+    var tagValues;
+    return{
+        getAllTags: function () {
+            var dfd = $q.defer();
+            $http.get('/api/tags').then(function (response) {
+                if (response.data) {
+                    //dfd.resolve(true);
+                    dfd.resolve(response.data);
+                } else {
+                    dfd.resolve(false);
+                }
+            });
+            return dfd.promise;
+        },
+        setTagValue: function(tags){
+            tagValues = tags;
+        },
+        getTagValue: function(tags){
+            return tagValues;
+        }
+    };
+});
+
+assignmentLibraryModule.factory('fileDetailService', function($http, $q){
+    var fileDetails = {};
+    return{
+        setfileDetails: function(fileName, fileDescription, primaryTag, secondaryTagId, secondaryTagValue, uploadURL){
+            fileDetails.fileName = fileName;
+            fileDetails.fileDescription = fileDescription;
+            fileDetails.primaryTag = primaryTag;
+            fileDetails.secondaryTagId = secondaryTagId;
+            fileDetails.secondaryTagValue = secondaryTagValue;
+            fileDetails.uploadURL = uploadURL;
+        },
+        getfileDetails: function(){
+            return fileDetails;
+        }
+    };
+});

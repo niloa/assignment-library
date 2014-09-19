@@ -1,16 +1,40 @@
 var express = require('express');
 var async = require('async');
 
+var options = {
+    tmpDir:  __dirname + '/../public/uploaded/tmp',
+    uploadDir: __dirname + '/../public/uploaded/files',
+    uploadUrl:  '/uploaded/files/',
+    storage : {
+        type : 'local'
+    }
+};
+
 module.exports = function (app, passport) {
 
+    var uploader = require('blueimp-file-upload-expressjs')(options);
 	// get an instance of the express Router
-	var router = express.Router(); 
+	var router = express.Router();
 
-	// Default document when server is loaded
-	router.get("/", function (req, res) {
-        	res.render('index.html');
-    	});
-	
+    router.get('/upload', function (req, res) {
+        uploader.get(req, res, function (obj) {
+            res.send(JSON.stringify(obj));
+        });
+    });
+
+    //router.post('/upload', function (req, res) {
+    app.post('/upload', function (req, res) {
+        uploader.post(req, res, function (obj) {
+            res.send(JSON.stringify(obj));
+        });
+    });
+
+    router.delete('/uploaded/files/:name', function (req, res) {
+        uploader.delete(req, res, function (obj) {
+            res.send(JSON.stringify(obj));
+        });
+    });
+
 	router.use(function(req, res, next) {
 		console.log("Starting up the app.");
 		next();	
@@ -71,33 +95,6 @@ module.exports = function (app, passport) {
         res.json({userData: req.user});
     });
 
-    /*// Default document when server is loaded
-     app.get('*', function (req, res) {
-     res.render('index.html');
-     });*/
-
-    //profile page once authenticated
-    /*app.get('/dqp', isLoggedIn, function(req, res) {
-
-     res.render('partials/dqp.html', {
-     user : req.user // get the user out of session and pass to template
-     });
-     });*/
-
-    /*  app.get('/uploadFiles', isLoggedIn, function(req, res, next) {
-     console.log("get called");
-     // res.render('partials/uploadFiles.html');
-     //     next();
-     //res.json({message: 'upload'});
-     });*/
-
-    // =====================================
-    // LOGOUT ==============================
-    // =====================================
-    /* app.get('/logout', function(req, res) {
-     req.logout();
-     res.redirect('/');
-     });*/
 
     app.get('/abc', function(req,res){
         res.json({message: 'test json'});
@@ -109,15 +106,6 @@ module.exports = function (app, passport) {
         failureRedirect : '/', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
-
-    // process the login form
-    /*app.post('/login', passport.authenticate('local-login', {
-
-     successRedirect : '/dqp', // redirect to the secure profile section
-     failureRedirect : '/', // redirect back to the signup page if there is an error
-     failureFlash : true // allow flash messages
-     }));*/
 
     app.post('/login', function(req, res, next){
         var auth = passport.authenticate('local-login', function(err, user){
