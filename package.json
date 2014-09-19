@@ -14,7 +14,8 @@
         "cookie-parser": "~1.0.0",
         "method-override": "~1.0.0",
         "express-session": "~1.0.0",
-        "async": "~0.9.0"
+        "async": "~0.9.0",
+        "blueimp-file-upload-expressjs": "latest"
     },
     "engines" : {
         "node": "0.10.x"
