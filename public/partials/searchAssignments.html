@@ -4,7 +4,7 @@
     </div>
     <div class="search">
     	<form novalidate class="search-form">
-    		Search By: <input type="text" ng-model="search_key"/>
+    		Search By Name: <input type="text" ng-model="search_key"/>
     		<button ng-click="search()">SEARCH</button>
     	</form>
     	<ul class="list-group col-lg-6" ng-repeat="tag in tags | filter:search_key">
