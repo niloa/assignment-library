@@ -31,6 +31,9 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/tags/:tagId', {
                 templateUrl: 'partials/tagdetails.html'
             })
+            .when('/assignments/name/:name', {
+                templateUrl: 'partials/tagdetails.html'
+            })
             .when('/assignments/:assignmentId', {
                 templateUrl: 'partials/assignmentdetails.html'
             })
