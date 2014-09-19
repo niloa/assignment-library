@@ -47,6 +47,19 @@ assignmentLibraryModule.factory('userAuthService', function($http, userIdentityS
     }
 });
 
+assignmentLibraryModule.factory('assignmentsListService', function(){
+    var assignments = [];
+    return {
+            setAssignments: function(assignments) {
+                this.assignments = assignments;
+            },
+            getAssignments: function() {
+                return this.assignments;
+            }
+
+        }
+});
+
 assignmentLibraryModule.factory('tagDetailService', function($http, $q){
     var tagValues;
     return{

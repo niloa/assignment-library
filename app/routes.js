@@ -87,7 +87,6 @@ module.exports = function (app, passport) {
 
 	router.route("/tags/:tagId")
 		.get(function(req, res) {
-			console.log(req.params.tagId);
 			async.parallel([
 				function(callback) {
 					Assignments.find().where('tags.mapped_id').equals(req.params.tagId).exec(callback);
@@ -98,6 +97,21 @@ module.exports = function (app, passport) {
 					} else {
                         console.log(assignments);
 						res.json(assignments[0]);
+					}
+				});
+		});
+
+	router.route("/assignments/name/:name")
+		.get(function(req, res) {
+			async.parallel([
+				function(callback) {
+					Assignments.find({name: new RegExp(req.params.name, 'i')}).exec(callback);
+					return;
+				}], function(error, assignmentDetails) {
+					if (error) {
+						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+					} else {
+						res.json(assignmentDetails[0]);
 					}
 				});
 		});
