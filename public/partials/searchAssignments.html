@@ -7,7 +7,7 @@
     		Search By: <input type="text" ng-model="search_key"/>
     		<button ng-click="search()">SEARCH</button>
     	</form>
-    	<ul class="list-group" ng-repeat="tag in tags">
+    	<ul class="col-lg-6 list-group" ng-repeat="tag in tags">
 			<li>{{tag.primary_tag}}
 				<ul>
 					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse">

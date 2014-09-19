@@ -1,5 +1,28 @@
 <div class="jumbotron" ng-controller="uploadAssignmentController">
-    <h1 class="text-center">Select Files</h1>
-    <input type="file"/>
-    <button class="btn btn-primary pull-right">Upload</button>
+    <div>
+        <div class="form-group">
+            <label for="fileName">File Name</label>
+            <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Enter File name">
+        </div>
+        <div class="form-group">
+            <label for="fileDesc">Description</label>
+        <textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>
+        </div>
+        <div class="form-group row">
+            <label for="primary" class="col-sm-2">Primary Tag</label>
+            <select id="primary" class="col-sm-3" data-ng-model="primaryTag" data-ng-options="c as c.primary_tag for c in allTags" data-ng-change="">
+                <option value="">Select Primary Tag</option>
+            </select><!--<span class="col-sm-7"></span>-->
+            <label for="secondary" class="col-sm-offset-1 col-sm-2">Secondary Tag</label>
+            <select id="secondary" class="col-sm-4" data-ng-model="secondaryTag" data-ng-options="s._id+'~'+s.secondary_tag as s.secondary_tag for s in primaryTag.secondary_tags">
+                <option value="">Select Secondary Tag</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="inputFile">File input</label>
+            <input type="file" id="inputFile" ng-file-select="onFileSelect($files)">
+        </div>
+        <button class="btn btn-primary" ng-click="startUpload()">Upload</button>
+        <a class="btn btn-default" href="/">Cancel</a>
+    </div>
 </div>

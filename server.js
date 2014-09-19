@@ -1,7 +1,7 @@
 
 var express = require('express');
 var app = express();
-var port = process.env.PORT || 8080; 		// set our port
+var port = process.env.PORT || 8000; 		// set our port
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
@@ -21,6 +21,23 @@ db.on('error',console.error.bind(console, 'connection error...'));
 db.once('open',function callback(){
     console.log('libAuth db opened-value is '+configDB.url);
 });
+
+//create default tags if tag list is empty
+var Tags = require("./app/models/tags");
+Tags.find({}).exec(function(err, collection){
+    if(collection.length == 0) {
+        console.log("zero");
+        var t1 = new Tags({primary_tag: "NILOA", secondary_tag: "Sociology"});
+        var t2 = new Tags({primary_tag: "NILOA", secondary_tag: "Philosophy"});
+        var t3 = new Tags({primary_tag: "DQP", secondary_tag: "Mathematics"});
+        t1.save();
+        t2.save();
+        t3.save();
+    }
+    else
+        console.log("non zero "+collection.length);
+});
+//create default tags if tag list is empty
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
