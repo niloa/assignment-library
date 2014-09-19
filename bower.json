@@ -13,6 +13,7 @@
         "angular-resource": "latest",
         "angular-route": "latest",
         "bootstrap": "latest",
-        "ng-table": "latest"
+        "ng-table": "latest",
+        "ng-file-upload": "latest"
     }
 }

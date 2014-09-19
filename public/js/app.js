@@ -2,7 +2,8 @@ var assignmentLibraryModule = angular.module('assignmentLibraryModule', [
     'ngRoute',
     'ngResource',
     'ngTable',
-    'assignmentLibraryControllers'
+    'assignmentLibraryControllers',
+    'angularFileUpload'
     ]);
 
 //configure routes using angular routeProvider
@@ -35,6 +36,9 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             })
             .when('/assignments/:assignmentId', {
                 templateUrl: 'partials/assignmentdetails.html'
+            })
+            .when('/testFUP', {
+                templateUrl: 'partials/testFUP.html'
             })
             .when('/', {
                 templateUrl: 'partials/niloa.html'
