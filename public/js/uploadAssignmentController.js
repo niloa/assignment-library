@@ -1,5 +1,5 @@
 
-assignmentLibraryModule.controller('uploadAssignmentController', function($scope, $rootScope, $location, $upload,userIdentityService,tagDetailService, fileDetailService){
+assignmentLibraryModule.controller('uploadAssignmentController', function($scope, $http, $rootScope, $location, $upload,userIdentityService,tagDetailService, fileDetailService){
     // check if user is authenticated, as direct get to /upload with login will redirect to /uploadFiles
     if(userIdentityService.currentUser != undefined)
         $location.path('/uploadFiles');
@@ -45,7 +45,9 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
 
         //get the file details
         var fileName = $scope.fileName;
+        var author = $scope.author;
         var fileDescription = $scope.fileDescription;
+        var createdAt = new Date().getSeconds();
 
         if(!fileName || !fileDescription){
             toastr.error("Please Enter File name/ File description to proceed");
@@ -84,8 +86,15 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             console.log(data.files[0].name);
             /*console.log("File name "+fileName+" File description "+fileDescription+" Primary Tag "+primaryTag+" secondary Tag "+secondaryTagText+
                 " secondary tag id "+secondaryTagID+" uploaded url "+data.files[0].deleteUrl);*/
-            fileDetailService.setfileDetails(fileName, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl);
-            console.log(fileDetailService.getfileDetails());
+            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl);
+            console.log(" before xhr "+fileDetailService.getfileDetails());
+            $http.post('/saveAssignment',{
+                data:fileDetailService.getfileDetails()
+            }).success(function(){
+               toastr.success("Successfully uploaded the file");
+            }).error(function(){
+                toastr.error("Failed to upload the file, please try again after sometime");
+            });
         });
     };
 });

@@ -43,33 +43,35 @@ Tags.find({}).exec(function(err, collection){
         console.log("non zero "+collection.length);
 });
 
-Assignments.find({}).exec(function(err, collection){
+/*Assignments.find({}).exec(function(err, collection){
     if(collection.length == 0) {
 		var a1 = new Assignments({
-			name : "Assignment1", 
+			name : "Assignment1",
+            author: "Author1",
 			description: "Welcome to NILOA", 
 			file_location: "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt",
 			created_at: new Date().getSeconds(),
 			tags: [ {
 				"mapped_id" : "5417149a7e2e1c3b3c000002",
 				"primary_tag": "NILOA",
-				"secondary_tag": "Philosophy",
+				"secondary_tag": "Philosophy"
 			},
 			{
 				"mapped_id" : "5417149a7e2e1c3b3c000001",
 				"primary_tag" : "NILOA",
-				"secondary_tag" : "Sociology",
+				"secondary_tag" : "Sociology"
 			}]
 		});
 		var a2 = new Assignments({
-			name : "Assignment2", 
+			name : "Assignment2",
+            author: "Author2",
 			description: "Welcome to NILOA", 
 			file_location: "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt",
 			created_at: new Date().getSeconds(),
 			tags: [{
 				"mapped_id": "5417149a7e2e1c3b3c000003",
 				"primary_tag": "DQP",
-				"secondary_tag": "Mathematics",
+				"secondary_tag": "Mathematics"
 
 			}]
 		});
@@ -78,7 +80,7 @@ Assignments.find({}).exec(function(err, collection){
     }
     else
         console.log("non zero "+collection.length);
-});
+});*/
 
 //create default tags if tag list is empty
 

@@ -87,8 +87,10 @@ assignmentLibraryModule.factory('tagDetailService', function($http, $q){
 assignmentLibraryModule.factory('fileDetailService', function($http, $q){
     var fileDetails = {};
     return{
-        setfileDetails: function(fileName, fileDescription, primaryTag, secondaryTagId, secondaryTagValue, uploadURL){
+        setfileDetails: function(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagId, secondaryTagValue, uploadURL){
             fileDetails.fileName = fileName;
+            fileDetails.author = author;
+            fileDetails.createdAt = createdAt;
             fileDetails.fileDescription = fileDescription;
             fileDetails.primaryTag = primaryTag;
             fileDetails.secondaryTagId = secondaryTagId;
