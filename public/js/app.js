@@ -2,8 +2,9 @@ var assignmentLibraryModule = angular.module('assignmentLibraryModule', [
     'ngRoute',
     'ngResource',
     'ngTable',
-    'assignmentLibraryControllers',
-    'angularFileUpload'
+    'angularFileUpload',
+    'ui.bootstrap',
+    'assignmentLibraryControllers'
     ]);
 
 //configure routes using angular routeProvider

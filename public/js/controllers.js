@@ -37,12 +37,42 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
     }
 });
 
-assignmentLibraryControllers.controller('AssignmentDetailsController', function ($scope, $routeParams, $http) {
-    $http.get('api/assignments/' + $routeParams.assignmentId)
-    .success(function(assignmentDetails) {
-        $scope.assignmentDetails = assignmentDetails;
-    })
-    .error(function(error) {
-        console.log(data);
+assignmentLibraryControllers.controller("AssignmentDetailsController", function($scope, $modal, $log, $routeParams, $http) {
+$scope.open = function (size) {
+
+    var modalInstance = $modal.open({
+      templateUrl: 'surveycontent.html',
+      controller: 'SurveryController'
     });
+  };
+
+    $http.get('api/assignments/' + $routeParams.assignmentId)
+        .success(function(assignmentDetails) {
+            $scope.assignmentDetails = assignmentDetails;
+        })
+        .error(function(error) {
+            console.log(data);
+        });
 });
+
+var SurveryController = function ($scope, $modalInstance, $http) {
+    $scope.form = {
+        institution: {},
+        category: "",
+        heardFrom: {},
+        emailAddress: ""
+    };
+
+      $scope.ok = function () {
+        $http.post('api/survey/', $scope.form)
+        .success((data, status) {
+        })
+        .error(function(error)) {
+            console.log(error);
+        }
+      };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+};

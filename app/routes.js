@@ -101,6 +101,12 @@ module.exports = function (app, passport) {
 				});
 		});
 
+
+	router.route("/survey")
+		.post(function(req, res) {
+			console.log(req);
+		});
+
 	router.route("/assignments/name/:name")
 		.get(function(req, res) {
 			async.parallel([
