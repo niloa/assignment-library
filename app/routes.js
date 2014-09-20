@@ -132,7 +132,7 @@ module.exports = function (app, passport) {
 					if (error) {
 						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
 					} else {
-						assignmentDetails[0].file_location = "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt";
+						//assignmentDetails[0].file_location = "https://dl.dropboxusercontent.com/u/44789714/How%20to%20use%20the%20Public%20folder.txt";
 						res.json(assignmentDetails[0]);
 					}
 				});
@@ -147,6 +147,31 @@ module.exports = function (app, passport) {
 
     app.get('/abc', function(req,res){
         res.json({message: 'test json'});
+    });
+
+    //process the post to save assignment details
+    app.post('/saveAssignment', function(req,res){
+        //console.log("Start uploading");
+        //var Assignments = require("/app/models/assignments");
+        var Assignments = require("../app/models/assignments");
+        var assignDetails = new Assignments();
+        assignDetails.name = req.body.data.fileName;
+        assignDetails.author = req.body.data.author;
+        assignDetails.description = req.body.data.fileDescription;
+        assignDetails.file_location = req.body.data.uploadURL;
+        assignDetails.created_at = req.body.data.createdAt;
+        assignDetails.tags=  {
+            "mapped_id" : req.body.data.secondaryTagId,
+            "primary_tag": req.body.data.primaryTag,
+            "secondary_tag": req.body.data.secondaryTagValue
+        };
+        assignDetails.save(function(err) {
+            if (err)
+                throw err;
+            return true;
+        });
+        //console.log(req.body.data.fileName);
+        res.json({status: 'success'});
     });
 
     // process the signup form
@@ -182,7 +207,6 @@ module.exports = function (app, passport) {
 
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
-    console.log("get called");
     // if user is authenticated in the session, carry on
     if (req.isAuthenticated())
         return next();
