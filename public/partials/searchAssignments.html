@@ -1,11 +1,9 @@
 <div class="container" ng-controller="SearchController">
-    <div class="jumbotron">
-        <h1>Welcome to Search Assignment</h1>
-    </div>
+	<p class="search-content"> Click on the filtering options below to narrow your search as best suits your purposes and interests. </p>
     <div class="search">
     	<form novalidate class="search-form">
     		Search By Name: <input type="text" ng-model="search_key"/>
-    		<button ng-click="search()">SEARCH</button>
+    		<button ng-click="search()">Search</button>
     	</form>
     	<ul class="list-group col-lg-6" ng-repeat="tag in tags | filter:search_key">
 			<li>{{tag.primary_tag}}

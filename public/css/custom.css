@@ -1,3 +1,69 @@
-div.dropdown-menu.open{
+div.container {
+	font-family:times, serif;
+	font-size:150%;
+}
+div.dropdown-menu.open {
     overflow: visible !important;
+}
+h1.title {
+	color: #FFFFFF;
+	background-color: #f3775e;
+	text-align: center;
+	font-size: 200%;
+	height: 150px;
+	display: block;
+	font-family: 'Source Sans Pro', sans-serif
+}
+div.nav {
+	color: #FFFFFF;
+}
+div p.search-content {
+	font-family: times, serif;
+	text-align: justify;
+    text-justify: inter-word;
+    font-size: 75%;
+}
+
+div form.search-form {
+	font-family: times, serif;
+	text-align: center;
+    font-size: 60%;
+    background-color: #E3E3E6;
+    height: 70px;
+}
+
+div form.search-form  button{
+	font-family: times, serif;
+}
+
+div ul.list-group{
+	font-family: times, serif;
+	font-size: 60%;
+}
+
+div ul.list-group a{
+	color: #2eaaa8;
+}
+
+div.landing .landing-content {
+	font-family: times, serif;
+	text-align: justify;
+    text-justify: inter-word;
+    font-size: 60%;
+}
+div.resources-content{
+	font-family: times, serif;
+	text-align: justify;
+    text-justify: inter-word;
+    font-size: 75%;
+}
+div.details {
+	font-family: times, serif;
+	text-align: justify;
+    text-justify: inter-word;
+    font-size: 60%;
+}
+
+div.details a {
+	color:  #2eaaa8;
 }
