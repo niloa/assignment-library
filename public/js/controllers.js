@@ -11,7 +11,7 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
 		});
 
     $scope.search = function() {
-        $http.get('api/assignments/name'+ $scope.search_key)
+        $http.get('api/assignments/name/'+ $scope.search_key)
             .success(function(assignments){
                 assignmentsListService.setAssignments(assignments);
                 $location.path("/assignments/name/" + $scope.search_key);
@@ -65,11 +65,11 @@ var SurveryController = function ($scope, $modalInstance, $http) {
 
       $scope.ok = function () {
         $http.post('api/survey/', $scope.form)
-        .success((data, status) {
+        .success(function(data, status) {
         })
-        .error(function(error)) {
+        .error(function(error) {
             console.log(error);
-        }
+        });
       };
 
   $scope.cancel = function () {
