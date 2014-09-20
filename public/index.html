@@ -13,21 +13,26 @@
 </head>
 <body ng-controller="indexController">
 <div class="container">
-    <h1>National Institute for Learning Outcomes Assesment</h1>
-    <ul class="nav navbar nav-pills">
-        <li><a href="#">Welcome</a></li>
-        <li><a href="/search">Search</a></li>
-        <li><a href="/testFUP">testFUP</a></li>
-        <!--<li ng-controller="uploadAssignmentController">-->
-        <li ng-controller="authenticationController">
-            <a href="" ng-click="isUserLoggedIn()">Upload</a>
-        </li>
-        <li ng-hide="identity.isAuthenticated()"><a href="/login">Log in</a></li>
-        <!--<li ng-hide="identity.isAuthenticated()"><a href="/register">Sign Up</a></li>-->
-        <li class="pull-right" ng-controller="authenticationController" ng-show="identity.isAuthenticated()">
-            <a href="" ng-click="logoutUser()">Sign out</a>
-        </li>
-    </ul>
+    <div class="header">
+        <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav nav-pills">
+            <li><a href="#">Welcome</a></li>
+            <li><a href="/search">Browse our library</a></li>
+            <!-- <li><a href="/testFUP">testFUP</a></li> -->
+            <!--<li ng-controller="uploadAssignmentController">-->
+            <li><a href="/resources">Look for resources</a></li>
+            <li ng-controller="authenticationController">
+                <a href="" ng-click="isUserLoggedIn()">Submit an assignment</a>
+            </li>
+            <li ng-hide="identity.isAuthenticated()"><a href="/login">Log In</a></li>
+            <!--<li ng-hide="identity.isAuthenticated()"><a href="/register">Sign Up</a></li>-->
+            <li class="pull-right" ng-controller="authenticationController" ng-show="identity.isAuthenticated()">
+                <a href="" ng-click="logoutUser()">SIGN OUT</a>
+            </li>
+        </ul>
+        </nav>
+        <h1 class="title">WELCOME TO THE ASSIGNMENT LIBRARY</h1>
+    </div>
     <ng-view></ng-view>
 </div>
 <script type="text/javascript" src="vendor/ng-file-upload/angular-file-upload-html5-shim.min.js"></script>
@@ -80,6 +85,8 @@
 <script src="vendor/jQuery-File-Upload-9.7.1/js/cors/jquery.xdr-transport.js"></script>
 
 <!--adding blueimp-jquery-file-upload-->
+<script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script src="js/controllers.js"></script>
 <script src="./vendor/ng-table/ng-table.js"></script>

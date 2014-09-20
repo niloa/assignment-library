@@ -2,8 +2,9 @@ var assignmentLibraryModule = angular.module('assignmentLibraryModule', [
     'ngRoute',
     'ngResource',
     'ngTable',
-    'assignmentLibraryControllers',
-    'angularFileUpload'
+    'angularFileUpload',
+    'ui.bootstrap',
+    'assignmentLibraryControllers'
     ]);
 
 //configure routes using angular routeProvider
@@ -12,6 +13,9 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
         $routeProvider
             .when('/search', {
                 templateUrl: 'partials/searchAssignments.html'
+            })
+            .when('/resources', {
+                templateUrl: 'partials/resources.html'
             })
             .when('/upload', {
                 templateUrl: 'partials/uploadAssignment.html'
