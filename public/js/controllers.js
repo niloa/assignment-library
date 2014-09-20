@@ -29,7 +29,6 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
         $http.get('api/tags/'+ $routeParams.tagId)
         .success(function(assignments){
             $scope.assignments = assignments;
-
         })
         .error(function(data){
             console.log(data);
@@ -65,7 +64,8 @@ var SurveryController = function ($scope, $modalInstance, $http) {
 
       $scope.ok = function () {
         $http.post('api/survey/', $scope.form)
-        .success(function(data, status) {
+        .success(function(status) {
+            $modalInstance.close(status); 
         })
         .error(function(error) {
             console.log(error);
