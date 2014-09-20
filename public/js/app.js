@@ -14,6 +14,9 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/search', {
                 templateUrl: 'partials/searchAssignments.html'
             })
+            .when('/resources', {
+                templateUrl: 'partials/resources.html'
+            })
             .when('/upload', {
                 templateUrl: 'partials/uploadAssignment.html'
             })
