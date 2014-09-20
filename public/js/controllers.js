@@ -22,9 +22,14 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
     }
 });
 
-assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http, assignmentsListService){
+assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http, ngTableParams, assignmentsListService){
     $scope.assignments = assignmentsListService.getAssignments();
 
+    // Hide the pagination, not working right now, check later
+    $scope.tableParams = new ngTableParams({
+        counts: [], // hides page sizes
+        total: 1
+    });
     if($routeParams.tagId !== undefined) {
         $http.get('api/tags/'+ $routeParams.tagId)
         .success(function(assignments){
