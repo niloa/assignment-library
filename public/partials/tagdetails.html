@@ -1,5 +1,5 @@
 <div class="container" ng-controller="TagsController">
-	<table ng-table class="table">
+	<table ng-table="tableParams" class="table">
    			<tr ng-repeat="assignment in assignments">
         		<td data-title="'Name'">
         			<a href="#/assignments/{{assignment._id}}">
