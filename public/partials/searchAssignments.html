@@ -5,14 +5,19 @@
     		Search By Name: <input type="text" ng-model="search_key"/>
     		<button ng-click="search()">Search</button>
     	</form>
-    	<ul class="list-group col-lg-6" ng-repeat="tag in tags | filter:search_key">
+        <div class="col-sm-12"></div>
+        <div class="col-sm-12"></div>
+        <br/>
+        <div class="container">
+    	<ul class="list-group col-lg-6" ng-repeat="tag in tags"><!--" | filter:search_key">-->
 			<li>{{tag.primary_tag}}
 				<ul>
-					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse | filter:search_key">
+					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse"><!--" | filter:search_key">-->
 						<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
 					</li>
 				</ul>
 			</li>	
 		</ul>
+        </div>
     </div>
 </div>

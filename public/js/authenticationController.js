@@ -1,10 +1,11 @@
 assignmentLibraryModule.controller('authenticationController', function($scope, $rootScope, $http, $location, userIdentityService, userAuthService){
-    //$scope.showLogin = false;
-    $rootScope.identity = userIdentityService;
-   /* $scope.showLoginForm = function(){
-        $scope.showLogin = true;
-    };*/
 
+    $rootScope.identity = userIdentityService;
+
+    // highlight appropriate nav bars on click
+    $scope.isActive = function (viewLocation) {
+        return viewLocation === $location.path() || $location.path() === '/upload';
+    };
     $scope.isUserLoggedIn = function(){
         if(userIdentityService.currentUser != undefined)
             $location.path('/uploadFiles');
@@ -16,7 +17,6 @@ assignmentLibraryModule.controller('authenticationController', function($scope, 
         userAuthService.authenticateUser($scope.username, $scope.password).then(function(success){
             if(success){
                 toastr.success('Successfully logged in');
-                //userIdentityService.currentUser = response.data.user.local;
                 $location.path('/uploadFiles');
             }else{
                 toastr.error('Username/ Password incorrect');
@@ -25,7 +25,6 @@ assignmentLibraryModule.controller('authenticationController', function($scope, 
     };
 
     $scope.logoutUser = function(){
-        //alert(" logout Clicked by "+userIdentityService.currentUser.email);
         userAuthService.logoutUser().then(function(){
           $scope.username = "";
           $scope.password = "";
