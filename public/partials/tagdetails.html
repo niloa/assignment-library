@@ -7,9 +7,9 @@
         			</a>
         		</td>
                 <td data-title="'Tags'">
-                    <label ng-repeat="tag in assignment.tags">
-                        {{tag.primary_tag}}:{{tag.secondary_tag}}, </br>
-                    </label>
+                    <li ng-repeat="tag in assignment.tags">
+                        {{tag.primary_tag}}: {{tag.secondary_tag}} </br>
+                    </li>
                 </td>
     		</tr>
     </table>
