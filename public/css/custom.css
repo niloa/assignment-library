@@ -1,19 +1,7 @@
-/*div.container {
-	font-family:times, serif;
-	font-size:150%;
-}*/
 div.dropdown-menu.open {
     overflow: visible !important;
 }
-/*h1.title {
-	color: #FFFFFF;
-	background-color: #f3775e;
-	text-align: center;
-	font-size: 200%;
-	height: 150px;
-	display: block;
-	font-family: 'Source Sans Pro', sans-serif
-}*/
+
 div.nav {
 	color: #FFFFFF;
 }
