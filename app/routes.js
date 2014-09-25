@@ -104,8 +104,10 @@ module.exports = function (app, passport) {
 	router.route("/survey")
 		.post(function(req, res) {
 			var Surveys = require("../app/models/surveys");
+
 			var survey = new Surveys();
 			var form = req.body;
+
 			survey.category = form.category;
 			survey.email = form.emailAddress;
 			survey.institution = form.institution;

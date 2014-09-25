@@ -102,3 +102,17 @@ assignmentLibraryModule.factory('fileDetailService', function($http, $q){
         }
     };
 });
+
+assignmentLibraryModule.factory('assignmentsLocationService', function(){
+    var assignmentLocation = "";
+    return {
+            setAssignmentLocation: function(assignmentLocation) {
+                this.assignmentLocation = assignmentLocation;
+                console.log(this.assignmentLocation);
+            },
+            getAssignmentLocation: function() {
+                return this.assignmentLocation;
+            }
+
+        }
+});
