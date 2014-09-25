@@ -1,59 +1,14 @@
 <div class="container" ng-controller="AssignmentDetailsController">
-    <script type="text/ng-template" id="surveycontent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Short Survey</h3>
-        </div>
-        <div>
-            <form>
-                <div class="modal-body form-group">
-                <div>
-                        1. My institution is (mark all that apply): </br>
-                        <input type="checkbox" ng-model="form.institution.fourYear"> 4-Year Institution  <br/> 
-                        <input type="checkbox" ng-model="form.institution.twoYear"> 2-Year Institution  <br/>
-                        <input type="checkbox" ng-model="form.institution.research"> Research Intensive  <br/>
-                        <input type="checkbox" ng-model="form.institution.teaching"> Teaching Focused    <br/>
-                        <input type="checkbox" ng-model="form.institution.vocationalOrTechnical"> Vocational or Technical Focused <br/>
-                        <input type="checkbox" ng-model="form.institution.none"> I am not affiliated with an institution <br/>
-                        <input type="checkbox" ng-model="form.institution.other"> Other <br/></br>
-                    </div>
-                    <div>
-                        2. My primary role within the institution is: </br>
-                        <input type="radio" ng-model="form.category" value="fulltime" > Full-time Faculty <br/>
-                        <input type="radio" ng-model="form.category" value="parttime" > Part-time Faculty <br/>
-                        <input type="radio" ng-model="form.category" value="administrator"> Administrator <br/>
-                        <input type="radio" ng-model="form.category" value="staff"> Staff <br/>
-                        <input type="radio" ng-model="form.category" value="student"> Student <br/>
-                        <input type="radio" ng-model="form.category" value="other"> Other <br/></br>
-                    </div>
-                    <div>
-                        3. I heard about the assignment library from (mark all that apply): </br>
-                        <input type="checkbox" ng-model="form.heardFrom.collegue"> Collegue  <br/> 
-                        <input type="checkbox" ng-model="form.heardFrom.newsletter"> Newsletter <br/>
-                        <input type="checkbox" ng-model="form.heardFrom.email"> Email  <br/>
-                        <input type="checkbox" ng-model="form.heardFrom.webSearch"> Web Search    <br/>
-                        <input type="checkbox" ng-model="form.heardFrom.conference"> Conference <br/>
-                        <input type="checkbox" ng-model="form.heardFrom.periodical"> Periodical <br/>
-                        <input type="checkbox" ng-model="form.heardFrom.other"> Other <br/></br>
-                    </div>
-
-                    <div>
-                        4. If you would like additional information, enter your email here: <input type="email" ng-model="form.emailAddress" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" ng-click="ok()">OK</button>
-                    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </script>
 	<div>
 		Name: <label>{{assignmentDetails.name}}</label>
+	</div>
+	<div>
+		Author: <label>{{assignmentDetails.author}}</label>
 	</div>
 	<div>
 		Description: <label>{{assignmentDetails.description}}</label>
 	</div>
 	<div>
-		<a ng-href="{{assignmentDetails.file_location}}" target="_blank" ng-click="open()" download>Download</a>
+		<button ng-click="open()">Download</button>
 	</div>
 </div>
