@@ -22,6 +22,10 @@ var assignmentsSchema = new Schema({
 		type: Number,
 		required: true
 	},
+	assignment_type: {
+		type: String,
+		required: true
+	},
 	tags: [{
 		mapped_id: String, 
 		primary_tag: String,

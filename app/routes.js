@@ -172,6 +172,7 @@ module.exports = function (app, passport) {
         assignDetails.description = req.body.data.fileDescription;
         assignDetails.file_location = req.body.data.uploadURL;
         assignDetails.created_at = req.body.data.createdAt;
+        assignDetails.assignment_type = req.body.data.assignmentType;
         assignDetails.tags=  {
             "mapped_id" : req.body.data.secondaryTagId,
             "primary_tag": req.body.data.primaryTag,
