@@ -1,3 +1,70 @@
-.customFileInput{
-    width: 41.5%;
+body{
+    padding-top: 4%;
 }
+
+.title{
+    background-color: #f3775e;
+    height: 125px;
+    text-align: center;
+
+}
+.container{
+    padding-top: 0.5%;
+}
+
+#showUploadForm{
+    height: 600px;
+}
+
+#welcome{
+    font-size: 300%;
+    padding-top: 2%;
+    color: white;
+
+}
+
+/*Styles matching Irongate DQP website*/
+footer {
+    background: #2eaaa8;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    height: 90px;
+    /*padding-top: 28px;*/
+}
+
+#lumina-logo {
+    background: url("../img/sprite.png") no-repeat scroll -467px -17px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 34px;
+    width: 113px;
+    text-indent: -9999px;
+    clear: both;
+    text-align: center;
+    color: #ffffff;
+}
+
+#niloa-logo {
+    color: white;
+    text-align: center;
+}
+
+.footerLink{
+    color: white;
+}
+
+#indexNav{
+    background-color: white;
+    padding-left: 28%;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #fff;
+    background-color: #2eaaa8;
+}
+
+/*Styles matching Irongate DQP website*/
+.customFileInput{
+    width: 65%;
+}
+

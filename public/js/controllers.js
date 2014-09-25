@@ -1,6 +1,12 @@
 var assignmentLibraryControllers = angular.module('assignmentLibraryControllers', []);
 
 assignmentLibraryControllers.controller("SearchController", function($scope, $http, $routeParams, $location, assignmentsListService) {
+    //make search assignments tab highlighted when files are selected from search results
+    /*$scope.isActive = function (viewLocation) {
+        return true;
+        //return viewLocation === $location.path();
+    };*/
+
 	$http.get('api/tags')
 		.success(function(tags) {
 			$scope.tags = tags;

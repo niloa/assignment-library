@@ -4,9 +4,9 @@
     </div>-->
     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <p>To upload an assignment, you need to login</p>
-        <button class="btn btn-primary" ng-click="showLoginForm()">Proceed</button>
+        <!--<button class="btn btn-primary" ng-click="showLoginForm()">Proceed</button>
     </div>
-    <div ng-show="showLogin" class="row col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div ng-show="showLogin" class="row col-lg-6 col-md-6 col-sm-6 col-xs-12">-->
         <span ng-controller="authenticationController">
             <div class="form-group">
                 <label>Email</label>
@@ -16,7 +16,8 @@
                 <label>Password</label>
                 <input type="password" class="form-control" name="password" ng-model="password">
             </div>
-            <button class="btn btn-primary" ng-click="loginUser()">logon</button>
+            <button class="btn btn-primary" ng-click="loginUser()">Log In</button>
+            <a href="/" class="btn btn-default">Cancel</a>
         </span>
     </div>
 </div>
