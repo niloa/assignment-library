@@ -169,6 +169,7 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
                 // $location.path("");
                 // $location.path(assignmentsLocationService.getAssignmentLocation()); 
                 window.open(assignmentsLocationService.getAssignmentLocation());
+                    $location.path('/');
             })
             .error(function(error) {
                 console.log(error);
