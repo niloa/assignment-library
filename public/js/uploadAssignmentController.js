@@ -7,10 +7,10 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
         $location.path('/upload');
 
     // Hide login form in upload page and only show on click of proceed
-    $scope.showLogin = false;
+    /*$scope.showLogin = false;
     $scope.showLoginForm = function(){
         $scope.showLogin = true;
-    };
+    };*/
 
     //if tag data is null get all tags for tag dropdowns
     if(tagDetailService.getTagValue()==undefined){
@@ -92,6 +92,7 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
                 data:fileDetailService.getfileDetails()
             }).success(function(){
                toastr.success("Successfully uploaded the file");
+                $location.path('/search');
             }).error(function(){
                 toastr.error("Failed to upload the file, please try again after sometime");
             });
