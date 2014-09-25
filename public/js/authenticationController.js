@@ -4,7 +4,15 @@ assignmentLibraryModule.controller('authenticationController', function($scope, 
 
     // highlight appropriate nav bars on click
     $scope.isActive = function (viewLocation) {
-        return viewLocation === $location.path() || $location.path() === '/upload';
+       // console.log("in func");
+        return viewLocation === $location.path() || $location.path() === '/upload';// || $location.path().indexOf('tag')!=-1 || $location.path().indexOf('assignments')!=-1;
+        /*if($location.path() === '/upload' ){
+            console.log("in up");
+            return true;}
+        else if($location.path().indexOf('tag')!=-1 || $location.path().indexOf('assignments')!=-1)
+            return true;
+        else
+            return viewLocation === $location.path();*/
     };
     $scope.isUserLoggedIn = function(){
         if(userIdentityService.currentUser != undefined)
