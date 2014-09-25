@@ -1,10 +1,10 @@
 <div class="survey" ng-controller="SurveyController">
-			<label> Your download will begin automatically once you submit the below survey! </label>
-			<label> Fields marked with ** are mandatory!</label>		
+			<label> Your download will begin automatically once you submit the below survey! </label></br>
+			<label> Fields marked with <label style="color:red"> ** </label> are mandatory!</label>		
             <form name="survey">
             	<div class="survey-content">
                 	<div>
-                        1. My institution is (mark all that apply)** : </br>
+                        1. My institution is (mark all that apply)<label style="color:red">**</label> : </br>
                         <input type="checkbox" ng-model="fourYear"> 4-Year Institution  <br/> 
                         <input type="checkbox" ng-model="twoYear"> 2-Year Institution  <br/>
                         <input type="checkbox" ng-model="research"> Research Intensive  <br/>
@@ -14,7 +14,7 @@
                         <input type="checkbox" ng-model="institutionOther"> Other <br/></br>
                     </div>
                     <div>
-                        2. My primary role within the institution is** : </br>
+                        2. My primary role within the institution is<label style="color:red">**</label> : </br>
                         <input type="radio" ng-model="category" value="fulltime" > Full-time Faculty <br/>
                         <input type="radio" ng-model="category" value="parttime" > Part-time Faculty <br/>
                         <input type="radio" ng-model="category" value="administrator"> Administrator <br/>
@@ -23,18 +23,18 @@
                         <input type="radio" ng-model="category" value="other"> Other <br/></br>
                     </div>
                     <div>
-                        3. I heard about the assignment library from (mark all that apply)** : </br>
+                        3. I heard about the assignment library from (mark all that apply)<label style="color:red">**</label> : </br>
                         <input type="checkbox" ng-model="collegue"> Collegue  <br/> 
                         <input type="checkbox" ng-model="newsletter"> Newsletter <br/>
                         <input type="checkbox" ng-model="email"> Email  <br/>
-                        <input type="checkbox" ng-model="webSearch"> Web Search    <br/>
+                        <input type="checkbox" ng-model="webSearch"> Web Search <br/>
                         <input type="checkbox" ng-model="conference"> Conference <br/>
                         <input type="checkbox" ng-model="periodical"> Periodical <br/>
                         <input type="checkbox" ng-model="heardFromOther"> Other <br/></br>
                     </div>
 
                     <div>
-                        4. If you would like additional information, enter your email here: <input type="email" ng-model="emailAddress">
+                        4. If you would like additional information, enter your email here: <input type="text" ng-model="emailAddress"/>
                     </div>
                 </div>
                 <div class="survey-footer">

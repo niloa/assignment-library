@@ -50,7 +50,7 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
         var author = $scope.author;
         var fileDescription = $scope.fileDescription;
         var createdAt = new Date().getSeconds();
-        var assignmentType = $scope.assignmentTypeSelected;
+        var assignmentType = $scope.assignmentTypeSelected.name;
 
         if(!fileName || !fileDescription){
             toastr.error("Please Enter File name/ File description to proceed");
