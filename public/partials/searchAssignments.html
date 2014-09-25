@@ -1,5 +1,6 @@
 <div class="container" ng-controller="SearchController">
-	<p class="search-content"> Click on the filtering options below to narrow your search as best suits your purposes and interests. </p>
+	<!--<p class="search-content"> Click on the filtering options below to narrow your search as best suits your purposes and interests. </p>-->
+	<p class="search-content"> To search using file name, use the below search box. If you are searching based on tags, click on specific tag. </p>
     <div class="search">
     	<form novalidate class="search-form">
     		Search By Name: <input type="text" ng-model="search_key"/>
@@ -9,7 +10,7 @@
         <div class="col-sm-12"></div>
         <br/>
         <div class="container">
-    	<ul class="list-group col-lg-6" ng-repeat="tag in tags">
+    	<ul class="list-group col-lg-4" ng-repeat="tag in tags">
 			<li>{{tag.primary_tag}}
 				<ul>
 					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse">

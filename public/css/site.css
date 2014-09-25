@@ -10,6 +10,7 @@ body{
 }
 .container{
     padding-top: 0.5%;
+    height: 750px;
 }
 
 #showUploadForm{
@@ -55,7 +56,7 @@ footer {
 
 #indexNav{
     background-color: white;
-    padding-left: 28%;
+    padding-left: 18%;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {

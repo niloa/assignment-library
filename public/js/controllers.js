@@ -7,7 +7,9 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
         //return viewLocation === $location.path();
     };*/
 
-	$http.get('api/tags')
+	$http.get('api/tags',{
+        cache: true
+    })
 		.success(function(tags) {
 			$scope.tags = tags;
 			console.log("Success " + tags.toString());
