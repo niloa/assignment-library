@@ -12,6 +12,11 @@
             <label for="fileDesc">Description</label>
         <textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>
         </div>
+        <div class="form-group">
+            <label for="type">Assignment Type</label>
+            <select ng-model="assignmentTypeSelected" ng-options="type.name for type in assignmentType"></select><br>
+            
+        </div>
         <div class="form-group row">
             <label for="primary" class="col-sm-2">Primary Tag</label>
             <select id="primary" class="col-sm-3" data-ng-model="primaryTag" data-ng-options="c as c.primary_tag for c in allTags" data-ng-change="">

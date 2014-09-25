@@ -1,5 +1,7 @@
 
 assignmentLibraryModule.controller('uploadAssignmentController', function($scope, $http, $rootScope, $location, $upload,userIdentityService,tagDetailService, fileDetailService){
+    $scope.assignmentType = [{name: "Assignment"}, {name: "Rubric"}];
+    $scope.assignmentTypeSelected = $scope.assignmentType[0];
     // check if user is authenticated, as direct get to /upload with login will redirect to /uploadFiles
     if(userIdentityService.currentUser != undefined)
         $location.path('/uploadFiles');
@@ -48,6 +50,7 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
         var author = $scope.author;
         var fileDescription = $scope.fileDescription;
         var createdAt = new Date().getSeconds();
+        var assignmentType = $scope.assignmentTypeSelected;
 
         if(!fileName || !fileDescription){
             toastr.error("Please Enter File name/ File description to proceed");
@@ -84,9 +87,10 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             console.log(data);
             console.log(data.files[0].deleteUrl);
             console.log(data.files[0].name);
+            
             /*console.log("File name "+fileName+" File description "+fileDescription+" Primary Tag "+primaryTag+" secondary Tag "+secondaryTagText+
                 " secondary tag id "+secondaryTagID+" uploaded url "+data.files[0].deleteUrl);*/
-            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl);
+            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl, assignmentType);
             console.log(" before xhr "+fileDetailService.getfileDetails());
             $http.post('/saveAssignment',{
                 data:fileDetailService.getfileDetails()

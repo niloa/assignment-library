@@ -6,6 +6,9 @@
         				{{assignment.name}}
         			</a>
         		</td>
+                <td data-title="'Assignment Type'">
+                        {{assignment.assignment_type}}
+                </td>
                 <td data-title="'Tags'">
                     <li ng-repeat="tag in assignment.tags">
                         {{tag.primary_tag}}: {{tag.secondary_tag}} </br>
