@@ -16,7 +16,7 @@
 <body ng-controller="indexController">
 <div class="container">
     <div class="header  well">
-        <h1 class="title">WELCOME TO THE ASSIGNMENT LIBRARY</h1>
+        <h1 class="title">ASSIGNMENT LIBRARY</h1>
         <nav class="navbar " role="navigation">
         <ul class="nav navbar-nav nav-pills">
             <li ng-class="{ active: isActive('/')}"><a href="#">Welcome</a></li>
@@ -27,7 +27,14 @@
             <li ng-controller="authenticationController" ng-class="{ active: isActive('/uploadFiles')}">
                 <a href="" ng-click="isUserLoggedIn()">Submit an assignment</a>
             </li>
+            <li>
+                <a href="">Learn about DQP</a>
+            </li>
             <li ng-hide="identity.isAuthenticated()" ng-class="{ active: isActive('/login')}"><a href="/login">Log In</a></li>
+
+            <li>
+                <a href="https://illinois.edu/fb/sec/6633144">Contact Us</a>
+            </li>
             <!--<li ng-hide="identity.isAuthenticated()"><a href="/register">Sign Up</a></li>-->
             <li class="pull-right" ng-controller="authenticationController" ng-show="identity.isAuthenticated()">
                 <a href="" ng-click="logoutUser()" class="pull-right">Sign Out</a>
