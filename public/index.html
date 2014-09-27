@@ -26,11 +26,11 @@
             <a href="" ng-click="isUserLoggedIn()">Submit an assignment</a>
         </li>
         <li>
-                <a href="http://www.degreeprofile.org/">Learn about DQP</a>
+                <a href="http://www.degreeprofile.org/" target="_blank">Learn about DQP</a>
         </li>
         <li ng-hide="identity.isAuthenticated()" ng-class="{ active: isActive('/login')}"><a href="/login">Log In</a></li>
          <li>
-                <a href="https://illinois.edu/fb/sec/6633144">Contact Us</a>
+                <a href="http://dqp.org.s110208.gridserver.com/contact/" target="_blank">Contact Us</a>
         </li>
         <!-- <li ng-hide="identity.isAuthenticated()"><a href="/register">Sign Up</a></li> -->
         <li class="pull-right" ng-controller="authenticationController" ng-show="identity.isAuthenticated()">

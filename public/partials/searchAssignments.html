@@ -11,7 +11,7 @@
         <br/>
         <div class="container">
     	<ul class="list-group col-lg-4" ng-repeat="tag in tags">
-			<li>{{tag.primary_tag}}
+			<li class="primary_tag"><label>{{tag.primary_tag}}</label>
 				<ul>
 					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse">
 						<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
