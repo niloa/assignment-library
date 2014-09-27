@@ -50,8 +50,8 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/', {
                 templateUrl: 'partials/niloa.html'
             })
-            .otherwise({
-               redirectTo: '/'
-            });
+            // .otherwise({
+            //    redirectTo: '/'
+            // });
    $locationProvider.html5Mode(true);
 }]);
