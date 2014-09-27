@@ -86,3 +86,7 @@ label.assignment-desc {
     display:inline-block; 
     width: 1em;
 }
+
+.primary_tag {
+    list-style-type: none;
+}
