@@ -10,6 +10,9 @@ var assignmentsSchema = new Schema({
     author:{
         type: String
     },
+    citation: {
+    	type: String
+    },
 	description: {
 		type: String,
 		required: true

@@ -48,6 +48,7 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
         //get the file details
         var fileName = $scope.fileName;
         var author = $scope.author;
+        var citation = $scope.citation;
         var fileDescription = $scope.fileDescription;
         var createdAt = new Date().getSeconds();
         var assignmentType = $scope.assignmentTypeSelected.name;
@@ -90,7 +91,7 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             
             /*console.log("File name "+fileName+" File description "+fileDescription+" Primary Tag "+primaryTag+" secondary Tag "+secondaryTagText+
                 " secondary tag id "+secondaryTagID+" uploaded url "+data.files[0].deleteUrl);*/
-            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl, assignmentType);
+            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl, assignmentType, citation);
             console.log(" before xhr "+fileDetailService.getfileDetails());
             $http.post('/saveAssignment',{
                 data:fileDetailService.getfileDetails()

@@ -1,16 +1,29 @@
 <div class="container" ng-controller="AssignmentDetailsController">
 	<div>
-		Name: <label>{{assignmentDetails.name}}</label>
+		<label class="assignment-details">NAME:<span class="assignment-spacing"></span></label> 
+		<label class="assignment-desc">{{assignmentDetails.name}}</label></br>
 	</div>
+	</br>
 	<div>
-		Author: <label>{{assignmentDetails.author}}</label>
+		<label class="assignment-details">ASSIGNMENT TYPE:<span class="assignment-spacing"></span></label>
+		<label class="assignment-desc"> {{assignmentDetails.assignment_type}}</label></br>
 	</div>
+	</br>
 	<div>
-		Assignment Type: <label>{{assignmentDetails.assignment_type}}</label>
+		<label class="assignment-details">AUTHOR:<span class="assignment-spacing"></span></label> 
+		<label class="assignment-desc"> {{assignmentDetails.author}}</label></br>
 	</div>
+	</br>
 	<div>
-		Description: <label>{{assignmentDetails.description}}</label>
+		<label class="assignment-details">CITATION:<span class="assignment-spacing"></span></label>
+		<label class="assignment-desc"> {{assignmentDetails.citation}}</label></br>
 	</div>
+	</br>
+	<div>
+		<label class="assignment-details">DESCRIPTION:<span class="assignment-spacing"></span></label>
+		<label class="assignment-desc"> {{assignmentDetails.description}}</label></br>
+	</div>
+	</br>
 	<div>
 		<button ng-click="open()" class="btn btn-primary">Download</button>
 	</div>
