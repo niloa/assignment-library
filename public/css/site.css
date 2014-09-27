@@ -72,3 +72,21 @@ footer {
 a {
     color:  #2eaaa8;
 }
+
+.assignment-details {
+    float: left;
+    color: #f3775e;
+}
+
+label.assignment-desc {
+    font-weight:normal !important;
+}
+
+.assignment-spacing {
+    display:inline-block; 
+    width: 1em;
+}
+
+.primary_tag {
+    list-style-type: none;
+}
