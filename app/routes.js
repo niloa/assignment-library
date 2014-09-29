@@ -8,8 +8,8 @@ var options = {
     storage : {
         type : 'aws',
         aws : {
-            accessKeyId :  'AKIAJTOC5KQCQDMDXAQA',
-            secretAccessKey : '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',
+            accessKeyId :  '',
+            secretAccessKey : '',
             bucketName : 'assignmentlibrary'
         }
     }
