@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./vendor/ng-table/ng-table.css">
     <link  rel="stylesheet" href="vendor/toastr/toastr.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" href="css/jqx.base.css" type="text/css" />
     <!--<link  rel="stylesheet" href="css/custom.css"/>-->
     <link  rel="stylesheet" href="css/site.css"/>
 </head>
@@ -29,8 +30,7 @@
                 <a href="http://www.degreeprofile.org/" target="_blank">Learn about DQP</a>
         </li>
         <li ng-hide="identity.isAuthenticated()" ng-class="{ active: isActive('/login')}"><a href="/login">Log In</a></li>
-         <li>
-                <a href="http://dqp.org.s110208.gridserver.com/contact/" target="_blank">Contact Us</a>
+         <li><a href="http://dqp.org.s110208.gridserver.com/contact/" target="_blank">Contact Us</a>
         </li>
         <!-- <li ng-hide="identity.isAuthenticated()"><a href="/register">Sign Up</a></li> -->
         <li class="pull-right" ng-controller="authenticationController" ng-show="identity.isAuthenticated()">
@@ -42,7 +42,7 @@
     <!--<h1 id="welcome">WELCOME TO THE ASSIGNMENT LIBRARY</h1>-->
     <p id="welcome">ASSIGNMENT LIBRARY</p>
 </div>
-<div class="container ">
+<div class="container mainBody">
    <ng-view></ng-view>
 </div>
 <footer class="navbar navbar-fixed-bottom">
@@ -85,6 +85,20 @@
 <!--angular-file-upload plugin-->
 <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
 <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<!--scripts for jqCOmboBox-->
+<script type="text/javascript" src="js/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxlistbox.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxbuttons.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxscrollbar.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxcombobox.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxdropdownlist.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxdropdownbutton.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxcolorpicker.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxeditor.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxwindow.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxtooltip.js"></script>
+<script type="text/javascript" src="js/jqwidgets/jqxcheckbox.js"></script>
+<!--scripts for jqCOmboBox-->
 <script type="text/javascript" src="js/app.js"></script>
 <script src="js/controllers.js"></script>
 <script src="./vendor/ng-table/ng-table.js"></script>
