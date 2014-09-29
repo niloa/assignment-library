@@ -1,8 +1,8 @@
-var cloud_storage = process.env.CLOUD_DIR;
 var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
-    uploadDir: cloud_storage,
-    uploadUrl:  '/app-storage',
+    publicDir: __dirname + '/../public/uploaded',
+    uploadDir: __dirname + '/../public/uploaded/files',
+    uploadUrl:  '/uploaded/files/',
     maxPostSize: 11000000000, // 11 GB
     minFileSize:  1,
     maxFileSize:  10000000000, // 10 GB
