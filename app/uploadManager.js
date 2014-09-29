@@ -43,7 +43,7 @@ module.exports = function (router) {
 
     });
 
-    router.delete('/app-storage/:name', function(req, res) {
+    router.delete('/uploaded/files/:name', function(req, res) {
         uploader.delete(req, res, function (obj) {
             res.send(JSON.stringify(obj));
         });
