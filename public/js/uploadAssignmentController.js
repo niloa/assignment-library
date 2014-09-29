@@ -1,5 +1,23 @@
 
 assignmentLibraryModule.controller('uploadAssignmentController', function($scope, $http, $rootScope, $location, $upload,userIdentityService,tagDetailService, fileDetailService){
+
+    //Test Tag duplication
+    $(".append").click(function(){
+        //$("p").clone().appendTo("body");
+        //alert("clicked");
+        var $button = $('.tags').clone();
+        $('.package').html($button);
+       // $(".tags").clone().insertAfter("div.package:last");
+        /*$('.package').appendTo($button);*/
+        /*$('.tags').clone().appendTo(".package");*/
+    });
+    $(".delete").click(function(){
+        //$("p").clone().appendTo("body");
+        //alert("clicked");
+        //var $button = $('.button').clone();
+        $('.package').html('');
+    });
+    //Test Tag duplication
     $scope.assignmentType = [{name: "Assignment"}, {name: "Rubric"}];
     $scope.assignmentTypeSelected = $scope.assignmentType[0];
     // check if user is authenticated, as direct get to /upload with login will redirect to /uploadFiles
@@ -13,7 +31,8 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
     $scope.showLoginForm = function(){
         $scope.showLogin = true;
     };*/
-
+    var primaryTags = [];
+    var secondaryTags = [];
     //if tag data is null get all tags for tag dropdowns
     if(tagDetailService.getTagValue()==undefined){
     tagDetailService.getAllTags().then(function(data){
@@ -22,12 +41,80 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             return;
         }
         $scope.allTags = data;
+        //var t = [];
+        for(var i = 0; i<data.length; i++){
+            primaryTags.push(data[i].primary_tag);
+           // console.log(data[i].primary_tag);
+            for(var j = 0; j< data[i].secondary_tags.length; j++){
+                secondaryTags.push(data[i].secondary_tags[j].secondary_tag);
+                //console.log(secondaryTags[j]);
+            }
+        }
+       /* for(var k = 0;k<secondaryTags.length;k++){
+            console.log(secondaryTags[k]);
+        }*/
+        $("#jqxComboBox").jqxComboBox({source: primaryTags, multiSelect: true, width: 500, height: 25});
+        $("#jqxComboBoxSecondary").jqxComboBox({source: secondaryTags, multiSelect: true, width: 500, height: 25});
+        /*for(var i = 0; i<t.length; i++){
+            console.log("t is "+t[i]);
+        }*/
+/*
+        *//*Test jqcombobox*//*
+        $("#jqxComboBox").jqxComboBox({source: t, multiSelect: true, width: 800, height: 25});
+        $("#jqxComboBox").jqxComboBox('selectItem', 'United States');
+        $("#jqxComboBox").jqxComboBox('selectItem', 'Germany');
+        *//*$("#arrow").jqxButton({  });
+        $("#arrow").click(function () {
+            $("#jqxComboBox").jqxComboBox({ showArrow: false });
+        });*//*
+        // trigger selection changes.
+        $("#jqxComboBox").on('change', function (event) {
+            var items = $("#jqxComboBox").jqxComboBox('getSelectedItems');
+            var selectedItems = "Selected Items: ";
+            $.each(items, function (index) {
+                selectedItems += this.label;
+                if (items.length - 1 != index) {
+                    selectedItems += ", ";
+                }
+            });
+            $("#log").text(selectedItems);
+        });
+        *//*Test jqcombobox*/
+
+
         tagDetailService.setTagValue(data);
-        console.log(data);
+        //console.log(data);
     });
     }else{
         $scope.allTags = tagDetailService.getTagValue();
+        //var ts = [];
+        for(var i = 0; i<$scope.allTags.length; i++){
+            primaryTags.push($scope.allTags[i].primary_tag);
+            //console.log("ts is "+primaryTags[i]);
+            for(var j = 0; j< $scope.allTags[i].secondary_tags.length; j++){
+                secondaryTags.push($scope.allTags[i].secondary_tags[j].secondary_tag);
+                //console.log(secondaryTags[j]);
+            }
+        }
     }
+
+    /*Test jqcombobox*/
+    $("#jqxComboBox").jqxComboBox({source: primaryTags, multiSelect: true, width: 500, height: 25});
+    $("#jqxComboBoxSecondary").jqxComboBox({source: secondaryTags, multiSelect: true, width: 500, height: 25});
+
+    // trigger selection changes.
+    $("#jqxComboBox").on('change', function (event) {
+        var items = $("#jqxComboBox").jqxComboBox('getSelectedItems');
+        var selectedItems = "Selected Items: ";
+        $.each(items, function (index) {
+            selectedItems += this.label;
+            if (items.length - 1 != index) {
+                selectedItems += ", ";
+            }
+        });
+        $("#log").text(selectedItems);
+    });
+    /*Test jqcombobox*/
 
     //function called on selection of file, to store file object in controller
     $scope.onFileSelect = function($files) {
@@ -103,4 +190,10 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             });
         });
     };
+
+        $('#editor').jqxEditor({
+            height: "250px",
+            width: '800px'
+        });
+
 });

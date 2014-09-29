@@ -1,5 +1,7 @@
 body{
     padding-top: 4%;
+    height: auto !important;
+    overflow: auto;
 }
 
 .title{
@@ -10,7 +12,24 @@ body{
 }
 .container{
     padding-top: 0.5%;
-    height: 750px;
+    /*height: 750px;*/
+    height: auto !important;
+}
+
+.mainBody{
+    height: auto !important;
+    overflow: hidden;
+    padding-bottom: 20%;
+}
+.mainBody:before, .mainBody:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.mainBody:after {
+    clear: both;
 }
 
 #showUploadForm{
@@ -45,8 +64,24 @@ footer {
     color: #ffffff;
 }
 
-#niloa-logo {
+/*#niloa-logo {
     color: white;
+    text-align: center;
+}*/
+/*202 × 35*/
+/*img{
+    width:20px; *//* you can use % *//*
+    height: auto;
+}*/
+#niloa-logo {
+    background: url("../img/NILOA-logo-white.png") no-repeat left top;
+    background-size: 202px 35px;
+    display: inline-block;
+    height: 35px;
+    width: 201px;
+    text-indent: -9999px;
+    clear: both;
+    margin-top: 7px;
     text-align: center;
 }
 

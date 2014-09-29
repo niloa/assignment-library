@@ -1,3 +1,4 @@
+<!--
 <div ng-controller="MyCtrl">
     <input type="text" ng-model="myModelObj">
     <input type="file" ng-file-select="onFileSelect($files)">
@@ -9,4 +10,81 @@
          ng-show="!dropSupported">HTML5 Drop File is not supported!</div>
     <button ng-click="startUpload($files)">start Upload</button>
     <button ng-click="upload.abort()">Cancel Upload</button>
-</div>
+</div>-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <!-- META -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="copyright" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <title>Cloning Select Inputs With jQuery</title>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="../vendor/jquery/dist/jquery.min.js"></script>
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var i = 0;
+           // $('input[type="button"]').on('click', function() {
+            $('body').on('click', '.boba', function(){
+            //$(".boba").click(function(){
+            //$(".boba").on('click',function(){
+                // The value of the select input
+                var value = $(this).siblings('select').val();
+                var value2 = $(this).siblings('select:last').val();
+                console.log("value1 is "+value);
+                console.log("value2 is "+value2);
+                // Our cloned object
+                var obj = $(this).closest('div').clone();
+
+                // The parent fieldset
+                var fieldset = $(this).closest('fieldset');
+
+                // Append our new object
+                $(fieldset).append(obj);
+
+                // Since we appended our new object, the last select object will be the one we just added
+                $(fieldset).find('select:last').val(value);
+               $(fieldset).find('select:nth-last-child(2)').val(value2);
+                /*  $(fieldset).find('select:nth-last-child(2)').attr('class','oso'+i);
+                $(fieldset).find('select:last').attr('class','sos'+i);*/
+                /*$(fieldset).find('select:nth-last-child(2)').attr('class','oso'+i);*/
+                i++;
+            });
+        });
+    </script>
+</head>
+<body>
+
+<form method="post" action="">
+    <fieldset>
+        <div>
+            <span>Primary Tag</span>
+            <select name="names[]" id="pm" class="pm">
+                <option value="abe">Abe</option>
+                <option value="bob">Bob</option>
+                <option value="cam">Cam &ldquo;My dad likes to shop me around&rdquo; Newton</option>
+                <option value="dom">Dom</option>
+                <option value="eve">Eve</option>
+            </select>
+            <span>Secondary Tag</span>
+            <select name="names[]" id="sc" class="sc">
+                <option value="a">a</option>
+                <option value="b">Bob</option>
+                <option value="c">Cam &ldquo;My dad likes to shop me around&rdquo; Newton</option>
+                <option value="d">Dom</option>
+                <option value="e">Eve</option>
+            </select>
+            <input type="button" value="Clone!" class="boba" />
+        </div>
+    </fieldset>
+</form>
+
+</body>
+</html>
