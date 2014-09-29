@@ -1,10 +1,11 @@
 var express = require('express');
 var async = require('async');
 
+var cloud_storage = process.env.CLOUD_DIR;
 var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
-    uploadDir: __dirname + '/../public/uploaded/files',
-    uploadUrl:  '/uploaded/files/',
+    uploadDir: cloud_storage,
+    uploadUrl:  '/app-storage',
     storage : {
         type : 'local'
     }
@@ -29,7 +30,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    router.delete('/uploaded/files/:name', function (req, res) {
+    router.delete('/app-storage/:name', function (req, res) {
         uploader.delete(req, res, function (obj) {
             res.send(JSON.stringify(obj));
         });
