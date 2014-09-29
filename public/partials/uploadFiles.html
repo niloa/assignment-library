@@ -1,35 +1,69 @@
+<script>
+    /*$(document).ready(function () {
+        $('#editor').jqxEditor({
+            height: "400px",
+            width: '800px'
+        });
+    });*/
+</script>
 <div class="jumbotrona" id="showUploadForma" ng-controller="uploadAssignmentController">
     <div>
         <div class="form-group">
             <label for="fileName">File Name</label>
             <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Enter File name">
         </div>
-        <div class="form-group">
+
+        <div class="form-group" id="authors">
             <label for="author">Author</label>
             <input type="text" ng-model="author" class="form-control " id="author" placeholder="Enter Author name">
         </div>
+        <!--<div class="button">This is a button</div>-->
+        <!--<div class="package">
+
+        </div>-->
         <div class="form-group">
+
             <label for="citation">Citation</label>
             <textarea class="form-control" ng-model="citation" id="citation" rows="1" placeholder="Enter Citation"></textarea>
         </div>
         <div class="form-group">
             <label for="fileDesc">Description</label>
         <textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>
+
+            <label for="editor">Description</label>
+        <!--<textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>-->
+            <textarea id="editor"></textarea>
+
         </div>
-        <div class="form-group">
+
+        <div class="col-md-12 form-group">
             <label for="type">Assignment Type</label>
             <select ng-model="assignmentTypeSelected" ng-options="type.name for type in assignmentType"></select><br>
         </div>
-        <div class="form-group row">
+
+        <div class="col-md-6 form-group">
+            <!--<span>Select primary Tag</span>-->
+            <label for="jqxComboBox">Select primary Tag</label>
+            <div style="margin-top: 5px;" id='jqxComboBox'></div>
+        </div>
+        <div class="col-md-6 form-group">
+            <!--<span>Select Secondary Tag</span>-->
+            <label for="jqxComboBoxSecondary">Select Secondary Tag</label>
+            <div style="margin-top: 5px;" id='jqxComboBoxSecondary'></div>
+        </div>
+        <div style="margin-top: 10px; font-size: 13px; font-family: Verdana; display: none" id="log"></div>
+
+        <!--<div class="form-group row tags">
             <label for="primary" class="col-sm-2">Primary Tag</label>
             <select id="primary" class="col-sm-3" data-ng-model="primaryTag" data-ng-options="c as c.primary_tag for c in allTags" data-ng-change="">
                 <option value="">Select Primary Tag</option>
             </select>
             <label for="secondary" class="col-sm-offset-1 col-sm-2">Secondary Tag</label>
-            <select id="secondary" class="col-sm-4" data-ng-model="secondaryTag" data-ng-options="s._id+'~'+s.secondary_tag as s.secondary_tag for s in primaryTag.secondary_tags">
+            <select id="secondary" class="col-sm-4" data-ng-model="secondaryTag" data-ng-options="s._id+'~'+s.secondary_tag as s.secondary_tag for s in primaryTag.secondary_tags" >
                 <option value="">Select Secondary Tag</option>
             </select>
         </div>
+        <div class="package"></div>-->
         <!--<div class="form-group">
             <label for="inputFile">File input</label>
             <input type="file" id="inputFile" ng-file-select="onFileSelect($files)">
@@ -40,7 +74,9 @@
             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
         </div>
         <button class="btn btn-primary" ng-click="startUpload()">Upload</button>
-        <a class="btn btn-default" href="/">Cancel</a>
+        <a class="btn btn-default" href="/">Cancel</a><!--
+        <button class="append btn btn-danger">Duplicate Tags</button>
+        <button class="delete btn btn-danger">Delete Tags</button>-->
     </div>
 
 </div>
