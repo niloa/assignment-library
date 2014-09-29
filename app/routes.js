@@ -3,10 +3,15 @@ var async = require('async');
 
 var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
-    uploadDir: __dirname + '/../public/uploaded/files',
-    uploadUrl:  '/uploaded/files/',
+    // AWS url that needs to be changed when we get niloa account
+    uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
     storage : {
-        type : 'local'
+        type : 'aws',
+        aws : {
+            accessKeyId :  'AKIAJTOC5KQCQDMDXAQA',
+            secretAccessKey : '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',
+            bucketName : 'assignmentlibrary'
+        }
     }
 };
 
@@ -29,7 +34,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    router.delete('/uploaded/files/:name', function (req, res) {
+    router.delete('/:name', function (req, res) {
         uploader.delete(req, res, function (obj) {
             res.send(JSON.stringify(obj));
         });
