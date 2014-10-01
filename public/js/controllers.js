@@ -84,6 +84,7 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
     $scope.conference = false;
     $scope.periodical = false;
     $scope.heardFromOther = false;
+    $scope.fileDownloadLink = assignmentsLocationService.getAssignmentLocation();
 
     var validate = function validateEmail(email) { 
         console.log(email);
@@ -96,7 +97,6 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
     } 
 
     $scope.ok = function() {
-        console.log($scope.emailAddress);
         if (($scope.category !== undefined) && ($scope.fourYear !== false || $scope.twoYear !== false 
             || $scope.research !== false || $scope.teaching !== false || $scope.vocationalOrTechnical !== false
             || $scope.none !== false || $scope.institutionOther !== false) && ($scope.collegue !== false
@@ -159,17 +159,7 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
 
             $http.post('api/survey/', form)
             .success(function(status) {
-                // var a = document.createElement("a");
-                // a.id = "download-link"
-                // a.href = assignmentsLocationService.getAssignmentLocation();
-                // a.download = assignmentsLocationService.getAssignmentLocation();
-                // document.body.appendChild(a);
-                // var alink = document.getElementById('download-link');
-                // alink.onclick();
-                // var index = assignmentsLocationService.getAssignmentLocation().indexOf("/uploaded");
-                // $location.path("");
-                // $location.path(assignmentsLocationService.getAssignmentLocation()); 
-                window.open(assignmentsLocationService.getAssignmentLocation());
+                    ($('#download-url')[0]).click();
                     $location.path('/');
             })
             .error(function(error) {

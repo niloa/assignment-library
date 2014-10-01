@@ -95,7 +95,6 @@ module.exports = function (app, passport) {
 			async.parallel([
 				function(callback) {
                     Tags.findOne().where('_id').equals(req.params.tagId).exec(callback);
-//					Assignments.find().where('tags').equals(secondary_tag_name).exec(callback);
 					return;
 				}], function(error, tag_match) {
 					if (error) {
