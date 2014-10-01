@@ -4,7 +4,8 @@ var assignmentLibraryModule = angular.module('assignmentLibraryModule', [
     'ngTable',
     'angularFileUpload',
     'ui.bootstrap',
-    'assignmentLibraryControllers'
+    'assignmentLibraryControllers',
+    'angularUtils.directives.dirDisqus'
     ]);
 
 //configure routes using angular routeProvider

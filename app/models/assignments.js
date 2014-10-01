@@ -29,10 +29,11 @@ var assignmentsSchema = new Schema({
 		type: String,
 		required: true
 	},
-	tags: [{
-		mapped_id: String, 
+	tags: []
+    /*tags: [{
+		mapped_id: String,
 		primary_tag: String,
-		secondary_tag: String}]
+		secondary_tag: String}]*/
 });
 
 assignmentsSchema.index({name: 1, created_at: 1}, {unique: true});
