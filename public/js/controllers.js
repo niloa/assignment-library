@@ -53,7 +53,7 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
     }
 });
 
-assignmentLibraryControllers.controller("AssignmentDetailsController", function($scope, $modal, $log, $routeParams, $http, $location, assignmentsLocationService) {
+assignmentLibraryControllers.controller("AssignmentDetailsController", function($scope, $modal, $log, $routeParams, $http, $location, $sce, assignmentsLocationService) {
 $scope.open = function () {
     $location.path("/survey");
 };
@@ -61,6 +61,7 @@ $scope.open = function () {
     $http.get('api/assignments/' + $routeParams.assignmentId)
         .success(function(assignmentDetails) {
             $scope.assignmentDetails = assignmentDetails;
+            $scope.description = $sce.trustAsHtml(assignmentDetails.description);
             assignmentsLocationService.setAssignmentLocation($scope.assignmentDetails.file_location);
         })
         .error(function(error) {
