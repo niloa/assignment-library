@@ -27,8 +27,8 @@
             <textarea class="form-control" ng-model="citation" id="citation" rows="1" placeholder="Enter Citation"></textarea>
         </div>
         <div class="form-group">
-            <label for="fileDesc">Description</label>
-        <textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>
+          <!--  <label for="fileDesc">Description</label>
+        <textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>-->
 
             <label for="editor">Description</label>
         <!--<textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>-->
@@ -41,15 +41,15 @@
             <select ng-model="assignmentTypeSelected" ng-options="type.name for type in assignmentType"></select><br>
         </div>
 
-        <div class="col-md-6 form-group">
+        <div class="col-md-6 form-group" style="display: none">
             <!--<span>Select primary Tag</span>-->
             <label for="jqxComboBox">Select primary Tag</label>
             <div style="margin-top: 5px;" id='jqxComboBox'></div>
         </div>
         <div class="col-md-6 form-group">
             <!--<span>Select Secondary Tag</span>-->
-            <label for="jqxComboBoxSecondary">Select Secondary Tag</label>
-            <div style="margin-top: 5px;" id='jqxComboBoxSecondary'></div>
+            <label for="jqxComboBoxSecondary">Select Tags</label>
+            <div style="margin-top: 5px;" id='jqxComboBoxSecondary' ></div>{{abcd}}
         </div>
         <div style="margin-top: 10px; font-size: 13px; font-family: Verdana; display: none" id="log"></div>
 

@@ -1,6 +1,6 @@
 
 assignmentLibraryModule.controller('uploadAssignmentController', function($scope, $http, $rootScope, $location, $upload,userIdentityService,tagDetailService, fileDetailService){
-
+    $rootScope.tagsSelected = "";
     //Test Tag duplication
     $(".append").click(function(){
         //$("p").clone().appendTo("body");
@@ -103,8 +103,10 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
     $("#jqxComboBoxSecondary").jqxComboBox({source: secondaryTags, multiSelect: true, width: 500, height: 25});
 
     // trigger selection changes.
-    $("#jqxComboBox").on('change', function (event) {
-        var items = $("#jqxComboBox").jqxComboBox('getSelectedItems');
+    $("#jqxComboBoxSecondary").on('change', function (event) {
+        var items = $("#jqxComboBoxSecondary").jqxComboBox('getSelectedItems');
+       // console.log(items);
+        $rootScope.tagsSelected = items;
         var selectedItems = "Selected Items: ";
         $.each(items, function (index) {
             selectedItems += this.label;
@@ -127,6 +129,7 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
     // 2. Uploads the file to node server and returns the upload url and file properties
     // 3. Use the returned value along with other information like tag details, file name etc and store it in file DB
     $scope.startUpload = function() {
+
         if(!$rootScope.file){
             toastr.error("Please select a file to upload");
             return;
@@ -136,16 +139,17 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
         var fileName = $scope.fileName;
         var author = $scope.author;
         var citation = $scope.citation;
-        var fileDescription = $scope.fileDescription;
+       // var fileDescription = $scope.fileDescription;
+        var fileDescription = $("#editor").val();
         var createdAt = new Date().getSeconds();
         var assignmentType = $scope.assignmentTypeSelected.name;
 
-        if(!fileName || !fileDescription){
+        if(!fileName || (fileDescription.length <= 12)){
             toastr.error("Please Enter File name/ File description to proceed");
             return;
         }
 
-        //get the primary and secondary tag details
+        /*//get the primary and secondary tag details
         if(!($scope.primaryTag)){
             toastr.error("Please select primary tag");
             return;
@@ -161,6 +165,18 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             var delim = secondaryTag.indexOf('~');
             var secondaryTagID = secondaryTag.substring(0,delim);
             var secondaryTagText = secondaryTag.substring(delim+1, secondaryTag.length);
+        }*/
+
+        // get multiple tag details
+        if($rootScope.tagsSelected == ""){
+            toastr.error("Please select at least one tag to proceed");
+            return;
+        }
+        else{
+            var tagDetails = [];
+            for(var p = 0; p < $rootScope.tagsSelected.length; p++){
+                tagDetails.push($rootScope.tagsSelected[p].value);
+            }
         }
 
         var file = $rootScope.file;
@@ -178,7 +194,8 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             
             /*console.log("File name "+fileName+" File description "+fileDescription+" Primary Tag "+primaryTag+" secondary Tag "+secondaryTagText+
                 " secondary tag id "+secondaryTagID+" uploaded url "+data.files[0].deleteUrl);*/
-            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl, assignmentType, citation);
+            //fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl, assignmentType, citation);
+            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, tagDetails, data.files[0].deleteUrl, assignmentType, citation);
             console.log(" before xhr "+fileDetailService.getfileDetails());
             $http.post('/saveAssignment',{
                 data:fileDetailService.getfileDetails()
