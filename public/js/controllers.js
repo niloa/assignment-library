@@ -7,16 +7,15 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
         //return viewLocation === $location.path();
     };*/
 
-	$http.get('api/tags',{
+    $http.get('api/tags', {
         cache: true
     })
-		.success(function(tags) {
-			$scope.tags = tags;
-			console.log("Success " + tags.toString());
-		})
-		.error(function(data) {
-			console.log("Failure " + data);
-		});
+        .success(function (tags) {
+            $scope.tags = tags;
+        })
+        .error(function (data) {
+            console.log("Failure " + data);
+        });
 
     $scope.search = function() {
         $http.get('api/assignments/name/'+ $scope.search_key)
