@@ -84,10 +84,50 @@ assignmentLibraryModule.factory('tagDetailService', function($http, $q){
     };
 });
 
+assignmentLibraryModule.factory('rubricUploadService', function($http, $q, $upload){
+    //var tagValues;
+    return{
+        uploadRubrics: function (rub) {
+            //var dfd = $q.defer();
+            return($upload.upload({
+                url: '/upload', //upload.php script, node.js route, or servlet url
+                //data: {myObj: $scope.myModelObj},
+                file: rub
+            }));
+            //return dfd.promise;
+        }
+    };
+});
+
+assignmentLibraryModule.factory('assignmentUploadService', function($http, $q, $upload, $location){
+    //var tagValues;
+    return{
+        uploadAssignment: function (rub) {
+            //var dfd = $q.defer();
+            return($upload.upload({
+                url: '/upload', //upload.php script, node.js route, or servlet url
+                //data: {myObj: $scope.myModelObj},
+                file: rub
+            }));
+            //return dfd.promise;
+        },
+        saveAssignment: function(data){
+            $http.post('/saveAssignment',{
+                data:data
+            }).success(function(){
+                toastr.success("Successfully uploaded the file");
+                $location.path('/search');
+            }).error(function(){
+                toastr.error("Failed to upload the file, please try again after sometime");
+            });
+        }
+    };
+});
+
 assignmentLibraryModule.factory('fileDetailService', function($http, $q){
     var fileDetails = {};
     return{
-        setfileDetails: function(fileName, author, createdAt, fileDescription, tagDetails, uploadURL, assignmentType, citation){
+        setfileDetails: function(fileName, author, createdAt, fileDescription, tagDetails, uploadURL, assignmentType, citation, rubricAjaxData){
             fileDetails.fileName = fileName;
             fileDetails.author = author;
             fileDetails.createdAt = createdAt;
@@ -96,6 +136,7 @@ assignmentLibraryModule.factory('fileDetailService', function($http, $q){
             fileDetails.uploadURL = uploadURL;
             fileDetails.assignmentType = assignmentType;
             fileDetails.citation = citation;   
+            fileDetails.rubricAjaxData = rubricAjaxData;
         },
         getfileDetails: function(){
             return fileDetails;

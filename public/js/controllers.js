@@ -177,4 +177,38 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
     $scope.cancel = function() {
         $location.path("/search");
     }
+});
+
+assignmentLibraryControllers.controller("AppCtrl", function ($q, $timeout) {
+    var one = $q.defer();
+    var two = $q.defer();
+    var three = $q.defer();
+
+    var all = $q.all([one.promise, two.promise, three.promise]);
+    all.then(success1);
+
+
+    function success(data) {
+        console.log(data);
+        //alert("Super done");
+    }
+    function success1(data) {
+        console.log(data+ "Doner ");
+        //alert("Super done");
+    }
+    one.promise.then(success)
+    two.promise.then(success)
+    three.promise.then(success)
+
+    $timeout(function () {
+        one.resolve("one done");
+    }, Math.random() * 1000)
+
+    $timeout(function () {
+        two.resolve("two done");
+    }, Math.random() * 1000)
+
+    $timeout(function () {
+        three.resolve("three done");
+    }, Math.random() * 1000)
 })

@@ -8,12 +8,12 @@
 </script>
 <div class="jumbotrona" id="showUploadForma" ng-controller="uploadAssignmentController">
     <div>
-        <div class="form-group">
+        <div class="col-sm-12 form-group">
             <label for="fileName">File Name</label>
             <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Enter File name">
         </div>
 
-        <div class="form-group" id="authors">
+        <div class="col-sm-12 form-group" id="authors">
             <label for="author">Author</label>
             <input type="text" ng-model="author" class="form-control " id="author" placeholder="Enter Author name">
         </div>
@@ -21,12 +21,12 @@
         <!--<div class="package">
 
         </div>-->
-        <div class="form-group">
+        <div class="col-sm-12 form-group">
 
             <label for="citation">Citation</label>
             <textarea class="form-control" ng-model="citation" id="citation" rows="1" placeholder="Enter Citation"></textarea>
         </div>
-        <div class="form-group">
+        <div class="col-sm-12 form-group">
           <!--  <label for="fileDesc">Description</label>
         <textarea class="form-control" ng-model="fileDescription" id="fileDesc" rows="3" placeholder="Enter File description"></textarea>-->
 
@@ -36,7 +36,7 @@
 
         </div>
 
-        <div class="col-md-12 form-group">
+        <div class="col-md-12 form-group" style="display: none">
             <label for="type">Assignment Type</label>
             <select ng-model="assignmentTypeSelected" ng-options="type.name for type in assignmentType"></select><br>
         </div>
@@ -46,10 +46,10 @@
             <label for="jqxComboBox">Select primary Tag</label>
             <div style="margin-top: 5px;" id='jqxComboBox'></div>
         </div>
-        <div class="col-md-6 form-group">
+        <div class="col-md-12 form-group">
             <!--<span>Select Secondary Tag</span>-->
             <label for="jqxComboBoxSecondary">Select Tags</label>
-            <div style="margin-top: 5px;" id='jqxComboBoxSecondary' ></div>{{abcd}}
+            <div style="margin-top: 5px;" id='jqxComboBoxSecondary' ></div>
         </div>
         <div style="margin-top: 10px; font-size: 13px; font-family: Verdana; display: none" id="log"></div>
 
@@ -68,13 +68,30 @@
             <label for="inputFile">File input</label>
             <input type="file" id="inputFile" ng-file-select="onFileSelect($files)">
         </div>-->
+        <div class="col-sm-12">
+            <label for="inputFile"> Select Assignment</label>
+            <div class="fileinput fileinput-new input-group customFileInput" data-provides="fileinput">
+                <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+                <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..." id="inputFile" ng-file-select="onFileSelect($files)"></span>
+                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+            </div>
+        </div>
+
+        <div class="col-sm-12" style="padding-bottom: 1%">
+            <label for="inputRubric">Select Rubric (Optional)</label>
+            <input type="file" id="inputRubric" ng-file-select="onRubricSelect($files)" name="files[]" multiple>
+        </div>
+        <!--<label for="inputRubric"> Select Rubric (optional)</label>
         <div class="fileinput fileinput-new input-group customFileInput" data-provides="fileinput">
             <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-            <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..." id="inputFile" ng-file-select="onFileSelect($files)"></span>
+            <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file/s</span><span class="fileinput-exists">Change</span><input type="file" name="..." id="inputRubric" ng-file-select="onRubricSelect($files)" multiple accept="*"></span>
             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
-        </div>
-        <button class="btn btn-primary" ng-click="startUpload()">Upload</button>
-        <a class="btn btn-default" href="/">Cancel</a><!--
+        </div>-->
+    <div class="col-sm-12">
+            <button class="btn btn-primary" ng-click="startUpload()">Upload</button>
+            <a class="btn btn-default" href="/">Cancel</a>
+    </div>
+        <!--
         <button class="append btn btn-danger">Duplicate Tags</button>
         <button class="delete btn btn-danger">Delete Tags</button>-->
     </div>
