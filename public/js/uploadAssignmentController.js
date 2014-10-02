@@ -1,6 +1,7 @@
 
 assignmentLibraryModule.controller('uploadAssignmentController', function($scope, $http, $rootScope, $location, $upload,userIdentityService,tagDetailService, fileDetailService, rubricUploadService, assignmentUploadService){
     $rootScope.tagsSelected = "";
+    $rootScope.file = "";
     $rootScope.rubricFiles = "";
     //Test Tag duplication
     $(".append").click(function(){
