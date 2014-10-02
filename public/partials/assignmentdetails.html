@@ -25,6 +25,13 @@
 	</div>
 	</br>
 	<div>
-		<button ng-click="open()" class="btn btn-primary">Download</button>
+		<button ng-click="open()" class="btn btn-primary">Download Assignment Only</button>
 	</div>
+    </br>
+    <div class="rubrics">
+        <span ng-repeat="rubric in assignmentDetails.rubricsData">
+            <a href="{{rubric.url}}" class="btn btn-primary">Rubric: {{rubric.name}}</a>
+        </span>
+        </br>
+    </div>
 </div>
