@@ -3,6 +3,7 @@ var async = require('async');
 
 var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
+   // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
     // AWS url that needs to be changed when we get niloa account
     uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
     storage : {
@@ -180,6 +181,7 @@ module.exports = function (app, passport) {
         assignDetails.assignment_type = req.body.data.assignmentType;
         assignDetails.citation = req.body.data.citation;
         assignDetails.tags= req.body.data.primaryTag;
+        assignDetails.rubricsData= req.body.data.rubricAjaxData;
         /*assignDetails.tags=  {
             "mapped_id" : req.body.data.secondaryTagId,
             "primary_tag": req.body.data.primaryTag,
