@@ -77,6 +77,11 @@ $scope.open = function () {
 
     $http.get('api/assignments/' + $routeParams.assignmentId)
         .success(function(assignmentDetails) {
+            if(assignmentDetails.rubricsData.length === 1 && assignmentDetails.rubricsData[0] === "") {
+                $scope.displayRubric = false;
+            } else {
+                $scope.displayRubric = true;
+            }
             $scope.assignmentDetails = assignmentDetails;
             $scope.description = $sce.trustAsHtml(assignmentDetails.description);
             assignmentsLocationService.setAssignmentLocation($scope.assignmentDetails.file_location);
