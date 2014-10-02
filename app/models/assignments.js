@@ -29,7 +29,8 @@ var assignmentsSchema = new Schema({
 		type: String,
 		required: true
 	},
-	tags: []
+	tags: [],
+    rubricsData: []
     /*tags: [{
 		mapped_id: String,
 		primary_tag: String,

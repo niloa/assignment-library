@@ -1,3 +1,4 @@
+/*
 var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
     publicDir: __dirname + '/../public/uploaded',
@@ -50,4 +51,4 @@ module.exports = function (router) {
 
     });
     return router;
-}
+}*/
