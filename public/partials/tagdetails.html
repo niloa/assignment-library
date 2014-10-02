@@ -3,7 +3,7 @@
         <tr>
             <td align="center"><label>Name</label></td>
             <td align="center"><label>Assignment Type</label></td>
-            <td align="center"><label>Tags<label></td>
+            <td align="center"><label>Tags</label></td>
         </tr>
    			<tr ng-repeat="assignment in assignments">
         		<td align="center">
@@ -16,7 +16,7 @@
                 </td>
                 <td align="center">
                     <li ng-repeat="tag in assignment.tags">
-                        {{tag.primary_tag}}: {{tag.secondary_tag}} </br>
+                        {{tag}} </br>
                     </li>
                 </td>
     		</tr>
