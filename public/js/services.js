@@ -99,7 +99,7 @@ assignmentLibraryModule.factory('rubricUploadService', function($http, $q, $uplo
     };
 });
 
-assignmentLibraryModule.factory('assignmentUploadService', function($http, $q, $upload, $location){
+assignmentLibraryModule.factory('assignmentUploadService', function($http, $q, $upload, $location,$rootScope){
     //var tagValues;
     return{
         uploadAssignment: function (rub) {
@@ -116,6 +116,8 @@ assignmentLibraryModule.factory('assignmentUploadService', function($http, $q, $
                 data:data
             }).success(function(){
                 toastr.success("Successfully uploaded the file");
+                $rootScope.file = "";
+                $rootScope.rubricFiles = "";
                 $location.path('/search');
             }).error(function(){
                 toastr.error("Failed to upload the file, please try again after sometime");
