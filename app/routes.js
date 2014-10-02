@@ -95,13 +95,19 @@ module.exports = function (app, passport) {
 		.get(function(req, res) {
 			async.parallel([
 				function(callback) {
-					Assignments.find().where('tags.mapped_id').equals(req.params.tagId).exec(callback);
+                    Tags.findOne().where('_id').equals(req.params.tagId).exec(callback);
 					return;
-				}], function(error, assignments) {
+				}], function(error, tag_match) {
 					if (error) {
 						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
 					} else {
-						res.json(assignments[0]);
+                        async.parallel([
+                            function(callback) {
+                                Assignments.find().where('tags').equals(tag_match[0].secondary_tag).exec(callback);
+                            }
+                        ], function(error, assignments) {
+						    res.json(assignments[0]);
+                        });
 					}
 				});
 		});

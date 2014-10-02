@@ -7,16 +7,33 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
         //return viewLocation === $location.path();
     };*/
 
-	$http.get('api/tags',{
+    $http.get('api/tags', {
         cache: true
     })
-		.success(function(tags) {
-			$scope.tags = tags;
-			console.log("Success " + tags.toString());
-		})
-		.error(function(data) {
-			console.log("Failure " + data);
-		});
+        .success(function (tags) {
+            console.log(tags);
+            $scope.academicDisciplines1 = [];
+            $scope.academicDisciplines2 = [];
+            for (i = 0; i< tags.length; i++) {
+                if(tags[i]["primary_tag"] === "Academic Disciplines and Assignment Characteristics") {
+                    var entries = tags[i]["secondary_tags"];
+                    for (j = 0; j < entries.length; j++) {
+                        if (j <= (entries.length/2)) {
+                            $scope.academicDisciplines1.push(entries[j]);
+                        } else {
+                            $scope.academicDisciplines2.push(entries[j]);
+                        }
+                    }
+                } else if (tags[i]["primary_tag"] === "DQP Proficiencies") {
+                    $scope.dqpProficiencies = tags[i]["secondary_tags"];
+                } else {
+                    $scope.degreeAndCourseLevels = tags[i]["secondary_tags"];
+                }
+            }
+        })
+        .error(function (data) {
+            console.log("Failure " + data);
+        });
 
     $scope.search = function() {
         $http.get('api/assignments/name/'+ $scope.search_key)
@@ -53,7 +70,7 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
     }
 });
 
-assignmentLibraryControllers.controller("AssignmentDetailsController", function($scope, $modal, $log, $routeParams, $http, $location, assignmentsLocationService) {
+assignmentLibraryControllers.controller("AssignmentDetailsController", function($scope, $modal, $log, $routeParams, $http, $location, $sce, assignmentsLocationService) {
 $scope.open = function () {
     $location.path("/survey");
 };
@@ -61,6 +78,7 @@ $scope.open = function () {
     $http.get('api/assignments/' + $routeParams.assignmentId)
         .success(function(assignmentDetails) {
             $scope.assignmentDetails = assignmentDetails;
+            $scope.description = $sce.trustAsHtml(assignmentDetails.description);
             assignmentsLocationService.setAssignmentLocation($scope.assignmentDetails.file_location);
         })
         .error(function(error) {
@@ -83,6 +101,7 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
     $scope.conference = false;
     $scope.periodical = false;
     $scope.heardFromOther = false;
+    $scope.fileDownloadLink = assignmentsLocationService.getAssignmentLocation();
 
     var validate = function validateEmail(email) { 
         console.log(email);
@@ -95,7 +114,6 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
     } 
 
     $scope.ok = function() {
-        console.log($scope.emailAddress);
         if (($scope.category !== undefined) && ($scope.fourYear !== false || $scope.twoYear !== false 
             || $scope.research !== false || $scope.teaching !== false || $scope.vocationalOrTechnical !== false
             || $scope.none !== false || $scope.institutionOther !== false) && ($scope.collegue !== false
@@ -158,17 +176,7 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
 
             $http.post('api/survey/', form)
             .success(function(status) {
-                // var a = document.createElement("a");
-                // a.id = "download-link"
-                // a.href = assignmentsLocationService.getAssignmentLocation();
-                // a.download = assignmentsLocationService.getAssignmentLocation();
-                // document.body.appendChild(a);
-                // var alink = document.getElementById('download-link');
-                // alink.onclick();
-                // var index = assignmentsLocationService.getAssignmentLocation().indexOf("/uploaded");
-                // $location.path("");
-                // $location.path(assignmentsLocationService.getAssignmentLocation()); 
-                window.open(assignmentsLocationService.getAssignmentLocation());
+                    ($('#download-url')[0]).click();
                     $location.path('/');
             })
             .error(function(error) {
