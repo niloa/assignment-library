@@ -1,32 +1,103 @@
-<div class="container" ng-controller="SearchController">
-	<!--<p class="search-content"> Click on the filtering options below to narrow your search as best suits your purposes and interests. </p>-->
-	<p class="search-content"> To search using file name, use the below search box. If you are searching based on tags, click on specific tag. </p>
-    <div class="search">
-    	<form novalidate class="search-form">
-    		Search By Name: <input type="text" ng-model="search_key"/>
-    		<button ng-click="search()" class="btn btn-primary">Search</button>
-    	</form>
-        <div class="col-sm-12"></div>
-        <div class="col-sm-12"></div>
-        <br/>
-        <div class="container">
-
-    	<!--<ul class="list-group col-lg-4" ng-repeat="tag in tags">-->
-    	<span class="list-group col-lg-4" ng-repeat="tag in tags">
-			<span>{{tag.primary_tag}}
-
-				<ul>
-					<li ng-repeat="sub_tag in tag.secondary_tags | orderBy:predicate:reverse">
-						<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
-					</li>
-				</ul>
-			</span>
-		<!--</ul>-->
-            </span>
+<div class="container" style="align-content: center" ng-controller="SearchController">
+    <!--<p class="search-content"> Click on the filtering options below to narrow your search as best suits your purposes and interests. </p>-->
+    <p class="search-content"> Search for an assignment by clicking on any specific tag below or you could search by a
+        keyword using the search box at the bottom of this page.</p></br>
+    <hr/>
+    <div class="row clearfix">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Academic Disciplines and Assignment Characteristics</div>
+                <div class="row">
+                    <div class="col-md-4 academic-1">
+                        <ul>
+                            <li ng-repeat="sub_tag in academicDisciplines1 | orderBy:predicate:reverse">
+                                <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 academic-1">
+                        <ul>
+                            <li ng-repeat="sub_tag in academicDisciplines2 | orderBy:predicate:reverse">
+                                <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">DQP Proficiencies</div>
+                <ul>
+                    <li ng-repeat="sub_tag in dqpProficiencies | orderBy:predicate:reverse">
+                        <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Degree and Course Levels</div>
+                <ul>
+                    <li ng-repeat="sub_tag in degreeAndCourseLevels | orderBy:predicate:reverse">
+                        <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-   <!-- <dir-disqus disqus-shortname="testlib"
-                disqus-identifier="avsadsafsas"
-                disqus-url="http://localhost:8000/search">
-    </dir-disqus>-->
+    <hr/>
+    <div class="panel">
+        <div class="panel-body">
+            <form novalidate class="search-form">
+                Search By Keyword: <input type="text" ng-model="search_key"/>
+                <button ng-click="search()" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
 </div>
+<!--<div class="search" style="width: 100%">-->
+<!--<div style="float: left; width: 70%">-->
+<!--<div><label>Academic Disciplines and Assignment Characteristics</label></div>-->
+<!--<div class="col-lg-4 academic-1">-->
+<!--<ul>-->
+<!--<li ng-repeat="sub_tag in academicDisciplines1 | orderBy:predicate:reverse">-->
+<!--<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--<div class="col-lg-4 academic-2">-->
+<!--<ul>-->
+<!--<li ng-repeat="sub_tag in academicDisciplines2 | orderBy:predicate:reverse">-->
+<!--<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div  style="float: left; width: 15%">-->
+<!--<label>DQP Proficiencies</label>-->
+<!--<ul>-->
+<!--<li ng-repeat="sub_tag in dqpProficiencies | orderBy:predicate:reverse">-->
+<!--<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--<div  style="float: left; width: 15%">-->
+<!--<label>Degree and Course Levels</label>-->
+<!--<ul>-->
+<!--<li ng-repeat="sub_tag in degreeAndCourseLevels | orderBy:predicate:reverse">-->
+<!--<a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div>-->
+<!--<form novalidate class="search-form">-->
+<!--Search By Name: <input type="text" ng-model="search_key"/>-->
+<!--<button ng-click="search()" class="btn btn-primary">Search</button>-->
+<!--</form>-->
+<!--</div>-->
+<!-- <dir-disqus disqus-shortname="testlib"
+             disqus-identifier="avsadsafsas"
+             disqus-url="http://localhost:8000/search">
+ </dir-disqus>-->

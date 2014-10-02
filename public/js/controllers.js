@@ -11,7 +11,25 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
         cache: true
     })
         .success(function (tags) {
-            $scope.tags = tags;
+            console.log(tags);
+            $scope.academicDisciplines1 = [];
+            $scope.academicDisciplines2 = [];
+            for (i = 0; i< tags.length; i++) {
+                if(tags[i]["primary_tag"] === "Academic Disciplines and Assignment Characteristics") {
+                    var entries = tags[i]["secondary_tags"];
+                    for (j = 0; j < entries.length; j++) {
+                        if (j <= (entries.length/2)) {
+                            $scope.academicDisciplines1.push(entries[j]);
+                        } else {
+                            $scope.academicDisciplines2.push(entries[j]);
+                        }
+                    }
+                } else if (tags[i]["primary_tag"] === "DQP Proficiencies") {
+                    $scope.dqpProficiencies = tags[i]["secondary_tags"];
+                } else {
+                    $scope.degreeAndCourseLevels = tags[i]["secondary_tags"];
+                }
+            }
         })
         .error(function (data) {
             console.log("Failure " + data);
