@@ -1,6 +1,20 @@
 <div class="container" ng-controller="TagsController">
     <p ng-hide="tableDisplay" style="text-align: center">There are no assignments that are currently associated with
         this category!</p>
+    <div class="table-div" ng-show="tableDisplay">
+        <p style="text-align: justify">
+            Browsing the library returns two areas of information, the name and tags of each assignment. Each assignment
+            has been given a title that relates to the focus of the assignment. Clicking on the title takes users to a
+            description of the assignment along with background information, context, and reflections on each faculty
+            designed assignment. Downloadable assignments, along with rubrics and supporting information, are available
+            on the assignment description page. Please note – each assignment has a citation on the description page and
+            we ask that if you use the assignment you cite it as such.</p>
+
+        <p style="text-align: justify"> Each assignment has also been tagged with multiple search keywords. The tags column identifies the various
+            keywords that an assignment is linked to, allowing for additional narrowing to specific assignments of
+            interest. Included in the tags are the DQP proficiencies connected to an assignment, the degree and course
+            level of the assignment, and academic disciplines and assignment characteristics descriptors.
+        </p></br></br>
 	<table class="table" border="1" style="width:100%" ng-show="tableDisplay">
         <tr>
             <td align="center"><label>Name</label></td>
@@ -19,4 +33,5 @@
                 </td>
     		</tr>
     </table>
+    </div>
 </div>
