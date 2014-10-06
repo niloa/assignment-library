@@ -62,7 +62,12 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
     if($routeParams.tagId !== undefined) {
         $http.get('api/tags/'+ $routeParams.tagId)
         .success(function(assignments){
-            $scope.assignments = assignments;
+                if (assignments.length !== 0) {
+                    $scope.tableDisplay = true;
+                } else {
+                    $scope.tableDisplay = false;
+                }
+                $scope.assignments = assignments;
         })
         .error(function(data){
             console.log(data);
