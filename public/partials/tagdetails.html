@@ -1,8 +1,9 @@
 <div class="container" ng-controller="TagsController">
-	<table class="table" border="1" style="width:100%">
+    <p ng-hide="tableDisplay" style="text-align: center">There are no assignments that are currently associated with
+        this category!</p>
+	<table class="table" border="1" style="width:100%" ng-show="tableDisplay">
         <tr>
             <td align="center"><label>Name</label></td>
-            <td align="center"><label>Assignment Type</label></td>
             <td align="center"><label>Tags</label></td>
         </tr>
    			<tr ng-repeat="assignment in assignments">
@@ -12,10 +13,7 @@
         			</a>
         		</td>
                 <td align="center">
-                        {{assignment.assignment_type}}
-                </td>
-                <td align="center">
-                    <li ng-repeat="tag in assignment.tags">
+                    <li ng-repeat="tag in assignment.tags" style="list-style-type: none">
                         {{tag}} </br>
                     </li>
                 </td>
