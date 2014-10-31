@@ -9,7 +9,7 @@ var surverysSchema = new Schema({
 		teaching: Boolean,
 		vocational_or_technical: Boolean,
 		none: Boolean,
-		other: Boolean,
+		other: Boolean
 	},
     category:{
         type: String
@@ -21,11 +21,11 @@ var surverysSchema = new Schema({
 		web_search: Boolean,
 		conference: Boolean,
 		periodical: Boolean,
-		other: Boolean,
+		other: Boolean
 	},
 	email: {
-		type: String,
-	},
+		type: String
+	}
 });
 
 module.exports = mongoose.model('Surverys', surverysSchema);
