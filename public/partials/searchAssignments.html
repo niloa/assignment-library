@@ -11,14 +11,14 @@
                     <div class="col-md-6 academic-1">
                         <ul>
                             <li ng-repeat="sub_tag in academicDisciplines1 | orderBy:predicate:reverse">
-                                <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                                <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
                             </li>
                         </ul>
                     </div>
                     <div class="col-md-6 academic-2">
                         <ul>
                             <li ng-repeat="sub_tag in academicDisciplines2 | orderBy:predicate:reverse">
-                                <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                                <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
                             </li>
                         </ul>
                     </div>
@@ -30,7 +30,7 @@
                 <div class="panel-heading"><label>DQP Proficiencies</label></div>
                 <ul>
                     <li ng-repeat="sub_tag in dqpProficiencies | orderBy:predicate:reverse">
-                        <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                        <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
                     </li>
                 </ul>
             </div>
@@ -40,7 +40,7 @@
                 <div class="panel-heading"><label>Degree and Course Levels</label></div>
                 <ul>
                     <li ng-repeat="sub_tag in degreeAndCourseLevels | orderBy:predicate:reverse">
-                        <a href="#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                        <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
                     </li>
                 </ul>
             </div>
