@@ -13,6 +13,11 @@ var options = {
             secretAccessKey : '',
             bucketName : ''
         }
+    },
+    copyImgAsThumb : true,
+    imageVersions :{
+        maxWidth : 200,
+        maxHeight : 200
     }
 };
 
