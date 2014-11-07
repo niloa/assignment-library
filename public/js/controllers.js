@@ -90,6 +90,7 @@ $scope.open = function () {
             $scope.assignmentDetails = assignmentDetails;
             $scope.description = $sce.trustAsHtml(assignmentDetails.description);
             assignmentsLocationService.setAssignmentLocation($scope.assignmentDetails.file_location);
+            assignmentsLocationService.setAssignmentPage('/assignments/' + $routeParams.assignmentId);
         })
         .error(function(error) {
             console.log(data);
@@ -113,8 +114,7 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
     $scope.heardFromOther = false;
     $scope.fileDownloadLink = assignmentsLocationService.getAssignmentLocation();
 
-    var validate = function validateEmail(email) { 
-        console.log(email);
+    var validate = function validateEmail(email) {
         if (email === undefined || email === "" || email === null) {
             // console.log("came here")
             return true;
@@ -187,7 +187,7 @@ assignmentLibraryControllers.controller("SurveyController", function($scope, $ht
             $http.post('api/survey/', form)
             .success(function(status) {
                     ($('#download-url')[0]).click();
-                    $location.path('/');
+                    $location.path(assignmentsLocationService.getAssignmentPage());
             })
             .error(function(error) {
                 console.log(error);
@@ -223,19 +223,19 @@ assignmentLibraryControllers.controller("AppCtrl", function ($q, $timeout) {
         console.log(data+ "Doner ");
         //alert("Super done");
     }
-    one.promise.then(success)
-    two.promise.then(success)
-    three.promise.then(success)
+    one.promise.then(success);
+    two.promise.then(success);
+    three.promise.then(success);
 
     $timeout(function () {
         one.resolve("one done");
-    }, Math.random() * 1000)
+    }, Math.random() * 1000);
 
     $timeout(function () {
         two.resolve("two done");
-    }, Math.random() * 1000)
+    }, Math.random() * 1000);
 
     $timeout(function () {
         three.resolve("three done");
     }, Math.random() * 1000)
-})
+});
