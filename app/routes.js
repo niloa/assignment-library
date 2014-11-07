@@ -14,7 +14,11 @@ var options = {
             bucketName : ''
         }
     },
-    copyImgAsThumb : true
+    copyImgAsThumb : true,
+    imageVersions :{
+        maxWidth : 200,
+        maxHeight : 200
+    }
 };
 
 module.exports = function (app, passport) {
