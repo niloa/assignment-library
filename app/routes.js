@@ -13,7 +13,8 @@ var options = {
             secretAccessKey : '',
             bucketName : ''
         }
-    }
+    },
+    copyImgAsThumb : true
 };
 
 module.exports = function (app, passport) {
