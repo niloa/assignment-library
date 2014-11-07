@@ -149,6 +149,12 @@ assignmentLibraryModule.factory('fileDetailService', function($http, $q){
 assignmentLibraryModule.factory('assignmentsLocationService', function(){
     var assignmentLocation = "";
     return {
+            setAssignmentPage: function (assignmentPageURL) {
+                this.assignmentPageURL = assignmentPageURL;
+            },
+            getAssignmentPage: function () {
+                return this.assignmentPageURL;
+            },
             setAssignmentLocation: function(assignmentLocation) {
                 this.assignmentLocation = assignmentLocation;
                 console.log(this.assignmentLocation);
@@ -156,6 +162,5 @@ assignmentLibraryModule.factory('assignmentsLocationService', function(){
             getAssignmentLocation: function() {
                 return this.assignmentLocation;
             }
-
         }
 });
