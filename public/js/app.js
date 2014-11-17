@@ -1,7 +1,6 @@
 var assignmentLibraryModule = angular.module('assignmentLibraryModule', [
     'ngRoute',
     'ngResource',
-    'ngTable',
     'angularFileUpload',
     'ui.bootstrap',
     'assignmentLibraryControllers',
