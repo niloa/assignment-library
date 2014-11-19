@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<html class="not-ie" lang="en">
+<!--<![endif]-->
+
+<head>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.js"></script>
+    <script>
+        alert("You are using IE8 or lesser version, kindly view in Chrome/ Firefox for best and fluid version");
+        setTimeout(function(){
+            $("#spy").css('display','none');
+        },500);
+    </script>
+    <![endif]-->
+
+    <meta charset="utf-8">
+    <meta name="description" content="description" />
+    <meta name="keywords" content="keywords"/>
+    <meta name="author" content="SUHAS" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>Suhas's Portfolio</title>
+
+    <!-- google web font-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- style sheets-->
+    <link rel="stylesheet" media="all" href="../css/bootstrap.css" type="text/css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" media="all" href="../css/custom.css" type="text/css"/>
+    <link rel="stylesheet" media="all" href="../css/animate.css" type="text/css"/>
+    <!--<link rel="stylesheet" media="all" href="css/dark.css" type="text/css"/> --><!--uncomment for dark theme-->
+    <link rel="stylesheet" media="all" href="../css/light.css" type="text/css"/> <!--uncomment for light theme-->
+
+    <!-- main jquery libraries / others are at the bottom-->
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/modernizr.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<!-- Top icons -->
+<div class="top-icons">
+    <a class="top-menu hidden-xs hidden-sm" data-toggle="tooltip" data-placement="top" title="Menu toggle"><span class="glyphicon glyphicon-th-list"></span></a>
+    <a href="Resume_Suhas.pdf" target="_blank" class="top-download-resume hidden-xs hidden-sm" data-toggle="tooltip" data-placement="top" title="Download resume"><span class="glyphicon glyphicon-cloud-download"></span></a>
+    <a class="top-contact hidden-xs hidden-sm" data-toggle="tooltip" data-placement="top" title="Contact me"><span class="glyphicon glyphicon-send"></span></a>
+</div>
+<!-- end Top icons -->
+
+<!-- Navigation -->
+<nav id="spy" class="spy hidden-sm hidden-xs">
+    <ul>
+        <li class="active"><a href="#profile">Profile</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work-experience">Work experience</a></li>
+        <li><a href="#professional-skills">Skills</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#presentation">Paper Presentation</a></li>
+        <li><a href="#activities">Extra-Curricular Activities</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+<!-- end Navigation -->
+
+<!-- Navigation for small devices -->
+<nav id="mini-nav" class="darkThemeNav spy visible-sm visible-xs">
+    <ul>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">Menu</a>
+            <ul class="darkThemeNav dropdown-menu">
+                <li class="active"><a href="#profile">Profile</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#work-experience">Work experience</a></li>
+                <li><a href="#professional-skills">Skills</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#presentation">Paper Presentation</a></li>
+                <li><a href="#activities">Extra-Curricular Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!-- end Navigation for small devices -->
+
+<!-- Header -->
+<header id="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <img src="./img/dp.JPG" class="face animated bounceInDown" alt="Suhas Image">
+                <hr class="empty">
+                <p class="header-name animated flip">Suhas Hoskote Muralidhar</p>
+                <!--<p class="header-name" style="background-color: #ff0000;" id="testVisible">Test box</p>-->
+                <!--<p class="header-title">CS Grad @ University of Illinois at Urbana-Champaign</p>-->
+                <p class="userName header-title col-sm-offset-2">CS Grad @ University of Illinois at Urbana-Champaign&nbsp; <span>&nbsp;</span></p>
+                <br/><br/>
+                <p class="header-subtitle desc" > I inhale HTML5, CSS3 and Javascript, Exhale AWESOMENESS \m/</p>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end Header -->
+
+<!-- Profile -->
+<section id="profile" class="profile activate">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-user"></span>Profile</li>
+                    <li>
+                        <span class="note">Full name</span>
+                        <p><strong>Suhas Hoskote Muralidhar</strong></p>
+                    </li>
+                    <li>
+                        <span class="note">Born</span>
+                        <p><strong>09 March 1991</strong></p>
+                    </li>
+
+                    <li>
+                        <span class="note">LinkedIn Profile </span>
+                        <p><strong><i class="fa fa-linkedin-square"></i> <a href="http://www.linkedin.com/in/suhashm" target="_blank">http://www.linkedin.com/in/suhashm</a></strong></p>
+                    </li>
+
+                    <li>
+                        <span class="note"><a href="https://github.com/suhashm" target="_blank">Github Profile</a></span>
+                        <p><strong><i class="fa fa-github-square"></i> <a href="https://github.com/suhashm" target="_blank">https://github.com/suhashm</a></strong></p>
+                    </li>
+                    <li>
+                        <span class="note"><a href="http://www.thinkjs.io/Resume_Suhas.pdf" target="_blank">Resume</a></span>
+                        <p><strong><i class="fa fa-file-pdf-o"></i> <a href="http://www.thinkjs.io/Resume_Suhas.pdf" target="_blank">http://www.thinkjs.io/Resume_Suhas.pdf</a></strong></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Profile -->
+
+<!-- Education -->
+<section id="education" class="education">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-book"></span>Education</li>
+                    <li>
+                        <span class="note">August 2014 - Current</span>
+                        <p><strong>Master's in Computer Science</strong></p>
+                        <p><strong>University of Illinois</strong> at Urbana-Champaign</p>
+                        <p class="description"><em style="font-weight: bold">Subjects: </em>Data Mining, User Interface Design, Software Engineering, Human Computer Interaction</p>
+                    </li>
+                    <li>
+                        <span class="note">September 2008 - June 2012</span>
+                        <p><strong>Bachelor's in Computer Science and Engineering</strong></p>
+                        <p><strong>RV College of Engineering</strong> - Bangalore, India</p>
+                        <p class="description"><em style="font-weight: bold">Subjects: </em> Analysis of Algorithms and Design, Data Structures, Operating Systems</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Education -->
+
+
+<!-- Work experience -->
+<section id="work-experience" class="work-experience">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-briefcase"></span>Work experience</li>
+                    <li>
+                        <span class="note">August 2014 - Current</span>
+                        <p><strong>Research Assistant</strong>, College of Education, University of Illinois at Urbana-Champaign, IL.</p>
+                        <p><strong>Full stack web developer</strong></p>
+                        <p class="description">Building a nationwide online library of high-quality, peer-reviewed assignments to simulate
+                            institutional efforts at grassroots level to make difference in the classroom</p>
+                        <!--<br/>-->
+                        <p class="description"><b>Technology Used:</b> MEAN Stack (MongoDB, ExpressJS, AngularJS and NodeJS)</p>
+                    </li>
+                    <li>
+                        <span class="note">July 2012 - June 2014</span>
+                        <p><strong>INTEL INDIA</strong></p>
+                        <p><strong>Software Engineer</strong>, Bangalore, IN</p>
+                        <ul>
+                            <li>Worked as <b>Lead Front End Web Developer</b>Built responsive, large scale web application which enhanced productivity and user experience for
+                                various scheduling applications across Intel.</li>
+                            <p class="description col-sm-offset-1 col-xs-offset-2"><b>Technology Used:</b></p>
+                            <p class="description col-sm-offset-1 col-xs-offset-2"><em>Front end:</em> HTML5, CSS3(Bootstrap), Javascript( AngularJS)</p>
+                            <p class="description col-sm-offset-1 col-xs-offset-2"><em>Backend:</em> Microsoft Exchange.</p>
+                            <li><b>Enterprise Issue Management (EIM)</b> - Developed a Customer facing Web application for Intel Warranted Product Issue resolutions.</li>
+                            <p class="description col-sm-offset-1 col-xs-offset-2"><b>Technology Used:</b></p>
+                            <p class="description col-sm-offset-1 col-xs-offset-2"><em>Front end:</em> Java-J2EE and Struts 2.0 Framework</p>
+                            <p class="description col-sm-offset-1 col-xs-offset-2"><em>Backend:</em> SAP CRM</p>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="note">June 2011 - August 2011</span>
+                        <p><strong>Thomson Reuters</strong></p>
+                        <p><strong>Software Developer - Intern</strong> in Bangalore, IN</p>
+                        <p class="description">Reuters Market Light (RML) Implemented Collaborative filtering algorithm to identify agrarian services like Crop Prices, Weather Forecast, Cash Crops etc. and send them to the subscribed farmers over mobile using SMS gateways</p>
+                        <br/>
+                        <p class="description"><b>Technology Used:</b> Java, J2EE with Struts 2.0 Framework</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Work experience -->
+
+
+<!-- Professional skills -->
+<section id="professional-skills" class="professional-skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-tasks"></span>Professional skills</li>
+                    <li>
+                        <p>Java<span class="annotation pull-right">90%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Front End Web Development (HTML5, CSS3 - Bootstrap)<span class="annotation pull-right">85%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Javascript- AngularJS, NodeJS, ExpressJS, jQuery<span class="annotation pull-right">80%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Mobile Application Development - Android (Native) and Phonegap(Hybrid)<span class="annotation pull-right">50%</span></p>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <p><b>Misc: </b> Git, &nbsp; Heroku,&nbsp; MongoDB, &nbsp; ASP.Net MVC4</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Professional skills -->
+
+<!-- Personal skills -->
+<section id="personal-skills" class="personal-skills">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-stats"></span>Personal skills</li>
+                    <li>
+                        <span class="chart" data-percent="95"><span class="skill">Creativity</span>
+                            <span class="percent"></span>
+                        </span>
+                        <span class="chart" data-percent="85"><span class="skill">Social skills</span>
+                            <span class="percent"></span>
+                        </span>
+                        <span class="chart" data-percent="80"><span class="skill">Leadership</span>
+                            <span class="percent"></span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Personal skills -->
+
+<!-- Interests -->
+<section id="interests" class="interests">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-heart-empty"></span>Interests</li>
+                    <li>
+                        <p><strong>Research</strong></p>
+                        <p class="description">Human Computer Interaction (HCI)</p>
+                    </li>
+                    <li>
+                        <p><strong>Academics</strong></p>
+                        <p class="description">Algorithms, Data Structures, Probability, Data Mining, User Interface Design</p>
+                    </li>
+                    <li>
+                        <p><strong>Full Stack Web Application Development</strong></p>
+                        <p class="description">Building full scale web application entirely in Javascript using MEAN Stack - MongoDB, ExpressJS, AngularJS and NodeJS</p>
+                    </li>
+                    <li>
+                        <p><strong>Mobile Application Development</strong></p>
+                        <p class="description">Native application development on Android and Hybrid application development using HTML5, jQuery Mobile and Apache Cordova (Phonegap)</p>
+                    </li>
+                    <li>
+                        <p><strong>Game Development</strong> - HTML5 and Unity3D</p>
+                    </li>
+                    <li>
+                        <p><strong>Web</strong> - UX and Responsive Web Design</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Interests -->
+
+<!-- Portfolio -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-eye-open"></span>PROJECTS</li>
+                    <li>
+                        <p><strong>Tech Pandora - MEAN Stack Application</strong></p>
+                        <p class="description">Full Stack web application written completely in Javascript using MEAN Stack - MongoDB, ExpressJS, AngularJS and NodeJS</p>
+                        <p class="description"><b>URL: </b><a href="http://suhashm.github.io/MEAN-Stack/" target="_blank">http://suhashm.github.io/MEAN-Stack/</a> </p>
+                    </li>
+                    <li>
+                        <p><strong>Node Authentication</strong></p>
+                        <p class="description">Implemented Local SignIn and SignUP, Facebook, Twitter and Google+ authentication using Passportauthentication
+                            middleware for NodeJS</p>
+                        <p class="description"><b>Technology Used: </b>NodeJS, ExpressJS, PassportJS, MongoDB</p>
+                        <p class="description"><b>URL: </b><a href="http://suhashm.github.io/node-authentication/" target="_blank">http://suhashm.github.io/node-authentication/</a> </p>
+                    </li>
+                    <li>
+                        <p><strong>Optical Character Recognition - Android Application</strong></p>
+                        <p class="description">Developed an Android application in which neural networks are trained using Machine Learning Algorithms like Kohonen self-organizing maps and Hilditch Image Processing algorithm to recognize large data sets of text from an image and the subsequent characters are optically recognized and read out using native text-speech engine.</p>
+                    </li>
+                    <li>
+                        <p><strong>e-Scrap Mobile Application at Intel Code-A-Thon</strong></p>
+                        <p class="description">Developed a mobile application to track the e-scraps from Intel Labs</p>
+                        <p class="description"><b>Technology Used: </b>HTML5 and jQuery Mobile for front end and MySQL for backend and used PaaS (Platform as Service) to physically land the app in Intel Enterprise Private Cloud.</p>
+                    </li>
+                    <li>
+                        <p><strong>Single Pass Assembler for 8086 Microprocessor</strong></p>
+                        <p class="description">Implemented an assembler using a lex tool named flex and devised our own algorithm to handle forward references while parsing</p>
+                        <p class="description">Used Assembly language programming to build a dictionary with instructions and generate the assembly code in a single pass.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Portfolio -->
+
+<!-- start Presentation -->
+<section id="presentation" class="interests">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-certificate"></span>Paper Presentation</li>
+                    <li>
+                        <p><strong>Secret Behind Search Engines - Web Crawler</strong></p>
+                        <p class="description">Presented at National Conference organized by Computer Society of India (CSI) at SJCE, Mysore.</p>
+                        <p class="description">The paper dealt with various algorithms related to Distributed and Multi-threaded Web Crawlers, performance and the various methods to improve the existing implementation of Web Crawlers.</p>
+                    </li>
+                    <li>
+                        <p><strong>Social CRM - Innovative way to connect with Customer</strong></p>
+                        <p class="description">Presented at Software Professional Conference organized by Intel India</p>
+                        <p class="description">The paper dealt with different ways of engaging with customer using Salesforce.com's Cloud CRM Platform</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end presentation-->
+
+<!-- start activities -->
+<section id="activities" class="education">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-leaf"></span>Extra Curricular Activities</li>
+                    <li>
+                        <p>Awarded 1st Prize in <b>Code-A-thon</b> organized by Intel Labs for developing E-Scrap mobile application at Intel India, Bangalore April 2013.</p>
+                    </li>
+                    <li>
+                        <p>Technical Lead of <b>IOTA 2011</b>- Techno-Cultural fest of Dept. of Computer Science, RV College of Engineering (RVCE), Bangalore-IN</p>
+                    </li>
+                    <li>
+                        <p>Awarded first prize in <b>Gadget Quiz</b>, organized by Electronics and communications Dept. RVCE.</p>
+                    </li>
+                    <li>
+                        <p>An active member of <b>Rotract Club</b> of RVCE which is involved in social service activities like Blood donation, Paper Drive and orphanage visits.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end activities-->
+
+<!-- Contact -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7 col-sm-offset-5">
+                <ul>
+                    <li class="title"><span class="glyphicon glyphicon-envelope"></span>Contact</li>
+                    <li class="static">
+                        <span class="note">Address</span>
+                        <p><strong>711 W Elm street, Unit #18</strong></p>
+                        <p><strong>Urbana, IL - USA</strong></p>
+                        <span class="note">Mobile</span>
+                        <p><strong>(217)- 974-0761</strong></p>
+                        <span class="note">Email</span>
+                        <p><strong><a href="mailto:shmural2@illinois.edu" target="_blank">shmural2@illinois.edu</a></strong></p>
+                        <span class="note">Resume</span>
+                        <p><strong><a href="http://www.thinkjs.io/Resume_Suhas.pdf" target="_blank">http://www.thinkjs.io/Resume_Suhas.pdf</a></strong></p>
+                        <hr class="empty">
+                        <!--   <form action="contact.php" method="post">
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                   <input name="yourname" type="text" class="form-control" id="inputname" placeholder="Enter your name">
+                               </div>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                   <input name="email" type="email" class="form-control" id="inputemail" placeholder="Enter your email">
+                               </div>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon"><span class="glyphicon glyphicon-bold"></span></span>
+                                   <input name="subject" type="text" class="form-control" id="inputsubject" placeholder="Enter subject">
+                               </div>
+                               <div class="form-group input-group">
+                                   <span class="input-group-addon"><span class="glyphicon glyphicon-comment"></span></span>
+                                   <textarea name="comments" class="form-control" id="inputmessage" rows="3" placeholder="Enter message here"></textarea>
+                               </div>
+                               <button type="submit" class="btn btn-success pull-right"><span class="glyphicon glyphicon-send"></span> Send message</button>
+                           </form>-->
+                    </li>
+                    <li class="title up"><span class="glyphicon glyphicon-arrow-up"></span>Up</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end Contact -->
+
+<!-- Java Script -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap-progressbar.js"></script>
+<script src="../js/spy.js"></script>
+<script src="../js/scripts.js"></script>
+<!-- Charts -->
+<script src="../js/jquery.easypiechart.js"></script>
+<script src="../js/chart.js"></script>
+
+</body>
+</html>
