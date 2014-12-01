@@ -4,9 +4,12 @@ assignmentLibraryModule.controller('deleteAssignmentController', function($scope
     $scope.search = function() {
         $http.get('api/assignments/name/'+ $scope.search_key)
             .success(function(assignments){
-                console.log(assignments);
-                $scope.searchPopulated = true;
-                $scope.assignments = assignments;
+                if(assignments.length != 0) {
+                    $scope.searchPopulated = true;
+                    $scope.assignments = assignments;
+                } else {
+                    toastr.error("There are no assignments matching this name!")
+                }
             })
             .error(function(data){
                 console.log(data);
