@@ -1,0 +1,21 @@
+<div class="container" ng-controller="deleteAssignmentController">
+    <div class="panel">
+        <div class="panel-body">
+            <form novalidate class="search-form">
+                Search: <input type="text" ng-model="search_key"/>
+                <button ng-click="search()" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+    <div ng-show="searchPopulated" class="delete-search">
+        <div class="radio" ng-repeat="assignment in assignments">
+            <label>
+                <input type="radio" ng-click="selectedAssignment(assignment._id)">
+                {{assignment.name}}
+            </label>
+        </div>
+    </div>
+    <div ng-show="searchPopulated" class="delete">
+        <button ng-click="deleteAssignment()" class="btn btn-primary">Delete</button>
+    </div>
+</div>
