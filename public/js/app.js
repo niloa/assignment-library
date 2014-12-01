@@ -38,11 +38,17 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/assignments/name/:name', {
                 templateUrl: 'partials/tagdetails.html'
             })
+            .when('/assignments/delete', {
+                templateUrl: 'partials/assignment/delete.html'
+            })
             .when('/assignments/:assignmentId', {
                 templateUrl: 'partials/assignmentdetails.html'
             })
             .when('/survey', {
                 templateUrl: 'partials/surveycontent.html'
+            })
+            .when('/admin', {
+                templateUrl: 'partials/admin.html'
             })
             .when('/testFUP', {
                 templateUrl: 'partials/testFUP.html'
