@@ -14,18 +14,26 @@ assignmentLibraryModule.controller('authenticationController', function($scope, 
         else
             return viewLocation === $location.path();*/
     };
-    $scope.isUserLoggedIn = function(){
+
+    $scope.isUserLoggedInAsAdmin = function() {
         if(userIdentityService.currentUser != undefined)
-            $location.path('/uploadFiles');
+            $location.path('/admin');
         else
             $location.path('/upload');
     };
+
+//    $scope.isUserLoggedIn = function(){
+//        if(userIdentityService.currentUser != undefined)
+//            $location.path('/uploadFiles');
+//        else
+//            $location.path('/upload');
+//    };
 
     $scope.loginUser = function () {
         userAuthService.authenticateUser($scope.username, $scope.password).then(function(success){
             if(success){
                 toastr.success('Successfully logged in');
-                $location.path('/uploadFiles');
+                $location.path('/admin');
             }else{
                 toastr.error('Username/ Password incorrect');
             }
