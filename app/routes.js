@@ -5,14 +5,14 @@ var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
    // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
     // AWS url that needs to be changed when we get niloa account
-    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
-    //uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
+//    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
     storage : {
         type : 'aws',
         aws : {
             accessKeyId :  '',
             secretAccessKey : '',
-            bucketName : ''
+            bucketName : 'assignmentlibrary'
         }
     },
     copyImgAsThumb : true,
@@ -168,7 +168,20 @@ module.exports = function (app, passport) {
 				});
 		});
 
-	app.use("/api", router);
+    router.route("/assignments/:assignment_id")
+        .delete(function(req, res) {
+            Assignments.remove({
+                _id : req.params.assignment_id
+            }, function(err) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send("Deletion Successful!");
+                }
+            });
+    });
+
+    app.use("/api", router);
 
     app.get('/userDetails', function(req,res){
         res.json({userData: req.user});
