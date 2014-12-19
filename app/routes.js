@@ -5,14 +5,14 @@ var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
    // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
     // AWS url that needs to be changed when we get niloa account
-//    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    //uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
     uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
     storage : {
         type : 'aws',
         aws : {
             accessKeyId :  '',
             secretAccessKey : '',
-            bucketName : 'assignmentlibrary'
+            bucketName : ''
         }
     },
     copyImgAsThumb : true,
