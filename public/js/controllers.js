@@ -11,7 +11,7 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
         cache: true
     })
         .success(function (tags) {
-            console.log(tags);
+            //console.log(tags);
             $scope.academicDisciplines1 = [];
             $scope.academicDisciplines2 = [];
             for (i = 0; i< tags.length; i++) {

@@ -157,7 +157,7 @@ assignmentLibraryModule.factory('assignmentsLocationService', function(){
             },
             setAssignmentLocation: function(assignmentLocation) {
                 this.assignmentLocation = assignmentLocation;
-                console.log(this.assignmentLocation);
+                //console.log(this.assignmentLocation);
             },
             getAssignmentLocation: function() {
                 return this.assignmentLocation;
