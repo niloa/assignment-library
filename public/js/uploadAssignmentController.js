@@ -153,7 +153,7 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
         if(numberOfRubrics > 0) { // if atleast one rubric file is present, upload it first
             rubricUploadService.uploadRubrics($rootScope.rubricFiles[nR]).then(function (data) {
                 // file is uploaded successfully
-                console.log("This is "+(nR+1)+" time");
+                //console.log("This is "+(nR+1)+" time");
                 nR++;
                // alert("NR is "+nR+" number of rub "+numberOfRubrics);
                 //rubricAjaxData.push(data.data.files[0].deleteUrl + "~" + data.data.files[0].name);
@@ -168,15 +168,15 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             }).then(function (data) {
                 if(nR >= numberOfRubrics && data!=0){
                     fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, tagDetails, data.data.files[0].deleteUrl, assignmentType, citation, rubricAjaxData);
-                    console.log("Final fileDetailService is ");
-                    console.log(fileDetailService.getfileDetails());
+                   // console.log("Final fileDetailService is ");
+                    //console.log(fileDetailService.getfileDetails());
                     assignmentUploadService.saveAssignment(fileDetailService.getfileDetails());
                     //return 0;
                    // $location.path('/search');
                   //  deferred.done(callthis);
                     return 0;
                 }
-                console.log("This is "+(nR+1)+" time");
+                //console.log("This is "+(nR+1)+" time");
                 nR++;
                 //rubricAjaxData.push(data.data.files[0].deleteUrl + "~" + data.data.files[0].name);
                 rubricAjaxData.push({
@@ -192,8 +192,8 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
                     return 0 ;
                 if(nR >= numberOfRubrics){
                     fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, tagDetails, data.data.files[0].deleteUrl, assignmentType, citation, rubricAjaxData);
-                    console.log("Final fileDetailService is ");
-                    console.log(fileDetailService.getfileDetails());
+                   // console.log("Final fileDetailService is ");
+                    //console.log(fileDetailService.getfileDetails());
                     assignmentUploadService.saveAssignment(fileDetailService.getfileDetails());
                     //return 0;
                     //$location.path('/search');
@@ -216,15 +216,15 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
                     return 0 ;
                 if(nR >= numberOfRubrics){
                     fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, tagDetails, data.data.files[0].deleteUrl, assignmentType, citation, rubricAjaxData);
-                    console.log("Final fileDetailService is ");
-                    console.log(fileDetailService.getfileDetails());
+                    //console.log("Final fileDetailService is ");
+                    //console.log(fileDetailService.getfileDetails());
                     assignmentUploadService.saveAssignment(fileDetailService.getfileDetails());
                     //return 0;
                    // $location.path('/search');
                     //alert("Done with Both Rubrics and Assignments");
                     return 0;
                 }
-                console.log("This is "+(nR+1)+" time");
+                //console.log("This is "+(nR+1)+" time");
                 nR++;
                 //rubricAjaxData.push(data.data.files[0].deleteUrl + "~" + data.data.files[0].name);
                 rubricAjaxData.push({
@@ -238,8 +238,8 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
             }).then(function (data) {
                 if(data!=0){
                     fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, tagDetails, data.data.files[0].deleteUrl, assignmentType, citation, rubricAjaxData);
-                    console.log("Final fileDetailService is ");
-                    console.log(fileDetailService.getfileDetails());
+                   // console.log("Final fileDetailService is ");
+                    //console.log(fileDetailService.getfileDetails());
                     assignmentUploadService.saveAssignment(fileDetailService.getfileDetails());
                 }
                 //toastr.success("Successfully uploaded the Assignment");
@@ -252,12 +252,12 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
                 //data: {myObj: $scope.myModelObj},
                 file: file
             }).progress(function(evt) {
-                console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
+                //console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
             }).success(function(data, status, headers, config) {
                 // file is uploaded successfully
-                console.log(data);
-                console.log(data.files[0].deleteUrl);
-                console.log(data.files[0].name);
+                //console.log(data);
+                //console.log(data.files[0].deleteUrl);
+                //console.log(data.files[0].name);
 
                 /*console.log("File name "+fileName+" File description "+fileDescription+" Primary Tag "+primaryTag+" secondary Tag "+secondaryTagText+
                  " secondary tag id "+secondaryTagID+" uploaded url "+data.files[0].deleteUrl);*/
@@ -266,133 +266,11 @@ assignmentLibraryModule.controller('uploadAssignmentController', function($scope
                 //console.log(" before xhr "+fileDetailService.getfileDetails());
 
                 assignmentUploadService.saveAssignment(fileDetailService.getfileDetails());
-                /*$http.post('/saveAssignment',{
-                    data:fileDetailService.getfileDetails()
-                }).success(function(){
-                    toastr.success("Successfully uploaded the file");
-                    $location.path('/search');
-                }).error(function(){
-                    toastr.error("Failed to upload the file, please try again after sometime");
-                });*/
+
             });
         }
-                //working
-                /*rubricUploadService.uploadRubrics($rootScope.rubricFiles[0]).then(function (data) {
-                // file is uploaded successfully
-                    console.log("This is first time");
-                    rubricAjaxData.push(data.data.files[0].deleteUrl + "~" + data.data.files[0].name);
-                    rubricUploadService.uploadRubrics($rootScope.rubricFiles[1]).then(function (data) {
-                        console.log("This is second time");
-                        rubricAjaxData.push(data.data.files[0].deleteUrl + "~" + data.data.files[0].name);
-                        console.log("Done with 2 files ");
-                        for(var k = 0;k<rubricAjaxData.length;k++){
-                            console.log(rubricAjaxData[k]);
-                        }
-                        });
-                });*/
-                //working
-                //for(var u = 1; u<=2; u++) {
-                  /*  var rub = $rootScope.rubricFiles[1];
-                    $scope.upload = $upload.upload({
-                        url: '/upload', //upload.php script, node.js route, or servlet url
-                        //data: {myObj: $scope.myModelObj},
-                        file: rub
-                    }).then(function (data) {
-                        console.log("This is second time");
-                        console.log(data.data);
-                        console.log(data.data.files[0].deleteUrl);
-                        console.log(data.data.files[0].name);
-                        rubricAjaxData.push(data.data.files[0].deleteUrl + "~" + data.data.files[0].name);
-                        //console.log("Final rubrix is " + rubricAjaxData);
-                    });*/
-                //}
-               // console.log("rubricAjaxData[] = "+rubricAjaxData);
-           // });
-            //console.log("Finish");
-        //}
-
-        //return;
-        /*  for (var i = 0; i < $rootScope.rubricFiles.length; i++) {
-            var rub = $rootScope.rubricFiles[i];
-            $scope.upload = $upload.upload({
-                url: '/upload', //upload.php script, node.js route, or servlet url
-                //data: {myObj: $scope.myModelObj},
-                file: rub
-            }).progress(function (evt) {
-                console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
-            }).success(function (data, status, headers, config) {
-                // file is uploaded successfully
-                console.log(data);
-                console.log(data.files[0].deleteUrl);
-                console.log(data.files[0].name);
-                rubricAjaxData.push(data.files[0].deleteUrl+"~"+data.files[0].name);
-                //console.log("rubricAjaxData[] = "+rubricAjaxData);
-            });
-        }*/
 
 
-        //rubric test
-
-        /*if(!$rootScope.file){
-            toastr.error("Please select a file to upload");
-            return;
-        }
-
-        //get the file details
-        var fileName = $scope.fileName;
-        var author = $scope.author;
-        var citation = $scope.citation;
-       // var fileDescription = $scope.fileDescription;
-        var fileDescription = $("#editor").val();
-        var createdAt = new Date().getSeconds();
-        var assignmentType = $scope.assignmentTypeSelected.name;
-
-        if(!fileName || (fileDescription.length <= 12)){
-            toastr.error("Please Enter File name/ File description to proceed");
-            return;
-        }
-
-        // get multiple tag details
-        if($rootScope.tagsSelected == ""){
-            toastr.error("Please select at least one tag to proceed");
-            return;
-        }
-        else{
-            var tagDetails = [];
-            for(var p = 0; p < $rootScope.tagsSelected.length; p++){
-                tagDetails.push($rootScope.tagsSelected[p].value);
-            }
-        }
-
-        var file = $rootScope.file;*/
-       /* $scope.upload = $upload.upload({
-            url: '/upload', //upload.php script, node.js route, or servlet url
-            //data: {myObj: $scope.myModelObj},
-            file: file
-        }).progress(function(evt) {
-            console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total));
-        }).success(function(data, status, headers, config) {
-            // file is uploaded successfully
-            console.log(data);
-            console.log(data.files[0].deleteUrl);
-            console.log(data.files[0].name);
-            
-            *//*console.log("File name "+fileName+" File description "+fileDescription+" Primary Tag "+primaryTag+" secondary Tag "+secondaryTagText+
-                " secondary tag id "+secondaryTagID+" uploaded url "+data.files[0].deleteUrl);*//*
-            //fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, primaryTag, secondaryTagID, secondaryTagText, data.files[0].deleteUrl, assignmentType, citation);
-            fileDetailService.setfileDetails(fileName, author, createdAt, fileDescription, tagDetails, data.files[0].deleteUrl, assignmentType, citation);
-            console.log(" before xhr "+fileDetailService.getfileDetails());
-            console.log("Final Rubric Data is "+rubricAjaxData);
-
-            $http.post('/saveAssignment',{
-                data:fileDetailService.getfileDetails()
-            }).success(function(){
-               toastr.success("Successfully uploaded the file");
-                $location.path('/search');
-            }).error(function(){
-                toastr.error("Failed to upload the file, please try again after sometime");
-            });
-        });*/
     };
 
         $('#editor').jqxEditor({

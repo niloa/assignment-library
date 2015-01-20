@@ -125,3 +125,45 @@ label.assignment-desc {
 .primary_tag {
     list-style-type: none;
 }
+/*Responsive editor for upload files*/
+#editor{
+    width: 100% !important;
+}
+/*Responsive editor for upload files*/
+
+
+/* Style for navbar for small screen devices */
+button.navbar-toggle{
+    background-color: #f3775e;
+}
+
+span.icon-bar{
+    background-color: #ffffff;
+}
+
+@media (min-width: 768px) and (max-width: 920px){
+    #indexNav{
+        /*padding-left: 8%;*/
+        padding-left: 0;
+        font-size: 90%;
+    }
+}
+@media (min-width: 921px) and (max-width: 1050px){
+    #indexNav{
+        /*padding-left: 8%;*/
+        padding-left: 10%;
+        /*font-size: 90%;*/
+    }
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+    #indexNav{
+        padding-left: 2%;
+    }
+
+    #welcome {
+        font-size: 250%;
+        padding-top: 7%;
+    }
+}
+
