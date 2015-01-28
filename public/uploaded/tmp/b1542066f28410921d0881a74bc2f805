@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0058)http://www.learningoutcomesassessment.org/NILOApieces.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" --><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="icon" href="http://www.learningoutcomesassessment.org/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.learningoutcomesassessment.org/favicon.ico" type="image/x-icon">
+<link href="./viewpoint_backup_files/print.css" rel="stylesheet" type="text/css" media="print">
+
+
+
+<title>National Institute for Learning Outcomes Assessment</title>
+
+<style type="text/css">
+<!--
+@import url("NILOA.css");
+
+-->
+</style>
+<script type="text/javascript" async="" src="./viewpoint_backup_files/ga.js"></script><script language="JavaScript" type="text/javascript">
+function expand(section)
+{
+  if (document.getElementById(section).style.display=='none') 
+  {
+  document.getElementById(section).style.display='inline';
+  } 
+  else 
+  {
+  document.getElementById(section).style.display='none';
+  }
+}
+function close_all()
+{
+  i = 1;
+  while (document.getElementById('#' + i))
+  	{
+	document.getElementById('#' + i).style.display='none';
+	++i;
+	}
+}
+function show_all()
+{
+  i = 1;
+  while (document.getElementById('#' + i))
+  	{
+	document.getElementById('#' + i).style.display='inline';
+	++i;
+	}
+}
+
+</script>
+
+<!--[if IE]><style type="text/css">
+
+#full_containment { margin: -5px 0 0 0; }
+#full_navigation {background-color: #343434;}
+.full_navigation ul { margin: 0 0 0 20px; }
+.full_nav_toplinks { height: 18px; font-size: 80%; }
+.full_nav_toplinks_space { height: 18px; width: 18px; }
+
+
+#searchbar { margin-right: 10px; }
+
+#content { position: relative; margin-top: 1em; }
+.subnavigation ul { padding-left: 10px; margin: 0px;}
+
+.level2_content_box ul { padding-left: 40px; }
+
+</style><![endif]-->
+
+<!-- InstanceParam name="h2" type="text" value="none" -->
+<!-- InstanceParam name="About Us" type="boolean" value="true" -->
+<!-- InstanceParam name="Assessment and Accreditation" type="boolean" value="false" -->
+<!-- InstanceParam name="Transparency Framework" type="boolean" value="false" -->
+<!-- InstanceParam name="Resource Library" type="boolean" value="false" -->
+<!-- InstanceParam name="NILOA Resources" type="boolean" value="false" -->
+<!-- InstanceParam name="Degree Qualifications Profile" type="boolean" value="false" -->
+<!-- InstanceParam name="In The News" type="boolean" value="false" -->
+<!-- InstanceParam name="Calendar of Events" type="boolean" value="false" -->
+<!-- InstanceParam name="Case Studies of Exemplary Practice" type="boolean" value="false" -->
+<!-- InstanceParam name="National Survey" type="boolean" value="false" -->
+<!-- InstanceParam name="Resources, Papers, and Presentations" type="boolean" value="false" -->
+<!-- InstanceParam name="Tool Kit" type="boolean" value="false" -->
+<!-- InstanceParam name="div class" type="text" value="none" -->
+<!-- InstanceParam name="L1" type="boolean" value="false" -->
+<!-- InstanceParam name="message" type="boolean" value="false" -->
+<!-- InstanceParam name="L2" type="boolean" value="true" -->
+<!-- InstanceParam name="subnavigation_block" type="boolean" value="true" -->
+</head>
+
+<body cz-shortcut-listen="true"><!-- script to insert emergencey announcement -->
+<script type="text/javascript" src="./viewpoint_backup_files/illinois.js"></script>
+<h1>National Institute for Learning Outcomes Assessment | </h1>
+
+<!-- script to insert emergencey announcement DO NOT REMOVE-->
+<script type="text/javascript" src="http://webtools.uiuc.edu/rssManager/848/JS_112.js"></script>
+
+<div id="container">
+<div id="masthead">
+<div class="mainheader"><div class="mainheader"><a href="http://www.learningoutcomesassessment.org/index.html"><img src="./viewpoint_backup_files/header.jpg" alt="National Institute for Learning Outcomes Assessment" border="0"></a></div>
+  <div id="searchbar">
+  <form id="cse-search-box" action="http://www.learningoutcomeassessment.org/search.html" name="searchbox">
+    <label class="hide" for="cx">domains</label>
+    <input type="hidden" name="cx" id="cx" value="017743447808305510430:x4jjg7kt2si">
+    <label class="hide" for="cof">site search</label>
+    <input type="hidden" name="cof" id="cof" value="FORID:10">
+    <label class="hide" for="q">Search Site</label>
+    <input type="hidden" name="ie" value="UTF-8">
+    <input name="q" id="q" type="text" size="25" value="Search Site" onfocus="document.searchbox.q.value=&#39;&#39;;" class="sbox">
+    <label class="hide" for="sa">Go</label>
+    <input type="submit" name="sa" id="sa" value="Search" class="sbutton">
+  </form>
+  </div><div class="clear"></div>
+  
+
+  <div id="full_navigation"> 
+  <div id="full_nav_toplinks">
+  		<div class="full_nav_toplinks"><a href="http://www.learningoutcomesassessment.org/AboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;|</div>
+  		<div class="full_nav_toplinks"><a href="http://www.learningoutcomesassessment.org/NILOAResources.html">NILOA Publications</a>&nbsp; &nbsp;|</div>
+        <div class="full_nav_toplinks"><a href="http://www.learningoutcomesassessment.org/publications.html">Resource Library</a>&nbsp;&nbsp;&nbsp;|</div>
+        <div class="full_nav_toplinks"><a href="http://www.degreeprofile.org/" target="_blank">Degree Qualifications Profile</a>&nbsp;&nbsp;&nbsp;|</div>
+        <div class="full_nav_toplinks"><a href="http://www.learningoutcomesassessment.org/TransparencyFramework.htm">Transparency Framework</a>&nbsp;&nbsp;&nbsp;|</div>
+              
+  		<div class="full_nav_toplinksbutton"><div class="fullnavigation_color">
+  		<a onmousedown="javascript:expand(&#39;f1&#39;);" onkeydown="javascript:expand(&#39;f1&#39;);">FULL NAVIGATION &gt;&gt;</a></div>
+        </div>
+	  </div>
+      
+      <div id="f1" style="display: none; position: relative;">
+        <div id="full_containment">
+          <div class="indent">
+            <div class="full_navigation"><span class="full_navigation_header"><a href="http://www.learningoutcomesassessment.org/AboutUs.html">About Us</a></span>
+                <h2 class="hide">About Us Navigation</h2>
+              <ul>
+     	 	  <li><a href="http://www.learningoutcomesassessment.org/MissionAndVision.html">Our Mission &amp; Vision</a></li>
+     		    <li><a href="http://www.learningoutcomesassessment.org/StaffAndAssociates.html">Staff &amp; Associates</a></li>
+      	   	    <li><a href="http://www.learningoutcomesassessment.org/CollaboratingAssociationsAndFoundations.html">Collaborating Associations &amp; Foundations</a></li>
+    		    <li><a href="http://www.learningoutcomesassessment.org/AdvisoryPanel.html">National Advisory Panel</a></li>
+                <li><a href="https://illinois.edu/fb/sec/6633144">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="full_navigation"><span class="full_navigation_header"><a href="http://www.learningoutcomesassessment.org/NILOAResources.html">NILOA Publications</a></span>
+                <h2 class="hide">NILOA Resources Navigation</h2>
+              <ul>
+                  <li><a href="http://www.learningoutcomesassessment.org/NILOAReports.htm">NILOA Reports</a></li>
+                              <li><a href="http://www.learningoutcomesassessment.org/OccasionalPapers.htm">Occasional Papers</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/TransparencyFramework.htm">Transparency Framework</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/CaseStudiesInstitutions.html">Examples of Good Assessment Practice</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/assessmentbriefs.htm">Assessment Briefs</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/PrinciplesofAssessment.html">Principles of Assessment</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/MeasuringQuality.html">Measuring Quality</a></li>
+                <li><a href="./viewpoint_backup_files/viewpoint_backup.html">Viewpoints</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/NILOApresentations.html">NILOA Presentations</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/NILOAnewsletters.html">NILOA Newsletters</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/FeaturedWebsiteCurrent.html">Featured Websites</a></li>
+              </ul>
+            </div>
+            <div class="full_navigation"><span class="full_navigation_header"><a href="http://www.learningoutcomesassessment.org/publications.html">Resource Library</a></span>
+                <h2 class="hide">Resource Library Navigation</h2>
+              <ul>
+                  <li><a href="http://www.learningoutcomesassessment.org/publications.html">Library Database</a></li>
+               
+              </ul>
+            </div>
+           <div class="full_navigation"><span class="full_navigation_header"><a href="http://www.degreeprofile.org/" target="_blank">Degree Qualifications Profile</a></span>
+                <h2 class="hide">DQP Corner Navigation</h2>
+            </div>
+          </div>
+          <hr class="clear">
+          <div class="indent_bottom">
+            <div class="full_navigation"><span class="full_navigation_header"><a href="http://www.learningoutcomesassessment.org/TransparencyFramework.htm">Transparency Framework</a></span>
+                <h2 class="hide">Transparency Framework Navigation</h2>
+              <ul>
+                <li><a href="http://www.learningoutcomesassessment.org/TransparencyFrameworkIntro.htm">Introduction</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/TFoverview.htm">Overview</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/TFcomponents.htm">Framework Components</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/TFdefinitions.htm">Definitions</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/TFexamples.htm">Using the Framework</a></li>
+                <li><a href="http://www.learningoutcomesassessment.org/TFfield.htm">Framework in the Field</a></li>
+                </ul>
+            </div>
+                <div class="full_navigation"><span class="full_navigation_header"><a href="http://illinois.edu/lb/list/1870">News Archive</a></span>
+                <h2 class="hide">In The News</h2>
+              <ul>
+                  <li><a href="https://illinois.edu/gm/subscribe/2450">Join Our Email List</a></li>
+               
+              </ul>
+            </div>
+            <div class="full_navigation"><span class="full_navigation_header"><a href="http://illinois.edu/calendar/list/4144">Event Calendar</a></span>
+                <h2 class="hide">Calendar of Events Navigation</h2>
+              <ul>
+                  <li><a href="http://illinois.edu/calendar/list/4144">Dates of Upcoming Conferences, Meetings, Workshops, Webinars</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+
+  <div id="bottom">
+  
+  
+  <div id="subnavigation_block"> 
+    <div class="h2holder">
+      <h2><!-- InstanceBeginEditable name="h2-1" -->NILOA Resources<!-- InstanceEndEditable --></h2>
+    </div>
+    <div class="subnavigation">
+      <h2 class="hide">About Navigation</h2>
+      <ul>
+        <!-- InstanceBeginEditable name="subnav_1-1" -->
+          <li><a href="http://www.learningoutcomesassessment.org/NILOAReports.htm">NILOA Reports</a></li>
+                    <li><a href="http://www.learningoutcomesassessment.org/occasionalpapers.htm">Occasional Papers</a></li>
+                    <li><a href="http://www.learningoutcomesassessment.org/TransparencyFramework.htm">Transparency Framework</a></li>
+                    <li><a href="http://www.learningoutcomesassessment.org/CaseStudiesInstitutions.html">Examples of Good Assessment Practice</a></li>
+                    <li><a href="http://www.learningoutcomeassessment.org/Award-WinningCampuses.htm">Award-Winning Campuses</a></li>
+                    <a href="http://www.learningoutcomesassessment.org/NILOAarchive.html">Assessment Literature Archive</a>
+          <!-- InstanceEndEditable -->
+      </ul>
+      </div>
+    <div class="subnavigation">
+      <h2 class="hide">About Navigation</h2>
+      <ul>
+        <!-- InstanceBeginEditable name="subnav_1-2" -->
+         <li><a href="http://www.learningoutcomesassessment.org/AssessmentBriefs.htm">Assessment Briefs</a></li>
+                    <li><a href="http://www.learningoutcomesassessment.org/MeasuringQuality.html">Measuring Quality</a></li>
+                    <li>
+                      <hr>
+                    <a href="./viewpoint_backup_files/viewpoint_backup.html">Viewpoints</a></li>
+                    <li><a href="http://www.learningoutcomesassessment.org/NILOApresentations.html">NILOA Presentations</a></li>
+                    <li><a href="http://www.learningoutcomesassessment.org/NILOAnewsletters.html">NILOA Newsletters</a><br>
+                    </li>
+          <!-- InstanceEndEditable -->
+      </ul>
+      </div>
+    <div class="clear"></div>
+            </div>
+                  
+  
+  <div class="clear"></div>
+    <div id="content">
+	
+	
+      <div class="L2">
+      <div class="level2">
+          <div class="level2_content_box">
+            <h3><!-- InstanceBeginEditable name="Content Header" -->NILOA Guest Viewpoints <!-- InstanceEndEditable --></h3>
+            <div class="level2_content"><!-- InstanceBeginEditable name="Content" -->
+              <p>We’ve invited learning outcomes experts and thought leaders to craft a Viewpoint. We hope that these pieces will spark further conversations and actions that help advance the field. To join the conversation, click the link below the Viewpoint. You can also <a href="https://illinois.edu/gm/subscribe/2450">sign up here</a> to receive monthly newsletters that headline these pieces along with NILOA updates, current news items, and upcoming conferences.                </p>
+              <blockquote>
+                <div align="center">
+                  <table width="500" height="27" border="0">
+                    <tbody><tr valign="top">
+                      <td width="352" height="20" valign="top" bgcolor="#450100">&nbsp;</td>
+                      </tr>
+                  </tbody></table>
+                </div>
+                <blockquote> 
+                  <div align="center">
+                    <p><strong>Assessment - More than Numbers</strong>
+                  <br>
+                  Sheri Barrett, Johnson County Community College<br>
+                    </p>
+                  </div>
+                </blockquote>
+                <div align="center">
+                  <table width="500" height="27" border="0">
+                    <tbody><tr valign="top">
+                      <td width="352" height="20" valign="top" bgcolor="#450100">&nbsp;</td>
+                    </tr>
+                  </tbody></table>
+                </div>
+                </blockquote>
+              <hr>
+              <div align="center"></div>
+              <p> From  my first forays into assessment work, I heard colleagues assert that assessing  student learning is the responsibility of faculty with the goal of improving  student outcomes.&nbsp; I agree wholeheartedly  with the statement, but then encountered examples of assessment processes that  seemed to be driven more by the need to satisfy accreditors, state agencies, or  other external bodies, all of which seemed ill-suited to foster faculty  interest and involvement in assessment.&nbsp;  While I believe that Institutional Research or Assessment offices are  colleagues that partner with faculty to assist, the actual work of assessment  belongs to faculty and processes of assessment within institutions should be  constructed in a way to ensure faculty ownership and use of assessment  results.&nbsp;&nbsp; </p>
+              <p>At Johnson County Community  College we have found that using the cycle of assessment provides a theoretical  and practical framework to engage faculty in authentic assessment activities.</p>
+              <p><strong><em>What  was the Question?</em></strong><br>
+                </p>
+              <p>The cycle of assessment begins  with a “<strong>Question</strong>.”&nbsp; It is the faculty’s role to identify the  relevant question to assess learning in their classes, courses or programs. Basic  guidelines for writing a good assessment question are to make the question:</p>
+              <ul>
+                <li><strong>Meaningful</strong> – the  question is one about which faculty want to know the answer.</li>
+                <li><strong>Relatable </strong>–  the question is tied to course objectives, program goals and campus-wide  student learning outcomes. </li>
+                <li><strong>Measurable</strong> – the  question can be answered!&nbsp; Usually that  means specifying the question to an observable student performance .&nbsp; </li>
+                <ul>
+                  <li><strong>Too  broad: </strong>What attitudes do students need to possess to pass the  problem-solving essay portion on the mid-term exam?</li>
+                  <li><strong>Narrower</strong>:&nbsp; What key concepts are students not  understanding in the curriculum as reflected in the problem-solving essay  portion of the mid-term?</li>
+                </ul>
+                <li><strong>Manageable </strong>–the  process of collecting data is manageable.&nbsp;  Complex assessment systems with multiple variables make for interesting  research projects, but can be burdensome to faculty.</li>
+                <li><strong>Actionable </strong>– the answers  to the question provide faculty with information to make changes. </li>
+              </ul>
+              <p><strong><em>Planning  Makes Perfect</em></strong><br>
+                </p>
+              <p>After the question has been  developed, faculty “<strong>Plan</strong>” for the  collection of the assessment data.&nbsp; Some  universal decisions must be made:</p>
+              <ul>
+                <li>Which program goal, college-wide learning  outcome, and/or course objectives are going to be assessed?&nbsp; Often creating a curriculum map is a good  starting point to determine what initial assessment initiatives should be  addressed.</li>
+                <li>What tools are best to conduct the assessment,  such as portfolios, rubrics, embedded test question(s), pre/post tests, etc.?</li>
+                <li>What are faculty expectations of student  performance?&nbsp; This is an important  conversation to engage in prior to collecting the data, as expectations can  often “sink” to the level of the data collected.&nbsp; Expectations also provide a roadmap to  determine when students have “arrived” at an expected level of performance.<strong></strong></li>
+              </ul>
+              <p><strong><em>I  have data, so what?</em></strong><br>
+                </p>
+              <p><strong><em>“Collecting  and Scoring” </em></strong>the  data are best considered prior to collecting a single data point.&nbsp; On campus we frequently help faculty create Excel  templates to facilitate recording the data.&nbsp;  Once the data have been collected, deciding what the data are saying can  be challenging.&nbsp; It is important that  faculty grapple with this task rather than an office like Institutional  Research.&nbsp; Faculty must understand the  data to make meaning of the results.&nbsp; Faculty  have shared that sessions offered by the assessment office on making sense of  data have been helpful in grappling with their assessment data.&nbsp; The workshops include using real data from  courses/departments for faculty to discuss and analyze.</p>
+              <p><strong><em>Do something!</em></strong></p>
+              <p>The final steps in the  assessment cycle, “<strong>Report and Act</strong>,”  involve making curricular or instructional changes informed by the assessment results.&nbsp; In a very broad sense there are four possible  outcomes of assessment data.&nbsp; </p>
+              <p>First, faculty may find the  assessment instrument was ill-suited to measure the intended learning  outcome.&nbsp; When this happens, faculty  members need to either modify the instrument or change to a different  instrument. </p>
+              <p>Another  common result of analysis is that the findings indicate an area of challenge  for students in the course or overall program. Determining what changes faculty  should make to the curriculum or program to improve student learning is an  obvious but challenging next step. Assessment data can provide an opportunity  for robust discussion by the faculty. &nbsp;</p>
+              <p>Sometimes it is time to move  on from an assessment simply because results indicate that students are  successfully hitting the benchmark criteria.&nbsp;  Continuing to assess a learning outcome in which students show  proficiency may not be the best use of time and energy for departments.&nbsp; </p>
+              <p>Faculty may question when it  is time to move on and chose a different outcome to assess.&nbsp; Some questions to explore:</p>
+              <ul>
+                <li>Was  there improvement? </li>
+                <li>Did students  meet the benchmark performance?&nbsp; Setting  these benchmarks early in the process are important as the unfortunate tendency  of setting them later results in expectations “sinking” to the level of  performance.</li>
+                <li>Are  faculty satisfied with student performance?</li>
+                <li>Do faculty  see a greater need/question that needs to be asked?&nbsp; Often what emerges from an assessment that  has reached its benchmark is another question.&nbsp; </li>
+              </ul>
+              <p>Finally, assessment can lead  to changes, not in student learning, but in faculty training. When discussing assessment of student  learning, the assumption is that all data should point to actions that faculty  can take to improve student outcomes.&nbsp;  Sometimes the assessment process leads not to the students, but to the  faculty.&nbsp;&nbsp; In one instance, a general  education assessment project indicated that the faculty were uncomfortable  assessing student performance on visual communications in their discipline  because they themselves lacked a basic understanding of good visual  communications.&nbsp; Sometimes, assessment  projects &nbsp;may indicate that the faculty  need more training on a new textbook, learning management system, or program  concept etc.&nbsp; <br>
+                </p>
+              <p><strong><em>Write  about it</em></strong><br>
+                </p>
+              <p>It is  important to report results that are meaningful to multiple stakeholders,  internal and external.&nbsp; Good reports  provide a history of assessment activities, help crystalize what was learned,  and provide a road map for next steps.</p>
+              <p>                An  assessment report should answer the following questions:</p>
+              <ul>
+                <li>What was the question that needed to be  answered to improve student learning?</li>
+                <li>What assessment was completed to answer the  question?</li>
+                <li>What do the assessment results suggest in terms  of actions faculty and others must take? </li>
+                <li>What are the next steps?</li>
+            </ul>
+              <p><strong><em>Conclusion</em></strong></p>
+              <p>A  significant challenge facing institutions concerns assessment practices that  have dual purpose of engaging faculty in meaningful assessment practices, while  addressing ever increasing accountability requirements.&nbsp; How institutions address accountability calls  while still engaging in assessment practices that yield robust and authentic  assessment efforts will help create a true culture of assessment.&nbsp; </p>
+              <p>In using the Cycle of  Assessment as a means of framing assessment at Johnson County Community College,  we have found its most important result is a highly engaged faculty invested in  an process that is focused on student learning and contributes to developing  assessment practices in ways that benefitted students and the institution.</p>
+<p>&nbsp;</p>
+<p> We invite you to contribute your thoughts regarding this Viewpoint <a href="http://illinois.edu/blog/view/915/114684">here</a>.</p>
+<div align="center"></div>
+              <!-- InstanceEndEditable --></div>
+          </div>
+          <div class="right"><!-- InstanceBeginEditable name="right_image" -->
+            <script type="text/javascript" src="./viewpoint_backup_files/119.js"></script>
+            <table width="350" height="117" border="0">
+              <tbody><tr valign="top">
+                <td><p>Check out our past Viewpoints:<br>
+                    </p>
+                  <p><a href="http://illinois.edu/blog/view/915/116565">Assessment - More than Numbers</a><br>
+                  Sheri Barrett</p>
+                  <p><a href="http://illinois.edu/blog/view/915/115701">Challenges and Opportunities in Assessing the Capstone Experience in Australia</a><br>
+                  Nicolette Lee</p>
+                  <p><a href="http://illinois.edu/blog/view/915/114684">Making Assessment Count</a><br>
+                  Maggie Bailey</p>
+                  <p><a href="http://illinois.edu/blog/view/915/113048">Some Thoughts on Assessing Intercultural Competence</a><br>
+                  Darla K. Deardorff</p> <p><a href="http://illinois.edu/blog/view/915/111700">Catalyst for Learning: ePortfolio-Based Outcomes Assessment</a><br>
+                  Laura M. Gambino and Bret Eynon</p> <p><a href="http://illinois.edu/blog/view/915/110663">The Interstate Passport: A New Framework for Transfer</a><br>
+                  Peter Quigley, Patricia Shea, and Robert Turner</p><p><a href="http://illinois.edu/blog/view/915/110544">College Ratings: What Lessons Can We Learn from Other Sectors?</a><br>
+                  Nicholas Hillman</p><p><a href="http://illinois.edu/blog/view/915/109546">Guidelines to Consider in Being Strategic about Assessment</a><br>
+                  Larry A. Braskamp and Mark E. Engberg</p>
+                  <p><a href="http://illinois.edu/blog/view/915/108641">An "Uncommon" View of the Common Core</a><br>
+                  Paul L. Gaston</p>
+                  <p><a href="http://illinois.edu/blog/view/915/107512">Involving Undergraduates in Assessment: Documenting Student Engagement in Flipped Classrooms</a><br>
+                    Adriana Signorini &amp; Robert Oschner<br>
+                  </p>
+                  <p><a href="http://illinois.edu/blog/view/915/99344?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">The Surprisingly Useful Practice of Meta-Assessment</a><br>
+                  Keston H. Fulcher &amp; Megan Rodgers Good<br>
+                  </p>
+                  <p><a href="http://illinois.edu/blog/view/915/98229">Student Invovlement in Assessment: A 3-Way Win</a><br>
+                  Josie Welsh<br>
+                  </p>
+                  <p><a href="http://illinois.edu/blog/view/915/97037?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">Internships: Fertile Ground for Cultivating Integrative Learning</a><br>
+                      Alan W. Grose<br></p><p><a href="http://illinois.edu/blog/view/915/92858?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">What if the VSA Morphed into the VST?</a><br>
+                      George Kuh<br>
+                      </p><p><a href="http://illinois.edu/blog/view/915/92836?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">Where is Culture in Higher Education Assessment and Evaluation?</a><br>
+                    Nora Gannon-Slater, Stafford Hood, and Thomas Schwandt<br>
+                  </p>
+<p><a href="http://illinois.edu/blog/view/915/91526">Embedded Assessment and Evidence-Based Curriculum Mapping: The Promise of Learning Analytics</a><br>
+  Jane M. Souza<br>
+</p><p><a href="http://illinois.edu/blog/view/915/89906?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">The DQP and the Creation of the Transformative Education Program at St. Augustine University</a><br>
+                      St. Augustine University<br>
+                  <a href="http://illinois.edu/blog/view/915/84723"><br>
+                    Why Student Learning Outcomes Assessment is Key to the Future of MOOCs</a><br>
+                    Wallace Boston &amp; Jennifer Stephens
+                  </p>
+                  <p><strong><a href="http://illinois.edu/blog/view/915/82662?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">                    Measuring Success in Internationalization: What are Students Learning?</a><br>
+                </strong>Madeleine F. Green</p>
+                  <p><strong><a href="http://illinois.edu/blog/view/915/82661?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">Demonstrating How Career Services Contribute to Student Learning</a><br>
+                  </strong>Julia Panke Makela &amp; Gail S. Rooney</p>
+                  <p><strong><a href="http://illinois.edu/blog/view/915/80828">The Culture Change Imperative for Learning Assessment</a><br>
+                  </strong>Richard H. Hersh &amp; Richard P. Keeling</p>
+                  <p><strong><a href="http://illinois.edu/blog/view/915/80826" target="_blank">Comments on the Commentaries about "Seven Red Herrings"</a><br>
+                  </strong>Roger Benjamin </p>
+                  <p><strong><a href="http://illinois.edu/blog/view/915/79573?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">Ethics and Assessment: When the Test is Life Itself</a><br>
+                  </strong>Edward L. Queen </p>
+                  <p><a href="http://illinois.edu/blog/view/915/77660?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank"><strong>Discussing the Data, Making Meaning of the Results</strong></a><br>
+                    Anne Goodsell Love
+                    <br>
+                </p>
+                  <p><a href="http://illinois.edu/blog/view/915/76774?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">Faculty Concerns About Student Learning Outcomes Assessment</a><br>
+                    Janet Fontenot
+                  </p>
+                  <p><a href="http://illinois.edu/blog/view/915/75817?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank"><strong>What to Consider When Selecting an Assessment Management System</strong></a><br>
+                    R. Stephen RiCharde<br>
+                  </p>
+                  <p><a href="http://www.learningoutcomesassessment.org/PrinciplesofAssessment.html">AAHE Principles of Good Practice: Aging Nicely</a><strong> </strong>A Letter from Pat Hutchings, Peter Ewell, and Trudy Banta</p>
+                  <p><a href="http://illinois.edu/blog/view/915/73969?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank"><strong>The State of Assessment of Learning Outcomes </strong></a>Eduardo M. Ochoa</p>
+                  <p><a href="http://illinois.edu/blog/view/915/72187?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">What is Satisfactory Performance? Measuring Students and Measuring Programs with Rubrics</a><br>
+                    Patricia DeWitt                   <a href="http://www.learningoutcomesassessment.org/NILOApieces.html#pat"><strong><br>
+                    </strong></a></p>
+                  <p><a href="http://illinois.edu/blog/view/915/68373?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">Being Confident about Results from Rubrics </a>Thomas P. Judd, Charles Secolsky &amp; Clayton Allen</p>
+                  <p><a href="http://illinois.edu/blog/view/915/66019?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">What Assessment Personnel Need to Know About IRBs <em><br>
+                  </em></a> Curtis R. Naser</p>
+                  <p><a href="http://illinois.edu/blog/view/915/64343?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">How Assessment and Institutional Research Staff Can Help Faculty with Student Learning Outcomes Assessment <em><br>
+                </em></a>Laura Blasi</p>
+                  <p><a href="http://illinois.edu/blog/view/915/63004?displayOrder=desc&displayType=none&displayColumn=created&displayCount=26" target="_blank">Why Assess Student Learning? What the Measuring Stick Series Revealed<em><br>
+                  </em></a> Gloria F. Shenoy</p>
+                  <p><a href="http://illinois.edu/blog/view/915/58925?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">Putting Myself to the Test<br>
+                </a>Ama Nyamekye</p>
+                  <p><a href="http://illinois.edu/blog/view/915/57407?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">From Uniformity to Personalization: How to Get the Most Out of Assessment<br>
+                  </a> Peter Stokes</p>
+                  <p><a href="http://illinois.edu/blog/view/915/55126?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank">Transparency Drives Learning at Rio Salado College <br>
+                    </a>Vernon Smith<br>
+                    <a href="http://illinois.edu/blog/view/915/54008?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1" target="_blank"><br>
+                      Navigating a Perfect Storm<br>
+                  </a> Robert Connor</p>
+                  <p><a href="http://illinois.edu/blog/view/915/44143?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">Avoiding a Tragedy of the Commons in Postsecondary Education<br>
+                </a>Roger Benjamin </p>
+                  <p><a href="http://illinois.edu/blog/view/915/48184?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">In Search for Standard of Quality<br>
+                  </a>Michael Bassis</p>
+                  <p><a href="http://illinois.edu/blog/view/915/51971?displayOrder=desc&displayType=none&displayColumn=created&displayCount=1">It is Time to Make our Academic Standards Clear<br>
+                </a>Paul E. Lingenfelter </p></td>
+              </tr>
+            </tbody></table>
+            <p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable --></div>
+        </div></div>
+      
+      <div class="clear"></div><div class="clear"></div>
+        <div id="footer">
+          <p>© 2012 | This site is jointly funded by <a href="http://www.luminafoundation.org/" target="_blank">Lumina Foundation </a>, <a href="http://www.teaglefoundation.org/" target="_blank">The Teagle Foundation</a>, and the <a href="http://education.illinois.edu/" target="_blank">College of Education at the University of Illinois</a>.<br>
+            <a href="https://illinois.edu/fb/sec/6633144">Contact us</a> with questions or comments about the site.</p>
+        </div>
+    </div></div></div>
+  </div>
+
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7572716-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<!-- InstanceEnd -->
+</body></html>
