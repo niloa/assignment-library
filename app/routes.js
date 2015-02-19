@@ -5,14 +5,38 @@ var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
    // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
     // AWS url that needs to be changed when we get niloa account
-    //uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
-    uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
+    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    //uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
     storage : {
         type : 'aws',
         aws : {
             accessKeyId :  '',
             secretAccessKey : '',
-            bucketName : ''
+            bucketName : 'niloa-assignment-library'
+        }
+    },
+    copyImgAsThumb : true,
+    imageVersions :{
+        maxWidth : 200,
+        maxHeight : 200
+    }
+};
+var optionsSubmit = {
+    tmpDir:  __dirname + '/../public/uploaded/tmp',
+   // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
+    // AWS url that needs to be changed when we get niloa account
+    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    //uploadUrl:  'https://s3.amazonaws.com/niloa-email-attachments/',
+    //uploadUrl:  'niloa-email-attachments.s3-website-us-west-2.amazonaws.com/',
+    //uploadUrl:  'https://niloa-email-attachments.s3.amazonaws.com/',
+    //uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
+    storage : {
+        type : 'aws',
+        aws : {
+            accessKeyId :  '',
+            secretAccessKey : '',
+            bucketName : 'niloa-assignment-library'
+           // bucketName : 'niloa-email-attachments'
         }
     },
     copyImgAsThumb : true,
@@ -25,6 +49,7 @@ var options = {
 module.exports = function (app, passport) {
 
     var uploader = require('blueimp-file-upload-expressjs')(options);
+    var uploaderSubmit = require('blueimp-file-upload-expressjs')(optionsSubmit);
 	// get an instance of the express Router
 	var router = express.Router();
 
@@ -39,6 +64,104 @@ module.exports = function (app, passport) {
         uploader.post(req, res, function (obj) {
             res.send(JSON.stringify(obj));
         });
+    });
+    router.get('/uploadMail', function (req, res) {
+        uploaderSubmit.get(req, res, function (obj) {
+            res.send(JSON.stringify(obj));
+        });
+    });
+
+    //router.post('/upload', function (req, res) {
+    app.post('/uploadMail', function (req, res) {
+        uploaderSubmit.post(req, res, function (obj) {
+            res.send(JSON.stringify(obj));
+        });
+    });
+
+    // submit assignment for email
+    router.get('/submitAssignment', function (req, res) {
+        uploaderSubmit.get(req, res, function (obj) {
+            console.log("in get submit "+obj);
+            res.send(JSON.stringify(obj));
+        });
+    });
+
+    app.post('/submitAssignmentTemp', function (req, res) {
+
+        uploaderSubmit.post(req, res, function (obj) {
+
+            console.log(obj.files[0].deleteUrl);
+            var uploadedPath = obj.files[0].deleteUrl;
+
+            var nodemailer = require('nodemailer');
+            var transporter = nodemailer.createTransport();
+            transporter.sendMail({
+                from: 'suhas@gmail.com',
+                to: 'mandahasa2626@gmail.com',
+                subject: 'Attachment from Assignment Library 6',
+                text: 'Attachment from Assignment Library Node',
+                attachments: [
+                    {   // file on disk as an attachment
+                        //filename: 'Assignment.pdf',
+                        //path: __dirname+'/secondAttach.txt' // stream this file
+                        //path: 'https://s3.amazonaws.com/niloa-assignment-library/0d0b9cc6-f4a6-40f4-a434-43472ac2224a__rubric%20for%20pathophysiology-hypertension%20-%20bakhtiari.pdf'
+                        path: uploadedPath
+                        //path: filename
+                    }
+                ]
+            });
+
+            //res.send(JSON.stringify(obj));
+        });
+        res.json({status: 'success'});
+    });
+    app.post('/submitAssignment', function (req, res) {
+
+        var filename = req.body.data.filename;
+        var assignmentURL = req.body.data.assignmentURL;
+
+        var tags = req.body.data.tagDetails;
+        var tagMsg = "";
+        for(var jk = 0; jk < tags.length; jk++){
+          tagMsg +=  "<li>" + tags[jk] + "</li>";
+        }
+
+        var emailMsg = "<p><b>File Name: </b>"+filename+"</p>"+
+                        "<p><b> Author: </b>"+(req.body.data.author)+"</p>"+
+                        "<p><b> Institution: </b>"+(req.body.data.institution)+"</p>"+
+                        "<p><b> Department: </b>"+(req.body.data.department)+"</p>"+
+                        "<p><b> Email: </b>"+(req.body.data.emailAdd)+"</p>"+
+                        "<p><b> Description: </b></p><p>"+(req.body.data.description)+"</p>"+
+                        "<p><b> Tags are</b></p><ul>"+tagMsg+"</ul>"+
+                        "<p><b> reflections: </b></p><p>"+(req.body.data.reflections)+"</p>"+
+                        "<p><b> background: </b></p><p>"+(req.body.data.background)+"</p>";
+
+        var attachmentsToMail = [];
+        attachmentsToMail.push({path: assignmentURL});
+        if(req.body.data.rubricAjaxData.length == 0){
+            console.log("No Rubrics found");
+        }else{
+            for(var i = 0; i < req.body.data.rubricAjaxData.length; i++){
+                attachmentsToMail.push({path:req.body.data.rubricAjaxData[i].url})
+            }
+        }
+
+        var today = new Date();
+        var timestamp = today.getMonth()+1+"/"+today.getDate()+"/"+today.getFullYear();
+
+
+
+            var nodemailer = require('nodemailer');
+            var transporter = nodemailer.createTransport();
+            transporter.sendMail({
+                from: 'niloalearningoutcomes@gmail.com',
+                to: 'niloalearningoutcomes@gmail.com',
+                subject: 'Assignment Submission from Assignment Library Website, By '+(req.body.data.author)+', On '+timestamp,
+                html: emailMsg,
+                attachments: attachmentsToMail
+            });
+
+        res.json({status: 'success'});
     });
 
     router.delete('/:name', function (req, res) {
