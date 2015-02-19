@@ -1,0 +1,84 @@
+<div class="container" ng-controller="submitAssignmentController">
+    <div>
+        <h3 class="text-center">Assignment Submission Form</h3>
+        <label>* All fields are required</label>
+        <div class="col-sm-12 form-group">
+            <label for="fileName">Assignment Name</label>
+            <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Provide a name for the assignment, this will be how it appears in the library ">
+        </div>
+
+        <div class="col-sm-12 form-group" id="authors">
+            <label for="author">Author</label>
+            <input type="text" ng-model="author" class="form-control " id="author" placeholder="Enter Author name">
+        </div>
+        <div class="col-sm-12 form-group">
+            <label for="institution">Institution</label>
+            <input type="text" ng-model="institution" class="form-control " id="institution" placeholder="Enter Institution name">
+        </div>
+        <div class="col-sm-12 form-group">
+            <label for="department">Department</label>
+            <input type="text" ng-model="department" class="form-control " id="department" placeholder="Enter department name">
+        </div>
+        <div class="col-sm-12 form-group">
+            <label for="email">Email</label>
+            <input type="email" ng-model="email" class="form-control " id="email" placeholder="Enter Email address" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+        </div>
+        <div class="col-sm-12 form-group">
+            <label for="description">Brief description of assignment:  </label>
+            <!--<input type="text" ng-model="description" class="form-control " id="description" placeholder="Enter Email address">-->
+            <textarea name="description" id="description" cols="30" rows="5" class="col-sm-12" placeholder="In 150 words or less, outline the purpose of the assignment and a brief description: Brief description of assignment"></textarea>
+        </div>
+        <div class="col-md-6 form-group" style="display: none">
+            <!--<span>Select primary Tag</span>-->
+            <label for="jqxComboBox">Select primary Tag</label>
+            <div style="margin-top: 5px;" id='jqxComboBox'></div>
+        </div>
+        <div class="col-md-12 form-group">
+            <!--<span>Select Secondary Tag</span>-->
+            <label for="jqxComboBoxSecondary">Select Tags</label>
+            <div style="margin-top: 5px;" id='jqxComboBoxSecondary' ></div>
+        </div>
+        <div style="margin-top: 10px; font-size: 13px; font-family: Verdana; display: none" id="log"></div>
+        <!--<div class="col-sm-12 form-group">-->
+            <!--<label for="tags">Indicate which DQP Proficiencies the assignment is intended to assess in the associated tags:</label>-->
+            <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
+            <!--&lt;!&ndash;<textarea name="tags" id="tags" cols="30" rows="10" class="col-sm-12" placeholder="In 150 words or less, outline the purpose of the assignment and a brief description: Brief description of assignment"></textarea>&ndash;&gt;-->
+        <!--</div>-->
+        <div class="col-sm-12 form-group">
+            <label for="background">Background and Context
+            </label>
+            <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
+            <textarea name="background" id="background" cols="30" rows="5" class="col-sm-12" placeholder="In what course is the assignment used and at what point in the course? Include any additional information about students in the course (majors vs. non-majors, what they find most challenging about the assignment, etc.) and who else might find this assignment useful"></textarea>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label for="reflections">Reflections
+            </label>
+            <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
+            <textarea name="reflections" id="reflections" cols="30" rows="5" class="col-sm-12" placeholder="Discuss your experience with the assignment to date – has it produced the results you hoped for? Are there aspects of the assignment you’re especially pleased with or puzzled about?"></textarea>
+        </div>
+        <!--<div class="col-sm-12" style="padding-bottom: 1%">-->
+            <!--<label for="inputAssignment">Assignment (upload file in the form that you present it to students)</label>-->
+            <!--<input type="file" id="inputAssignment" ng-file-select="onAssignmentSelect($files)" name="files[]" multiple>-->
+        <!--</div>-->
+        <div class="col-sm-12">
+            <label for="inputAssignment">Assignment (upload file in the form that you present it to students)</label>
+            <div class="fileinput fileinput-new input-group customFileInput" data-provides="fileinput">
+                <div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+                <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="..." id="inputAssignment" ng-file-select="onAssignmentSelect($files)"></span>
+                <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+            </div>
+        </div>
+        <!--<div class="col-sm-12" style="padding-bottom: 1%">-->
+            <!--<label for="inputRubrics">Rubric (upload any associated rubrics or criteria used to evaluate the assignment)</label>-->
+            <!--<input type="file" id="inputRubrics"  multiple>-->
+        <!--</div>-->
+        <div class="col-sm-12" style="padding-bottom: 1%">
+            <label for="inputRubric">Rubric (Optional - upload any associated rubrics or criteria used to evaluate the assignment)</label>
+            <input type="file" id="inputRubrics" ng-file-select="onRubricSelectA($files)" name="files[]" multiple>
+        </div>
+        <div class="col-sm-12">
+            <button class="btn btn-primary" ng-click="submitAssignment()">Send</button>
+            <a class="btn btn-default" href="/">Cancel</a>
+        </div>
+    </div>
+</div>

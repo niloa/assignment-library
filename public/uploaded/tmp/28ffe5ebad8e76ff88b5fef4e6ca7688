@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link href="print.css" rel="stylesheet" type="text/css" media="print" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
+
+<title>National Institute for Learning Outcomes Assessment</title>
+
+<style type="text/css">
+<!--
+@import url("NILOA.css");
+
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+function expand(section)
+{
+  if (document.getElementById(section).style.display=='none') 
+  {
+  document.getElementById(section).style.display='inline';
+  } 
+  else 
+  {
+  document.getElementById(section).style.display='none';
+  }
+}
+function close_all()
+{
+  i = 1;
+  while (document.getElementById('#' + i))
+  	{
+	document.getElementById('#' + i).style.display='none';
+	++i;
+	}
+}
+function show_all()
+{
+  i = 1;
+  while (document.getElementById('#' + i))
+  	{
+	document.getElementById('#' + i).style.display='inline';
+	++i;
+	}
+}
+
+</script>
+
+<!--[if IE]><style type="text/css">
+
+#full_containment { margin: -5px 0 0 0; }
+#full_navigation {background-color: #343434;}
+.full_navigation ul { margin: 0 0 0 20px; }
+.full_nav_toplinks { height: 18px; font-size: 80%; }
+.full_nav_toplinks_space { height: 18px; width: 18px; }
+
+
+#searchbar { margin-right: 10px; }
+
+#content { position: relative; margin-top: 1em; }
+.subnavigation ul { padding-left: 10px; margin: 0px;}
+
+.level2_content_box ul { padding-left: 40px; }
+
+</style><![endif]-->
+
+<!-- InstanceParam name="h2" type="text" value="none" -->
+<!-- InstanceParam name="About Us" type="boolean" value="false" -->
+<!-- InstanceParam name="Assessment and Accreditation" type="boolean" value="false" -->
+<!-- InstanceParam name="Transparency Framework" type="boolean" value="false" -->
+<!-- InstanceParam name="Resource Library" type="boolean" value="false" -->
+<!-- InstanceParam name="NILOA Resources" type="boolean" value="true" -->
+<!-- InstanceParam name="Degree Qualifications Profile" type="boolean" value="false" -->
+<!-- InstanceParam name="In The News" type="boolean" value="false" -->
+<!-- InstanceParam name="Calendar of Events" type="boolean" value="false" -->
+<!-- InstanceParam name="Case Studies of Exemplary Practice" type="boolean" value="false" -->
+<!-- InstanceParam name="National Survey" type="boolean" value="true" -->
+<!-- InstanceParam name="Resources, Papers, and Presentations" type="boolean" value="false" -->
+<!-- InstanceParam name="Tool Kit" type="boolean" value="false" -->
+<!-- InstanceParam name="div class" type="text" value="none" -->
+<!-- InstanceParam name="L1" type="boolean" value="false" -->
+<!-- InstanceParam name="message" type="boolean" value="false" -->
+<!-- InstanceParam name="L2" type="boolean" value="true" -->
+<!-- InstanceParam name="subnavigation_block" type="boolean" value="true" -->
+</head>
+
+<body><!-- script to insert emergencey announcement -->
+<script type="text/javascript" src="http://emergency.webservices.illinois.edu/illinois.js"></script>
+<h1>National Institute for Learning Outcomes Assessment | </h1>
+
+<!-- script to insert emergencey announcement DO NOT REMOVE-->
+<script type="text/javascript" src="http://webtools.uiuc.edu/rssManager/848/JS_112.js"></script>
+
+<div id="container">
+<div id="masthead">
+<div class="mainheader"><div class="mainheader"><a href="index.html"><img src="images/header.jpg" alt="National Institute for Learning Outcomes Assessment" border="0" /></a></div>
+  <div id="searchbar">
+  <form id="cse-search-box" action="http://www.learningoutcomeassessment.org/search.html " name="searchbox">
+    <label class="hide" for="cx">domains</label>
+    <input type="hidden" name="cx" id="cx" value="017743447808305510430:x4jjg7kt2si" />
+    <label class="hide" for="cof">site search</label>
+    <input type="hidden" name="cof" id="cof" value="FORID:10" />
+    <label class="hide" for="q">Search Site</label>
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input name="q" id="q" type="text" size="25" value="Search Site" onfocus="document.searchbox.q.value='';" class="sbox" />
+    <label class="hide" for="sa">Go</label>
+    <input type="submit" name="sa" id="sa" value="Search" class="sbutton" />
+  </form>
+  </div><div class="clear"></div>
+  
+
+  <div id="full_navigation"> 
+  <div id="full_nav_toplinks">
+  		<div class="full_nav_toplinks"><a href="AboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;|</div>
+  		<div class="full_nav_toplinks"><a href="NILOAResources.html">NILOA Publications</a>&nbsp; &nbsp;|</div>
+        <div class="full_nav_toplinks"><a href="publications.html">Resource Library</a>&nbsp;&nbsp&nbsp;|</div>
+        <div class="full_nav_toplinks"><a href="http://www.degreeprofile.org" target="_blank">Degree Qualifications Profile</a>&nbsp;&nbsp&nbsp;|</div>
+        <div class="full_nav_toplinks"><a href="TransparencyFramework.htm">Transparency Framework</a>&nbsp;&nbsp&nbsp;|</div>
+              
+  		<div class="full_nav_toplinksbutton"><div class="fullnavigation_color">
+  		<a onmousedown="javascript:expand('f1');" onkeydown="javascript:expand('f1');">FULL NAVIGATION &gt;&gt;</a></div>
+        </div>
+	  </div>
+      
+      <div id="f1" style="display: none; position: relative;">
+        <div id="full_containment">
+          <div class="indent">
+            <div class="full_navigation"><span class="full_navigation_header"><a href="AboutUs.html">About Us</a></span>
+                <h2 class="hide">About Us Navigation</h2>
+              <ul>
+     	 	  <li><a href="MissionAndVision.html">Our Mission &amp; Vision</a></li>
+     		    <li><a href="StaffAndAssociates.html">Staff &amp; Associates</a></li>
+      	   	    <li><a href="CollaboratingAssociationsAndFoundations.html">Collaborating Associations &amp; Foundations</a></li>
+    		    <li><a href="AdvisoryPanel.html">National Advisory Panel</a></li>
+                <li><a href="https://illinois.edu/fb/sec/6633144">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="full_navigation"><span class="full_navigation_header"><a href="NILOAResources.html">NILOA Publications</a></span>
+                <h2 class="hide">NILOA Resources Navigation</h2>
+              <ul>
+                  <li><a href="NILOAReports.htm">NILOA Reports</a></li>
+                              <li><a href="OccasionalPapers.htm">Occasional Papers</a></li>
+                <li><a href="TransparencyFramework.htm">Transparency Framework</a></li>
+                <li><a href="CaseStudiesInstitutions.html">Examples of Good Assessment Practice</a></li>
+                <li><a href="assessmentbriefs.htm">Assessment Briefs</a></li>
+                <li><a href="PrinciplesofAssessment.html">Principles of Assessment</a></li>
+                <li><a href="MeasuringQuality.html">Measuring Quality</a></li>
+                <li><a href="NILOApieces.html">Viewpoints</a></li>
+                <li><a href="NILOApresentations.html">NILOA Presentations</a></li>
+                <li><a href="NILOAnewsletters.html">NILOA Newsletters</a></li>
+                <li><a href="FeaturedWebsiteCurrent.html">Featured Websites</a></li>
+              </ul>
+            </div>
+            <div class="full_navigation"><span class="full_navigation_header"><a href="publications.html">Resource Library</a></span>
+                <h2 class="hide">Resource Library Navigation</h2>
+              <ul>
+                  <li><a href="publications.html">Library Database</a></li>
+               
+              </ul>
+            </div>
+           <div class="full_navigation"><span class="full_navigation_header"><a href="http://www.degreeprofile.org" target="_blank">Degree Qualifications Profile</a></span>
+                <h2 class="hide">DQP Corner Navigation</h2>
+            </div>
+          </div>
+          <hr class="clear"/>
+          <div class="indent_bottom">
+            <div class="full_navigation"><span class="full_navigation_header"><a href="TransparencyFramework.htm">Transparency Framework</a></span>
+                <h2 class="hide">Transparency Framework Navigation</h2>
+              <ul>
+                <li><a href="TransparencyFrameworkIntro.htm">Introduction</a></li>
+                <li><a href="TFoverview.htm">Overview</a></li>
+                <li><a href="TFcomponents.htm">Framework Components</a></li>
+                <li><a href="TFdefinitions.htm">Definitions</a></li>
+                <li><a href="TFexamples.htm">Using the Framework</a></li>
+                <li><a href="TFfield.htm">Framework in the Field</a></li>
+                </ul>
+            </div>
+                <div class="full_navigation"><span class="full_navigation_header"><a href="http://illinois.edu/lb/list/1870">News Archive</a></span>
+                <h2 class="hide">In The News</h2>
+              <ul>
+                  <li><a href="https://illinois.edu/gm/subscribe/2450">Join Our Email List</a></li>
+               
+              </ul>
+            </div>
+            <div class="full_navigation"><span class="full_navigation_header"><a href="http://illinois.edu/calendar/list/4144">Event Calendar</a></span>
+                <h2 class="hide">Calendar of Events Navigation</h2>
+              <ul>
+                  <li><a href="http://illinois.edu/calendar/list/4144">Dates of Upcoming Conferences, Meetings, Workshops, Webinars</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+
+  <div id="bottom">
+  
+  
+  <div id="subnavigation_block">      
+    <div class="h2holder">
+      <h2><!-- InstanceBeginEditable name="h2-6" -->NILOA Resources<!-- InstanceEndEditable --></h2>
+    </div>
+              <div class="subnavigation">
+      <h2 class="hide">NILOA Resources Navigation</h2>
+                <ul>
+                  <!-- InstanceBeginEditable name="subnav_6" -->
+                    <li><a href="NILOAReports.htm">NILOA Reports</a></li>
+                              <li><a href="OccasionalPapers.htm">Occasional Papers</a></li>
+                <li><a href="TransparencyFramework.htm">Transparency Framework</a></li>
+                <li><a href="CaseStudiesInstitutions.html">Examples of Good Assessment Practice</a></li>
+                <li><a href="assessmentbriefs.htm">Assessment Briefs</a></li>
+                <li><a href="PrinciplesofAssessment.html">Principles of Assessment</a></li>
+                <li><a href="MeasuringQuality.html">Measuring Quality</a></li>
+                                  <!-- InstanceEndEditable -->
+                </ul>
+                </div>
+              <div class="subnavigation">
+                <h2 class="hide">NILOA Resources Navigation</h2>
+                <ul>
+                  <!-- InstanceBeginEditable name="subnav_6-2" -->
+                    <li><li><a href="NILOApieces.html">Viewpoints</a></li>
+                <li><a href="NILOApresentations.html">NILOA Presentations</a></li>
+                <li><a href="NILOAnewsletters.html">NILOA Newsletters</a></li>
+                <li><a href="FeaturedWebsiteCurrent.html">Featured Websites</a></li></li>
+              
+                    <!-- InstanceEndEditable -->
+                </ul>
+              </div>
+              <div class="clear"></div>
+                 </div>
+                  
+  
+  <div class="clear"></div>
+    <div id="content">
+	
+	
+      <div class="L2">
+      <div class="level2">
+          <div class="level2_content_box">
+            <h3><!-- InstanceBeginEditable name="Content Header" -->Overview<!-- InstanceEndEditable --></h3>
+            <div class="level2_content"><!-- InstanceBeginEditable name="Content" -->
+              <p><img src="images/gview_001.png" alt="NILOA Reports" width="65" height="75" align="left" /></p>
+              <p>The <a href="http://www.learningoutcomesassessment.org/NILOAReports.htm">NILOA reports</a> section directs you to the major research projects of NILOA. NILOA undertakes a variety of national surveys and research projects to examine the depth and breadth of student learning outcomes assessment at accredited colleges and universities across the United States. <img src="images/LibraryLOcover.jpg" alt="Occasional Paper" width="65" height="75" align="right" /></p>
+              <p>Located in&nbsp;<a href="http://learningoutcomesassessment.org/OccasionalPapers.htm">Occasional Papers</a> are  papers commissioned by NILOA that examine contemporary issues and inform the academic community of the current state-of-the art of assessing learning outcomes in American higher education.</p>
+              <p><img src="images/TransparencyFramework.jpg" alt="Transparency Framework" width="90" height="75" align="left" />Our&nbsp;<a href="../TransparencyFrameworkIntro.htm">Transparency Framework</a> is a tool developed by NILOA  intended to help institutions evaluate the extent to which they are making evidence of student accomplishment readily accessible and potentially useful and meaningful to various audiences. </p>
+              <p><img src="CrossExample.jpg" alt="Cross Example" width="65" height="75" align="right" /><a href="CaseStudiesInstitutions.html">Examples of Good Assessment Practice</a> are short, instructive case studies to develop a better understanding of what &ldquo;good work&rdquo; looks like related to assessment, data-informed improvement, and transparency at the institutional level. The&nbsp;Examples&nbsp;feature colleges and universities that appear to be using assessment data to effect changes in teaching and learning or reporting their activities and findings in an accessible manner. </p>
+              <p>Commissioned&nbsp;<a href="../assessmentbriefs.htm">Assessment Briefs</a> provide a short, informative guide on the nature and practical use of assessment evidence that is targeted to a particular audience. Assessment briefs for faculty and student affairs professionals are available.</p>
+              <p>Under&nbsp;<a href="http://www.learningoutcomesassessment.org/NILOAarchive.html">Assessment Literature Archive</a>, readers will find links to past assessment articles as well as the American Association of Higher Education Principles written in 1992 with a letter written by Pat Hutchings, Peter Ewell and Trudy Banta providing an overview of the development of AAHE's Principles and their continuing relevance today.</p>
+              <p><a href="http://learningoutcomesassessment.org/MeasuringQuality.html">Measuring Quality</a>&nbsp;is an online&nbsp;<img src="http://learningoutcomesassessment.org/images/measuringQualityimage.png" alt="Measuring Quality Inventory" width="359" height="37" hspace="6" vspace="6" align="right" />inventory of assessment resources, presented in a partnership with AIR and ACE, designed to assist higher education faculty and staff in the challenging task of assessing academic and support programs as well as institutional effectiveness, more broadly.</p>
+              <p><a href="NILOApieces.html">Viewpoints</a> are invited pieces from learning outcomes experts and thought leaders to help spark further conversations and actions to help advance the field of student learning outcomes assessment.</p>
+<p><img src="images/AI - Transparency.jpg" alt="" width="70" height="70" align="left" /><a href="NILOApresentations.html">NILOA Presentations</a> given by NILOA staff at academic and professional conferences are provided here. </p>
+<p><a href="NILOAnewsletters.html"><br />
+  </a></p>
+<p><a href="NILOAnewsletters.html">NILOA Newsletters</a> are sent out monthly to help inform readers  about the work we are doing at NILOA, news articles pertinent to student learning outcomes assessment, and a list of upcoming conferences and programs related to assessment.</p>
+            <!-- InstanceEndEditable --></div>
+          </div>
+          <div class="right"><!-- InstanceBeginEditable name="right_image" -->
+            <script type='text/javascript' src='http://illinois.edu/pc/js/2068/119.js'></script>
+              <table width="350" border="9" cellpadding="0" bordercolor="#CCCA8F" bgcolor="#CCCA8F">
+                <tr valign="top">
+                  <td width="326" height="103"><p align="center">&quot;<em>For several months I struggled to teach myself about learning outcomes and assessment in higher education.  And then in October 2009 I found NILOA.  In one place, I found current information and plenty of helpful resources.  Its national survey results provide a big picture, the occasional papers provide thoughtful commentary and analysis, and the tool kit gave me excellent descriptive information on assessment measures and links to longer documents.  All this was extremely helpful to me and easy to use.</em>&quot;</p>
+                    <p align="center"><img src="images/PatriciaCrosson.jpg" alt="Patricia Crosson" width="175" height="217" /></p>
+                    <p align="center"><strong>Patricia Crosson</strong><br />
+                      Senior Adviser for Academic Policy<br />
+                      Department of Higher Education<br />
+                    Commonwealth of Massachusetts</p></td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable --></div>
+        </div></div>
+      
+      <div class="clear"></div><div class="clear"></div>
+        <div id="footer">
+          <p>&copy; 2012 | This site is jointly funded by <a href="http://www.luminafoundation.org/" target="_blank">Lumina Foundation </a>, <a href="http://www.teaglefoundation.org/" target="_blank">The Teagle Foundation</a>, and the <a href="http://education.illinois.edu/" target="_blank">College of Education at the University of Illinois</a>.<br />
+            <a href="https://illinois.edu/fb/sec/6633144">Contact us</a> with questions or comments about the site.</p>
+        </div>
+    </div></div></div>
+  </div>
+
+</div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7572716-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+<!-- InstanceEnd --></html>

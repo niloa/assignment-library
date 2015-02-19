@@ -95,7 +95,41 @@ assignmentLibraryModule.factory('rubricUploadService', function($http, $q, $uplo
                 file: rub
             }));
             //return dfd.promise;
+        },uploadRubricsMail: function (rub) {
+            //var dfd = $q.defer();
+            return($upload.upload({
+                url: '/uploadMail', //upload.php script, node.js route, or servlet url
+                //data: {myObj: $scope.myModelObj},
+                file: rub
+            }));
+            //return dfd.promise;
         }
+    };
+});
+assignmentLibraryModule.factory('submitAssignmentService', function($http, $rootScope, $location){
+    //var tagValues;
+    return{
+        submitAssignment: function (data) {
+            $http.post('/submitAssignment',{
+                data:data
+            }).success(function(){
+                toastr.success("Successfully mailed the assignment");
+                $rootScope.attachments = "";
+                $rootScope.rubricAttachs = "";
+                $location.path('/');
+            }).error(function(){
+                toastr.error("Failed to mail the assignment, Try again later");
+            });
+        }
+//        submitAssignment: function (rub) {
+//            //var dfd = $q.defer();
+//            return($upload.upload({
+//                url: '/submitAssignment', //upload.php script, node.js route, or servlet url
+//                //data: {fl: filename},
+//                file: rub
+//            }));
+//            //return dfd.promise;
+//        }
     };
 });
 
@@ -106,6 +140,15 @@ assignmentLibraryModule.factory('assignmentUploadService', function($http, $q, $
             //var dfd = $q.defer();
             return($upload.upload({
                 url: '/upload', //upload.php script, node.js route, or servlet url
+                //data: {myObj: $scope.myModelObj},
+                file: rub
+            }));
+            //return dfd.promise;
+        },
+        uploadAssignmentMail: function (rub) {
+            //var dfd = $q.defer();
+            return($upload.upload({
+                url: '/uploadMail', //upload.php script, node.js route, or servlet url
                 //data: {myObj: $scope.myModelObj},
                 file: rub
             }));

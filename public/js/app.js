@@ -53,6 +53,9 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/testFUP', {
                 templateUrl: 'partials/testFUP.html'
             })
+            .when('/submitAssignment', {
+                templateUrl: 'partials/submitAssignment.html'
+            })
             .when('/', {
                 templateUrl: 'partials/niloa.html'
             })
