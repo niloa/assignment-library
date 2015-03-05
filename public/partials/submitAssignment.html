@@ -1,15 +1,22 @@
 <div class="container" ng-controller="submitAssignmentController">
-    <div>
+    <div class="col-sm-12">
+        <p><b>DQP Assignment Library: The Peer Review Process</b></p>
+
+        <p align="justify">The materials in the DQP Assignment Library have gone through a three-stage review process.  The first stage of review is undertaken by the NILOA project team, which makes decisions about whether to accept the submission or not.  Those selected for a second stage of review are then shared with three to six faculty peers, typically from the same or related fields, who have experience with assignment design; their role is to provide written feedback and suggestions for revision.  After making revisions, authors resubmit their materials to NILOA, where they pass through a final review--to make sure that all required elements are included, and minor copy editing as needed.  The finished materials are then published to the site.</p>
+
+        <p align="justify">We recognize, however, that assignment design is an iterative process, and we expect that many of the materials posted here will undergo further revision and improvement.  Authors are encouraged to submit updated versions of their materials and to continue reporting how the assignment is being used in their classrooms.</p>
+    </div>
+    <div class="col-sm-12">
         <h3 class="text-center">Assignment Submission Form</h3>
         <label>* All fields are required</label>
         <div class="col-sm-12 form-group">
             <label for="fileName">Assignment Name</label>
-            <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Provide a name for the assignment, this will be how it appears in the library ">
+            <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Provide a name for the assignment. This will be how it appears in the library ">
         </div>
 
         <div class="col-sm-12 form-group" id="authors">
-            <label for="author">Author</label>
-            <input type="text" ng-model="author" class="form-control " id="author" placeholder="Enter Author name">
+            <label for="author">Authors</label>
+            <input type="text" ng-model="author" class="form-control " id="author" placeholder="Enter Author names">
         </div>
         <div class="col-sm-12 form-group">
             <label for="institution">Institution</label>
@@ -24,9 +31,11 @@
             <input type="email" ng-model="email" class="form-control " id="email" placeholder="Enter Email address" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
         </div>
         <div class="col-sm-12 form-group">
-            <label for="description">Brief description of assignment:  </label>
+            <label for="description">Brief description of assignment:  </label><br/>
             <!--<input type="text" ng-model="description" class="form-control " id="description" placeholder="Enter Email address">-->
-            <textarea name="description" id="description" cols="30" rows="5" class="col-sm-12" placeholder="In 150 words or less, outline the purpose of the assignment and a brief description: Brief description of assignment"></textarea>
+
+            <textarea name="description" id="description" cols="30" rows="5" class="col-sm-12" placeholder="In 150 words or less, outline the purpose of the assignment and a brief description of the assignment"></textarea>
+
         </div>
         <div class="col-md-6 form-group" style="display: none">
             <!--<span>Select primary Tag</span>-->
@@ -35,7 +44,7 @@
         </div>
         <div class="col-md-12 form-group">
             <!--<span>Select Secondary Tag</span>-->
-            <label for="jqxComboBoxSecondary">Select Tags</label>
+            <label for="jqxComboBoxSecondary">Select Tags (including DQP proficiencies)</label>
             <div style="margin-top: 5px;" id='jqxComboBoxSecondary' ></div>
         </div>
         <div style="margin-top: 10px; font-size: 13px; font-family: Verdana; display: none" id="log"></div>
@@ -46,13 +55,13 @@
         <!--</div>-->
         <div class="col-sm-12 form-group">
             <label for="background">Background and Context
-            </label>
+            </label><br/>
             <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
             <textarea name="background" id="background" cols="30" rows="5" class="col-sm-12" placeholder="In what course is the assignment used and at what point in the course? Include any additional information about students in the course (majors vs. non-majors, what they find most challenging about the assignment, etc.) and who else might find this assignment useful"></textarea>
         </div>
         <div class="col-sm-12 form-group">
             <label for="reflections">Reflections
-            </label>
+            </label><br/>
             <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
             <textarea name="reflections" id="reflections" cols="30" rows="5" class="col-sm-12" placeholder="Discuss your experience with the assignment to date – has it produced the results you hoped for? Are there aspects of the assignment you’re especially pleased with or puzzled about?"></textarea>
         </div>
@@ -73,7 +82,7 @@
             <!--<input type="file" id="inputRubrics"  multiple>-->
         <!--</div>-->
         <div class="col-sm-12" style="padding-bottom: 1%">
-            <label for="inputRubric">Rubric (Optional - upload any associated rubrics or criteria used to evaluate the assignment)</label>
+            <label for="inputRubric">Rubric (Upload associated rubrics or criteria used to evaluate the assignment)</label>
             <input type="file" id="inputRubrics" ng-file-select="onRubricSelectA($files)" name="files[]" multiple>
         </div>
         <div class="col-sm-12">

@@ -12,7 +12,7 @@ var options = {
         aws : {
             accessKeyId :  '',
             secretAccessKey : '',
-            bucketName : 'niloa-assignment-library'
+            bucketName : ''
         }
     },
     copyImgAsThumb : true,
@@ -35,7 +35,7 @@ var optionsSubmit = {
         aws : {
             accessKeyId :  '',
             secretAccessKey : '',
-            bucketName : 'niloa-assignment-library'
+            bucketName : ''
            // bucketName : 'niloa-email-attachments'
         }
     },
