@@ -169,6 +169,12 @@ assignmentLibraryModule.controller('submitAssignmentController', function($scope
             toastr.error("Please select a file to upload");
             return;
         }
+
+        if(!$rootScope.rubricAttachs){
+            toastr.error("Please select a Rubric file to upload");
+            return;
+        }
+
         var file = $rootScope.attachments;
         var numberOfRubrics = 0;
         var rubricAjaxData = [];

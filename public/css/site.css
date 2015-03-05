@@ -91,7 +91,7 @@ footer {
 
 #indexNav{
     background-color: white;
-    padding-left: 22%;
+    padding-left: 19%;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
@@ -145,13 +145,13 @@ span.icon-bar{
     #indexNav{
         /*padding-left: 8%;*/
         padding-left: 0;
-        font-size: 90%;
+        font-size: 86%;
     }
 }
 @media (min-width: 921px) and (max-width: 1050px){
     #indexNav{
         /*padding-left: 8%;*/
-        padding-left: 10%;
+        padding-left: 8%;
         /*font-size: 90%;*/
     }
 }
