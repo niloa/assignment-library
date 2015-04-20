@@ -11,30 +11,30 @@
         <label>* All fields are required</label>
         <div class="col-sm-12 form-group">
             <label for="fileName">Assignment Name</label>
-            <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Provide a name for the assignment. This will be how it appears in the library ">
+            <input type="text" ng-model="fileName" class="form-control " id="fileName" placeholder="Provide a descriptive name/title for the assignment">
         </div>
 
         <div class="col-sm-12 form-group" id="authors">
-            <label for="author">Authors</label>
-            <input type="text" ng-model="author" class="form-control " id="author" placeholder="Enter Author names">
+            <label for="author">Author(s)</label>
+            <input type="text" ng-model="author" class="form-control " id="author" placeholder="Enter the name of the person or persons who designed the assignment.">
         </div>
         <div class="col-sm-12 form-group">
             <label for="institution">Institution</label>
-            <input type="text" ng-model="institution" class="form-control " id="institution" placeholder="Enter Institution name">
+            <input type="text" ng-model="institution" class="form-control " id="institution" placeholder="Enter your institution’s name.">
         </div>
         <div class="col-sm-12 form-group">
-            <label for="department">Department</label>
-            <input type="text" ng-model="department" class="form-control " id="department" placeholder="Enter department name">
+            <label for="department">Department/Program</label>
+            <input type="text" ng-model="department" class="form-control " id="department" placeholder="Enter the department or program in which the assignment is used.">
         </div>
         <div class="col-sm-12 form-group">
             <label for="email">Email</label>
-            <input type="email" ng-model="email" class="form-control " id="email" placeholder="Enter Email address" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
+            <input type="email" ng-model="email" class="form-control " id="email" placeholder="Enter your email address. " pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
         </div>
         <div class="col-sm-12 form-group">
-            <label for="description">Brief description of assignment:  </label><br/>
+            <label for="description">Brief description of the assignment:  </label><br/>
             <!--<input type="text" ng-model="description" class="form-control " id="description" placeholder="Enter Email address">-->
 
-            <textarea name="description" id="description" cols="30" rows="5" class="col-sm-12" placeholder="In 150 words or less, outline the purpose of the assignment and a brief description of the assignment"></textarea>
+            <textarea name="description" id="description" cols="30" rows="5" class="col-sm-12" placeholder="In 150 words or less, describe the purpose and focus of the assignment, and what DQP proficiencies it is designed to assess.  This description will help users decide, quickly, whether the assignment is relevant to their goals. "></textarea>
 
         </div>
         <div class="col-md-6 form-group" style="display: none">
@@ -57,13 +57,19 @@
             <label for="background">Background and Context
             </label><br/>
             <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
-            <textarea name="background" id="background" cols="30" rows="5" class="col-sm-12" placeholder="In what course is the assignment used and at what point in the course? Include any additional information about students in the course (majors vs. non-majors, what they find most challenging about the assignment, etc.) and who else might find this assignment useful"></textarea>
+            <textarea name="background" id="background" cols="30" rows="5" class="col-sm-12" placeholder="In this section, please describe the assignment in more detail (in prose, not just a list) by addressing some or all of the following factors.  For what course or courses was it designed and what features of the course (size, place in the curriculum, etc.) shape the assignment?  Who are the students—majors, non-majors, beginning or advanced?  What DQP proficiencies or other learning outcomes is it intended to assess, and how?   This section can be as long as it needs to be to give Library users a clear sense of the context in which the assignment is used."></textarea>
+        </div>
+        <div class="col-sm-12 form-group">
+            <label for="scaffolding">Alignment and Scaffolding
+            </label><br/>
+            <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
+            <textarea name="scaffolding" id="scaffolding" cols="30" rows="5" class="col-sm-12" placeholder="Where does the assignment fit in the course?  What previous courses or learning activities prepare students for the assignment?  What is it designed to prepare them to do next—within your course or in subsequent courses?  This section can be as long as it needs to be.  Include any comments you wish related to the syllabus and/or the rubric or evaluation criteria requested below.  "></textarea>
         </div>
         <div class="col-sm-12 form-group">
             <label for="reflections">Reflections
             </label><br/>
             <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
-            <textarea name="reflections" id="reflections" cols="30" rows="5" class="col-sm-12" placeholder="Discuss your experience with the assignment to date – has it produced the results you hoped for? Are there aspects of the assignment you’re especially pleased with or puzzled about?"></textarea>
+            <textarea name="reflections" id="reflections" cols="30" rows="5" class="col-sm-12" placeholder="Discuss your experience with the assignment to date.  Has it produced the results you hoped for?  What do students find most challenging about it?  Are there aspects of the assignment you’re especially pleased with—or puzzled about?  How has the assignment been revised over time, if at all?  How have student experiences with the assignment caused you to revise (or think about revising) the course?   Is there anything else Library users would find it helpful to know?  This section can be as long as it needs to be."></textarea>
         </div>
         <!--<div class="col-sm-12" style="padding-bottom: 1%">-->
             <!--<label for="inputAssignment">Assignment (upload file in the form that you present it to students)</label>-->
@@ -82,7 +88,7 @@
             <!--<input type="file" id="inputRubrics"  multiple>-->
         <!--</div>-->
         <div class="col-sm-12" style="padding-bottom: 1%">
-            <label for="inputRubric">Rubric (Upload associated rubrics or criteria used to evaluate the assignment)</label>
+            <label for="inputRubric">Rubric or criteria (Upload any rubrics or criteria used to evaluate the assignment)</label>
             <input type="file" id="inputRubrics" ng-file-select="onRubricSelectA($files)" name="files[]" multiple>
         </div>
         <div class="col-sm-12">
