@@ -242,24 +242,24 @@ module.exports = function (app, passport) {
 		});
 
 
-	router.route("/survey")
-		.post(function(req, res) {
-			var Surveys = require("../app/models/surveys");
-
-			var survey = new Surveys();
-			var form = req.body;
-
-			survey.category = form.category;
-			survey.email = form.emailAddress;
-			survey.institution = form.institution;
-			survey.heard_from = form.heardFrom;
-			survey.save(function(err) {
-            if (err)
-                throw err;
-            return true;
-        	});
-        	res.json({status: 'success'});
-		});
+//	router.route("/survey")
+//		.post(function(req, res) {
+//			var Surveys = require("../app/models/surveys");
+//
+//			var survey = new Surveys();
+//			var form = req.body;
+//
+//			survey.category = form.category;
+//			survey.email = form.emailAddress;
+//			survey.institution = form.institution;
+//			survey.heard_from = form.heardFrom;
+//			survey.save(function(err) {
+//            if (err)
+//                throw err;
+//            return true;
+//        	});
+//        	res.json({status: 'success'});
+//		});
 
 	router.route("/assignments/name/:name")
 		.get(function(req, res) {

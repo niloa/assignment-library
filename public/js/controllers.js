@@ -76,9 +76,17 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
 });
 
 assignmentLibraryControllers.controller("AssignmentDetailsController", function($scope, $modal, $log, $routeParams, $http, $location, $sce, assignmentsLocationService) {
-$scope.open = function () {
-    $location.path("/survey");
-};
+//$scope.open = function () {
+//    $location.path("/survey");
+//};
+
+    $scope.open = function (size) {
+        var modalInstance = $modal.open({
+            templateUrl: 'myModalContent.html',
+            controller: 'ModalInstanceCtrl',
+            size: size
+        });
+    };
 
     $http.get('api/assignments/' + $routeParams.assignmentId)
         .success(function(assignmentDetails) {
@@ -97,114 +105,126 @@ $scope.open = function () {
         });
 });
 
-assignmentLibraryControllers.controller("SurveyController", function($scope, $http, $location, assignmentsLocationService) {
-    $scope.fourYear = false;
-    $scope.twoYear = false;
-    $scope.research = false;
-    $scope.teaching = false;
-    $scope.vocationalOrTechnical = false; 
-    $scope.none = false;
-    $scope.insititutionOther = false;
-    $scope.collegue = false;
-    $scope.newsletter = false;
-    $scope.email = false;
-    $scope.webSearch = false;
-    $scope.conference = false;
-    $scope.periodical = false;
-    $scope.heardFromOther = false;
+assignmentLibraryControllers.controller('ModalInstanceCtrl', function ($scope, $modalInstance, $http, $location, assignmentsLocationService) {
     $scope.fileDownloadLink = assignmentsLocationService.getAssignmentLocation();
+    $scope.ok = function () {
+        window.location.assign($scope.fileDownloadLink);
+        $modalInstance.close();
+    };
 
-    var validate = function validateEmail(email) {
-        if (email === undefined || email === "" || email === null) {
-            // console.log("came here")
-            return true;
-        }
-        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    } 
-
-    $scope.ok = function() {
-        if (($scope.category !== undefined) && ($scope.fourYear !== false || $scope.twoYear !== false 
-            || $scope.research !== false || $scope.teaching !== false || $scope.vocationalOrTechnical !== false
-            || $scope.none !== false || $scope.institutionOther !== false) && ($scope.collegue !== false
-            || $scope.newsletter !== false || $scope.email !== false || $scope.webSearch !== false
-            || $scope.conference !== false || $scope.periodical !== false || $scope.heardFromOther !== false) 
-            && validate($scope.emailAddress)) {
-            // 
-            var form = {
-                category: "",
-                institution: {},
-                heardFrom: {},
-                emailAddress: ""
-            };
-            
-            if ($scope.fourYear === true) 
-                form.institution.four_year = true;
-
-            if ($scope.twoYear === true) 
-                form.institution.two_year = true;
-
-            if ($scope.research === true) 
-                form.institution.research = true;
-
-            if ($scope.teaching === true) 
-                form.institution.teaching = true;
-
-            if ($scope.vocational_or_technical === true) 
-                form.institution.vocational_or_technical = true;
-
-            if ($scope.institutionOther === true) 
-                form.institution.other = true;
-
-            if ($scope.none === true) 
-                form.institution.none = true;
-
-            form.category = $scope.category;
-
-            if ($scope.collegue === true) 
-                form.heardFrom.collegue = true;
-
-            if ($scope.newsletter === true) 
-                form.heardFrom.newsletter = true;
-
-            if ($scope.email === true) 
-                form.heardFrom.email = true;
-
-            if ($scope.webSearch === true) 
-                form.heardFrom.web_search = true;
-
-            if ($scope.conference === true) 
-                form.heardFrom.conference = true;
-
-            if ($scope.periodical === true) 
-                form.heardFrom.periodical = true;
-
-            if ($scope.heardFromOther === true) 
-                form.heardFrom.other = true;
-
-            form.emailAddress = $scope.emailAddress;
-
-            $http.post('api/survey/', form)
-            .success(function(status) {
-                    ($('#download-url')[0]).click();
-                    $location.path(assignmentsLocationService.getAssignmentPage());
-            })
-            .error(function(error) {
-                console.log(error);
-            });
-        } else {
-            if (!validate($scope.emailAddress)) {
-                toastr.error("Invalid email address!");
-            } else {
-                toastr.error("Some required fields are missing!");
-            }
-        }
-    }
-
-    $scope.cancel = function() {
-        $location.path("/search");
-    }
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
 });
+
+//assignmentLibraryControllers.controller("SurveyController", function($scope, $http, $location, assignmentsLocationService) {
+//    $scope.fourYear = false;
+//    $scope.twoYear = false;
+//    $scope.research = false;
+//    $scope.teaching = false;
+//    $scope.vocationalOrTechnical = false;
+//    $scope.none = false;
+//    $scope.insititutionOther = false;
+//    $scope.collegue = false;
+//    $scope.newsletter = false;
+//    $scope.email = false;
+//    $scope.webSearch = false;
+//    $scope.conference = false;
+//    $scope.periodical = false;
+//    $scope.heardFromOther = false;
+//    $scope.fileDownloadLink = assignmentsLocationService.getAssignmentLocation();
+//
+//    var validate = function validateEmail(email) {
+//        if (email === undefined || email === "" || email === null) {
+//            // console.log("came here")
+//            return true;
+//        }
+//        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//        return re.test(email);
+//    }
+//
+//    $scope.ok = function() {
+//        if (($scope.category !== undefined) && ($scope.fourYear !== false || $scope.twoYear !== false
+//            || $scope.research !== false || $scope.teaching !== false || $scope.vocationalOrTechnical !== false
+//            || $scope.none !== false || $scope.institutionOther !== false) && ($scope.collegue !== false
+//            || $scope.newsletter !== false || $scope.email !== false || $scope.webSearch !== false
+//            || $scope.conference !== false || $scope.periodical !== false || $scope.heardFromOther !== false)
+//            && validate($scope.emailAddress)) {
+//            //
+//            var form = {
+//                category: "",
+//                institution: {},
+//                heardFrom: {},
+//                emailAddress: ""
+//            };
+//
+//            if ($scope.fourYear === true)
+//                form.institution.four_year = true;
+//
+//            if ($scope.twoYear === true)
+//                form.institution.two_year = true;
+//
+//            if ($scope.research === true)
+//                form.institution.research = true;
+//
+//            if ($scope.teaching === true)
+//                form.institution.teaching = true;
+//
+//            if ($scope.vocational_or_technical === true)
+//                form.institution.vocational_or_technical = true;
+//
+//            if ($scope.institutionOther === true)
+//                form.institution.other = true;
+//
+//            if ($scope.none === true)
+//                form.institution.none = true;
+//
+//            form.category = $scope.category;
+//
+//            if ($scope.collegue === true)
+//                form.heardFrom.collegue = true;
+//
+//            if ($scope.newsletter === true)
+//                form.heardFrom.newsletter = true;
+//
+//            if ($scope.email === true)
+//                form.heardFrom.email = true;
+//
+//            if ($scope.webSearch === true)
+//                form.heardFrom.web_search = true;
+//
+//            if ($scope.conference === true)
+//                form.heardFrom.conference = true;
+//
+//            if ($scope.periodical === true)
+//                form.heardFrom.periodical = true;
+//
+//            if ($scope.heardFromOther === true)
+//                form.heardFrom.other = true;
+//
+//            form.emailAddress = $scope.emailAddress;
+//
+//            $http.post('api/survey/', form)
+//            .success(function(status) {
+//                    ($('#download-url')[0]).click();
+//                    $location.path(assignmentsLocationService.getAssignmentPage());
+//            })
+//            .error(function(error) {
+//                console.log(error);
+//            });
+//        } else {
+//            if (!validate($scope.emailAddress)) {
+//                toastr.error("Invalid email address!");
+//            } else {
+//                toastr.error("Some required fields are missing!");
+//            }
+//        }
+//    }
+//
+//    $scope.cancel = function() {
+//        $location.path("/search");
+//    }
+//});
 
 assignmentLibraryControllers.controller("AppCtrl", function ($q, $timeout) {
     var one = $q.defer();
