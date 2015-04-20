@@ -26,7 +26,7 @@ var optionsSubmit = {
    // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
     // AWS url that needs to be changed when we get niloa account
     uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
-    //uploadUrl:  'https://s3.amazonaws.com/niloa-email-attachments/',
+//    uploadUrl:  'https://s3.amazonaws.com/niloa-email-attachments/',
     //uploadUrl:  'niloa-email-attachments.s3-website-us-west-2.amazonaws.com/',
     //uploadUrl:  'https://niloa-email-attachments.s3.amazonaws.com/',
     //uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
@@ -36,7 +36,7 @@ var optionsSubmit = {
             accessKeyId :  '',
             secretAccessKey : '',
             bucketName : ''
-           // bucketName : 'niloa-email-attachments'
+//           bucketName : 'niloa-email-attachments'
         }
     },
     copyImgAsThumb : true,
@@ -126,6 +126,7 @@ module.exports = function (app, passport) {
           tagMsg +=  "<li>" + tags[jk] + "</li>";
         }
 
+//        console.log("scaf is "+(req.body.data.scaffolding));
         var emailMsg = "<p><b>File Name: </b>"+filename+"</p>"+
                         "<p><b> Author: </b>"+(req.body.data.author)+"</p>"+
                         "<p><b> Institution: </b>"+(req.body.data.institution)+"</p>"+
@@ -134,6 +135,7 @@ module.exports = function (app, passport) {
                         "<p><b> Description: </b></p><p>"+(req.body.data.description)+"</p>"+
                         "<p><b> Tags are</b></p><ul>"+tagMsg+"</ul>"+
                         "<p><b> reflections: </b></p><p>"+(req.body.data.reflections)+"</p>"+
+                        "<p><b> Alignment and Scaffolding: </b></p><p>"+(req.body.data.scaffolding)+"</p>"+
                         "<p><b> background: </b></p><p>"+(req.body.data.background)+"</p>";
 
         var attachmentsToMail = [];
@@ -150,7 +152,8 @@ module.exports = function (app, passport) {
         var timestamp = today.getMonth()+1+"/"+today.getDate()+"/"+today.getFullYear();
 
 
-
+        console.log("=========attachments to mail is =============");
+        console.log(attachmentsToMail);
             var nodemailer = require('nodemailer');
             var transporter = nodemailer.createTransport();
             transporter.sendMail({

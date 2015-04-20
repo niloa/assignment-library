@@ -152,6 +152,16 @@ assignmentLibraryModule.controller('submitAssignmentController', function($scope
         else
             submitObject.background = backgroundVal;
 
+        var scaffoldingVal = $("#scaffolding").val();
+        if(scaffoldingVal == undefined || scaffoldingVal == "" ) {
+            toastr.error("Please enter Alignment and Scaffolding values");
+            return;
+        }
+        else {
+            submitObject.scaffolding = scaffoldingVal;
+
+        }
+
         var reflectionsVal = $("#reflections").val();
         if(reflectionsVal == undefined || reflectionsVal == "" ) {
             toastr.error("Please enter reflections about assignment");
@@ -205,6 +215,8 @@ assignmentLibraryModule.controller('submitAssignmentController', function($scope
                     submitObject.assignmentURL = data.data.files[0].deleteUrl;
 
                     submitObject.rubricAjaxData = rubricAjaxData;
+                    console.log("Before calling submitassignment service");
+                    console.log(submitObject);
                     submitAssignmentService.submitAssignment(submitObject);
                     return 0;
                 }
