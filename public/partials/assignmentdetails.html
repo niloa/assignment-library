@@ -1,5 +1,23 @@
 <div class="container" ng-controller="AssignmentDetailsController">
-	<div>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Please select an option:</h3>
+        </div>
+        <div class="modal-body">
+           <p>
+               The assignment library and the assignments within are licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.
+               By clicking “Ok” you agree to cite each assignment (including modifications), with the provided citation on the assignments downloaded from this site.
+           </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+        <a ng-hide="true" href="{{fileDownloadLink}}" target="_self" id="download-url"></a>
+    </script>
+
+
+    <div>
 		<label class="assignment-details">NAME:<span class="assignment-spacing"></span></label> 
 		<label class="assignment-desc">{{assignmentDetails.name}}</label></br>
 	</div>

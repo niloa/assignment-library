@@ -44,9 +44,9 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/assignments/:assignmentId', {
                 templateUrl: 'partials/assignmentdetails.html'
             })
-            .when('/survey', {
-                templateUrl: 'partials/surveycontent.html'
-            })
+//            .when('/survey', {
+//                templateUrl: 'partials/surveycontent.html'
+//            })
             .when('/admin', {
                 templateUrl: 'partials/admin.html'
             })
