@@ -49,6 +49,8 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
 
 assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http,  assignmentsListService){
     $scope.assignments = assignmentsListService.getAssignments();
+    if($scope.assignments!= undefined)
+        $scope.tableDisplay = true;
 
     // Hide the pagination, not working right now, check later
     // $scope.tableParams = new ngTableParams({
