@@ -35,7 +35,7 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/tags/:tagId', {
                 templateUrl: 'partials/tagdetails.html'
             })
-            .when('/assignments/name/:name', {
+            .when('/assignments/:type/:search', {
                 templateUrl: 'partials/tagdetails.html'
             })
             .when('/assignments/delete', {
