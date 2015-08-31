@@ -7,6 +7,19 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
         //return viewLocation === $location.path();
     };*/
 
+    assignmentsListService.setAssignments([]);
+    assignmentsListService.setDataLoaded(false);
+    assignmentsListService.setDisplayTable(false);
+
+    $scope.searchTypes = [
+                            {name: "Name", value:"name"},
+                            {name: "Author", value:"author"},
+                            {name: "Citation", value:"citation"},
+                            {name: "Description", value:"description"}
+                         ]
+
+    $scope.search_type = $scope.searchTypes[0].value;
+
     $http.get('api/tags', {
         cache: true
     })
@@ -36,12 +49,12 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
         });
 
     $scope.search = function() {
-        $http.get('api/assignments/name/'+ $scope.search_key)
+        $http.get('api/assignments/' + $scope.search_type + '/'+ $scope.search_key)
             .success(function(assignments){
                 assignmentsListService.setDataLoaded(true);
                 assignmentsListService.setDisplayTable(assignments !== undefined && assignments.length > 0);
                 assignmentsListService.setAssignments(assignments);
-                $location.path("/assignments/name/" + $scope.search_key);
+                $location.path("/assignments/" + $scope.search_type + "/"+ $scope.search_key);
             })
             .error(function(data){
                 console.log(data);
