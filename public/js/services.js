@@ -48,6 +48,8 @@ assignmentLibraryModule.factory('userAuthService', function($http, userIdentityS
 });
 
 assignmentLibraryModule.factory('assignmentsListService', function(){
+    var dataLoaded = false;
+    var displayTable = false;
     var assignments = [];
     return {
             setAssignments: function(assignments) {
@@ -55,8 +57,19 @@ assignmentLibraryModule.factory('assignmentsListService', function(){
             },
             getAssignments: function() {
                 return this.assignments;
+            },
+            setDataLoaded: function(dataLoaded) {
+                this.dataLoaded = dataLoaded;
+            },
+            isDataLoaded: function() {
+                return this.dataLoaded;
+            },
+            setDisplayTable: function(displayTable) {
+                this.displayTable = displayTable;
+            },
+            canDisplayTable: function() {
+                return this.displayTable;
             }
-
         }
 });
 
@@ -67,7 +80,6 @@ assignmentLibraryModule.factory('tagDetailService', function($http, $q){
             var dfd = $q.defer();
             $http.get('/api/tags').then(function (response) {
                 if (response.data) {
-                    //dfd.resolve(true);
                     dfd.resolve(response.data);
                 } else {
                     dfd.resolve(false);
