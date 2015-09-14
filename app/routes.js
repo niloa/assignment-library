@@ -279,6 +279,52 @@ module.exports = function (app, passport) {
 				});
 		});
 
+    router.route("/assignments/author/:author")
+		.get(function(req, res) {
+			async.parallel([
+				function(callback) {
+					Assignments.find({author: new RegExp(req.params.author, 'i')}).exec(callback);
+					return;
+				}], function(error, assignmentDetails) {
+					if (error) {
+						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+					} else {
+						res.json(assignmentDetails[0]);
+					}
+				});
+		});
+
+	router.route("/assignments/citation/:citation")
+        .get(function(req, res) {
+            async.parallel([
+                function(callback) {
+                    Assignments.find({citation: new RegExp(req.params.citation, 'i')}).exec(callback);
+                    return;
+                }], function(error, assignmentDetails) {
+                    if (error) {
+                        res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+                    } else {
+                        res.json(assignmentDetails[0]);
+                    }
+                });
+        });
+
+
+    router.route("/assignments/description/:description")
+        .get(function(req, res) {
+            async.parallel([
+                function(callback) {
+                    Assignments.find({description: new RegExp(req.params.description, 'i')}).exec(callback);
+                    return;
+                }], function(error, assignmentDetails) {
+                    if (error) {
+                        res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+                    } else {
+                        res.json(assignmentDetails[0]);
+                    }
+                });
+        });
+
 	router.route("/assignments/:assignmentId")
 		.get(function(req, res) {
 			async.parallel([
