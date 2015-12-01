@@ -31,6 +31,7 @@ var assignmentsSchema = new Schema({
 	},
 	tags: [],
     rubricsData: []
+
     /*tags: [{
 		mapped_id: String,
 		primary_tag: String,

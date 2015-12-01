@@ -3,10 +3,8 @@ var async = require('async');
 
 var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
-   // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
-    // AWS url that needs to be changed when we get niloa account
-    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
-    //uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
+//    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    uploadUrl: 'https://test-niloa-assignment-library.s3.amazonaws.com/',
     storage : {
         type : 'aws',
         aws : {
@@ -23,13 +21,8 @@ var options = {
 };
 var optionsSubmit = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
-   // tmpDir: 'https://s3.amazonaws.com/assignmentlibrary/tmp',
-    // AWS url that needs to be changed when we get niloa account
-    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
-//    uploadUrl:  'https://s3.amazonaws.com/niloa-email-attachments/',
-    //uploadUrl:  'niloa-email-attachments.s3-website-us-west-2.amazonaws.com/',
-    //uploadUrl:  'https://niloa-email-attachments.s3.amazonaws.com/',
-    //uploadUrl:  'https://s3.amazonaws.com/assignmentlibrary/',
+//    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    uploadUrl: 'https://test-niloa-assignment-library.s3.amazonaws.com/',
     storage : {
         type : 'aws',
         aws : {
@@ -50,7 +43,7 @@ module.exports = function (app, passport) {
 
     var uploader = require('blueimp-file-upload-expressjs')(options);
     var uploaderSubmit = require('blueimp-file-upload-expressjs')(optionsSubmit);
-	// get an instance of the express Router
+
 	var router = express.Router();
 
     router.get('/upload', function (req, res) {
@@ -59,12 +52,12 @@ module.exports = function (app, passport) {
         });
     });
 
-    //router.post('/upload', function (req, res) {
     app.post('/upload', function (req, res) {
         uploader.post(req, res, function (obj) {
             res.send(JSON.stringify(obj));
         });
     });
+
     router.get('/uploadMail', function (req, res) {
         uploaderSubmit.get(req, res, function (obj) {
             res.send(JSON.stringify(obj));
@@ -115,6 +108,7 @@ module.exports = function (app, passport) {
         });
         res.json({status: 'success'});
     });
+
     app.post('/submitAssignment', function (req, res) {
 
         var filename = req.body.data.filename;
@@ -180,28 +174,30 @@ module.exports = function (app, passport) {
 
 	var Tags = require("../app/models/tags");
 	var Assignments = require("../app/models/assignments");
+
 	router.route("/tags")
 		.get(function(req, res) {
 			var allTags = [];
-			async.parallel([
-				function(callback) {
+			async.parallel(
+			    [function(callback) {
 					Tags.find().distinct('primary_tag', callback);
 					return;
 				}],
+
 				function(error, primaryTags) {
 					if (error) {
 						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
 					};
-					
-					async.forEach(primaryTags[0], 
+
+					async.forEach(primaryTags[0],
 						function(primaryTag, callback) {
 							var map = {};
 							async.parallel([
 								function(callback) {
 									map["primary_tag"] = primaryTag;
 									Tags.find({'primary_tag': primaryTag}, 'secondary_tag', callback);
-									return;		
-								}], 
+									return;
+								}],
 								function(error, secondaryTags) {
 									if (error) {
 										res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
@@ -218,18 +214,20 @@ module.exports = function (app, passport) {
 								res.json(allTags);
 							}
 						}
-					);	
+					);
 				}
 			);
 		});
 
 	router.route("/tags/:tagId")
 		.get(function(req, res) {
-			async.parallel([
-				function(callback) {
+			async.parallel(
+			    [function(callback) {
                     Tags.findOne().where('_id').equals(req.params.tagId).exec(callback);
 					return;
-				}], function(error, tag_match) {
+				}],
+
+				function(error, tag_match) {
 					if (error) {
 						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
 					} else {
@@ -241,28 +239,9 @@ module.exports = function (app, passport) {
 						    res.json(assignments[0]);
                         });
 					}
-				});
+				}
+			);
 		});
-
-
-//	router.route("/survey")
-//		.post(function(req, res) {
-//			var Surveys = require("../app/models/surveys");
-//
-//			var survey = new Surveys();
-//			var form = req.body;
-//
-//			survey.category = form.category;
-//			survey.email = form.emailAddress;
-//			survey.institution = form.institution;
-//			survey.heard_from = form.heardFrom;
-//			survey.save(function(err) {
-//            if (err)
-//                throw err;
-//            return true;
-//        	});
-//        	res.json({status: 'success'});
-//		});
 
 	router.route("/assignments/name/:name")
 		.get(function(req, res) {
@@ -359,15 +338,7 @@ module.exports = function (app, passport) {
         res.json({userData: req.user});
     });
 
-
-    app.get('/abc', function(req,res){
-        res.json({message: 'test json'});
-    });
-
-    //process the post to save assignment details
     app.post('/saveAssignment', function(req,res){
-        //console.log("Start uploading");
-        //var Assignments = require("/app/models/assignments");
         var Assignments = require("../app/models/assignments");
         var assignDetails = new Assignments();
         assignDetails.name = req.body.data.fileName;
@@ -390,6 +361,26 @@ module.exports = function (app, passport) {
             return true;
         });
         //console.log(req.body.data.fileName);
+        res.json({status: 'success'});
+    });
+
+    app.post('/updateAssignment', function(req,res){
+        var Assignments = require("../app/models/assignments");
+        var assignDetails = {};
+        assignDetails.name = req.body.data.fileName;
+        assignDetails.author = req.body.data.author;
+        assignDetails.description = req.body.data.fileDescription;
+        assignDetails.file_location = req.body.data.uploadURL;
+        assignDetails.citation = req.body.data.citation;
+        assignDetails.tags= req.body.data.primaryTag;
+        assignDetails.rubricsData= req.body.data.rubricAjaxData;
+
+        Assignments.findByIdAndUpdate(req.body.data.id, assignDetails, function(err) {
+            if (err)
+                throw err;
+            return true;
+        });
+
         res.json({status: 'success'});
     });
 

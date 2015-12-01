@@ -1,4 +1,46 @@
+assignmentLibraryModule.factory('assignmentsSearchService', function() {
+    var assignments = [];
 
+    return {
+        areAssignmentsSet: function() {
+            return assignments.length > 0;
+        },
+
+        getAssignments: function() {
+            return assignments;
+        },
+
+        setAssignments: function(data) {
+            assignments = data;
+        },
+
+        resetAssignmentsSearch: function() {
+            assignments = [];
+        }
+    };
+});
+
+assignmentLibraryModule.factory('assignmentUpdateService', function() {
+    var assignment;
+
+    return{
+        isAssignmentSet: function() {
+            return assignment === undefined || assignment === null;
+        },
+
+        setForUpdate: function (data) {
+            assignment = data;
+        },
+
+        getToUpdate: function () {
+            return assignment;
+        },
+
+        clearAssignment: function() {
+            assignment = null;
+        }
+    };
+});
 
 assignmentLibraryModule.factory('userIdentityService', function(){
     return{
@@ -97,24 +139,19 @@ assignmentLibraryModule.factory('tagDetailService', function($http, $q){
 });
 
 assignmentLibraryModule.factory('rubricUploadService', function($http, $q, $upload){
-    //var tagValues;
-    return{
+    return {
         uploadRubrics: function (rub) {
-            //var dfd = $q.defer();
             return($upload.upload({
-                url: '/upload', //upload.php script, node.js route, or servlet url
-                //data: {myObj: $scope.myModelObj},
+                url: '/upload',
                 file: rub
             }));
-            //return dfd.promise;
-        },uploadRubricsMail: function (rub) {
-            //var dfd = $q.defer();
+        },
+
+        uploadRubricsMail: function (rub) {
             return($upload.upload({
-                url: '/uploadMail', //upload.php script, node.js route, or servlet url
-                //data: {myObj: $scope.myModelObj},
+                url: '/uploadMail',
                 file: rub
             }));
-            //return dfd.promise;
         }
     };
 });
@@ -148,14 +185,21 @@ assignmentLibraryModule.factory('submitAssignmentService', function($http, $root
 assignmentLibraryModule.factory('assignmentUploadService', function($http, $q, $upload, $location,$rootScope){
     //var tagValues;
     return{
+        updateAssignment: function(data) {
+            $http.post('updateAssignment', {
+                data:data
+            }).success(function() {
+                toastr.success("Updated assignment.");
+                $location.path("/");
+            }).error(function() {
+                toastr.error("There was an error while updating the assignment. Please try again.");
+            });
+        },
         uploadAssignment: function (rub) {
-            //var dfd = $q.defer();
             return($upload.upload({
-                url: '/upload', //upload.php script, node.js route, or servlet url
-                //data: {myObj: $scope.myModelObj},
+                url: '/upload',
                 file: rub
             }));
-            //return dfd.promise;
         },
         uploadAssignmentMail: function (rub) {
             //var dfd = $q.defer();
@@ -184,6 +228,17 @@ assignmentLibraryModule.factory('assignmentUploadService', function($http, $q, $
 assignmentLibraryModule.factory('fileDetailService', function($http, $q){
     var fileDetails = {};
     return{
+        setFileDetailsForUpdate: function(id, fileName, author, fileDescription, tagDetails, uploadURL,
+                                    citation, rubricAjaxData) {
+            fileDetails.id = id;
+            fileDetails.fileName = fileName;
+            fileDetails.author = author;
+            fileDetails.fileDescription = fileDescription;
+            fileDetails.primaryTag = tagDetails;
+            fileDetails.uploadURL = uploadURL;
+            fileDetails.citation = citation;
+            fileDetails.rubricAjaxData = rubricAjaxData;
+        },
         setfileDetails: function(fileName, author, createdAt, fileDescription, tagDetails, uploadURL, assignmentType, citation, rubricAjaxData){
             fileDetails.fileName = fileName;
             fileDetails.author = author;

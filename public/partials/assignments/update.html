@@ -1,0 +1,19 @@
+<div class="container" ng-controller="assignmentsController">
+    <div ng-hide="searchPopulated()">
+        <div ng-include src="'partials/assignments/search.html'"></div>
+    </div>
+
+    <div ng-show="searchPopulated()">
+        <div>
+            <button ng-click="clearAssignments()" class="btn btn-primary">Clear</button>
+            <button ng-click="deleteAssignment()" class="btn btn-primary">Delete</button>
+            <button ng-click="updateAssignment()" class="btn btn-primary">Update</button>
+        </div>
+        <div class="radio" ng-repeat="assignment in assignments">
+            <label>
+                <input type="radio" ng-click="selectedAssignment(assignment._id)">
+                {{assignment.name}}
+            </label>
+        </div>
+    </div>
+</div>
