@@ -12,7 +12,7 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
     assignmentsListService.setDisplayTable(false);
 
     $scope.searchTypes = [
-                            {name: "Name", value:"name"},
+                            {name: "Title", value:"name"},
                             {name: "Author", value:"author"},
                             {name: "Citation", value:"citation"},
                             {name: "Description", value:"description"}
