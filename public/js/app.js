@@ -35,17 +35,20 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
             .when('/tags/:tagId', {
                 templateUrl: 'partials/tagdetails.html'
             })
+            .when('/assignments/update', {
+                templateUrl: 'partials/assignments/update.html'
+            })
+            .when('/assignments/update/:assignmentId', {
+                templateUrl: 'partials/assignments/update-assignment.html'
+            })
             .when('/assignments/:type/:search', {
                 templateUrl: 'partials/tagdetails.html'
-            })
-            .when('/assignments/delete', {
-                templateUrl: 'partials/assignment/delete.html'
             })
             .when('/assignments/:assignmentId', {
                 templateUrl: 'partials/assignmentdetails.html'
             })
             .when('/admin', {
-                templateUrl: 'partials/admin.html'
+                templateUrl: 'partials/niloa.html'
             })
             .when('/testFUP', {
                 templateUrl: 'partials/testFUP.html'

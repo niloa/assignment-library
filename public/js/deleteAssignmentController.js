@@ -15,9 +15,11 @@ assignmentLibraryModule.controller('deleteAssignmentController', function($scope
                 console.log(data);
             });
     };
+
     $scope.selectedAssignment = function (id) {
         $scope.deleteID = id;
     };
+
     $scope.deleteAssignment = function() {
         $http.delete('api/assignments/' + $scope.deleteID)
             .success(function(data){
