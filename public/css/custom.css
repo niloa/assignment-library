@@ -6,14 +6,14 @@ div.nav {
 	color: #FFFFFF;
 }
 div p.search-content {
-	font-family: times, serif;
+	font-family: Arial, Helvetica, sans-serif;
 	text-align: justify;
     text-justify: inter-word;
     font-size: 75%;
 }
 
 div form.search-form {
-	font-family: times, serif;
+	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
     font-size: 60%;
     background-color: #E3E3E6;
@@ -21,11 +21,11 @@ div form.search-form {
 }
 
 div form.search-form  button{
-	font-family: times, serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 div ul.list-group{
-	font-family: times, serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 60%;
 }
 
@@ -33,20 +33,15 @@ div ul.list-group a{
 	color: #2eaaa8;
 }
 
-div.landing .landing-content {
-	font-family: times, serif;
-	text-align: justify;
-    text-justify: inter-word;
-    font-size: 60%;
-}
 div.resources-content{
-	font-family: times, serif;
+	font-family: Arial, Helvetica, sans-serif;
 	text-align: justify;
     text-justify: inter-word;
     font-size: 75%;
 }
+
 div.details {
-	font-family: times, serif;
+	font-family: Arial, Helvetica, sans-serif;
 	text-align: justify;
     text-justify: inter-word;
     font-size: 60%;
