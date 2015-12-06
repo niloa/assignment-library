@@ -41,7 +41,7 @@
 	<div>
         <div><label class="assignment-details">Description</label></div>
         <br/>
-        <div class="bordered" ng-bind-html="description"></div>
+        <label class="bordered" ng-bind-html="description"></label>
 	</div>
     <br/>
 
@@ -63,6 +63,7 @@
         </div>
     </div>
 
+    <br/>
     <!--<div class="jumbotron">{{assignmentDetails._id}}</div>-->
     <dir-disqus disqus-shortname="assignmentlibrary"
                 disqus-identifier="{{assignmentDetails._id}}"

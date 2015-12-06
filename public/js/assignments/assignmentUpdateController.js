@@ -1,18 +1,26 @@
-assignmentLibraryModule.controller('assignmentUpdateController', function($scope, $http, $location,
+assignmentLibraryModule.controller('assignmentUpdateController', function($scope, $http, $location, $upload,
     assignmentUpdateService, tagDetailService, rubricUploadService, assignmentUploadService,
     fileDetailService){
 
+    var rubricsForUpdate = {};
     $scope.assignment = assignmentUpdateService.getToUpdate();
-    console.log($scope.assignment);
-
+    $scope.displayRubric = false;
+    
     if ($scope.assignment !== undefined && $scope.assignment !== null) {
+        if($scope.assignment.rubricsData.length === 0 || $scope.assignment.rubricsData[0] === "") {
+            $scope.displayRubric = false;
+        } else {
+            $scope.displayRubric = true;
+        }
 
+        // Setup the description field of the update assignment page.
         $('#editor').jqxEditor({
             height: "250px",
             width: '800px'
         });
         $('#editor').val($scope.assignment.description);
 
+        // Setup the tags for the update assignment page.
         var secondaryTags = [], tags, selectedItems = "Selected Items: ";
         if(tagDetailService.getTagValue() === undefined || tagDetailService.getTagValue() === null) {
             tagDetailService.getAllTags().then(function(data) {
@@ -55,11 +63,20 @@ assignmentLibraryModule.controller('assignmentUpdateController', function($scope
             });
             $scope.assignment.tags = selectedItems;
         });
+
+        // Setup the rubrics for the update assignment page.
+        for (var i in $scope.assignment.rubricsData) {
+            rubricsForUpdate[$scope.assignment.rubricsData[i].name] = false;
+        }
     }
 
-    var rubricsForUpdate = {};
     $scope.toggleRubricSelection = function(rubricName) {
-        rubricsForUpdate[rubricName] = true;
+        if (rubricsForUpdate[rubricName] === undefined || rubricsForUpdate[rubricName] === null)
+            rubricsForUpdate[rubricName] = true;
+        else if (rubricsForUpdate[rubricName] === true)
+            rubricsForUpdate[rubricName] = false;
+        else if (rubricsForUpdate[rubricName] === false)
+            rubricsForUpdate[rubricName] = true;
     }
 
     $scope.onFileSelect = function($files) {
@@ -82,22 +99,28 @@ assignmentLibraryModule.controller('assignmentUpdateController', function($scope
         var citation = $scope.assignment.citation;
         var fileDescription = $("#editor").val();
         var tagDetails = $scope.assignment.tags;
+        var assignmentUrl = $scope.assignment.file_location;
 
         var rubricAjaxData = [];
         // Remove the rubric that has been marked for update from the list of rubrics listed in the assignment currently
         for (var i in $scope.assignment.rubricsData) {
-            if (rubricsForUpdate[$scope.assignment.rubricsData[i].name] !== undefined &&
-            rubricsForUpdate[$scope.assignment.rubricsData[i].name] !== null)
-            rubricAjaxData.push[{
-                 url: $scope.assignment.rubricsData[i].url,
-                 name: $scope.assignment.rubricsData[i].name
-            }];
+            if (rubricsForUpdate[$scope.assignment.rubricsData[i].name] === undefined
+                || rubricsForUpdate[$scope.assignment.rubricsData[i].name] === null
+                || rubricsForUpdate[$scope.assignment.rubricsData[i].name] === false) {
+                rubricAjaxData.push({
+                    url: $scope.assignment.rubricsData[i].url,
+                    name: $scope.assignment.rubricsData[i].name
+                });
+            }
         }
 
+        var file, newAssignment;
         if ($scope.file !== undefined && $scope.file !== null) {
-            var file = $scope.file;
+            file = $scope.file;
+            newAssignment = true;
         } else {
-            var file = $scope.assignment.file_location;
+            file = $scope.assignment.file_location;
+            newAssignment = false;
         }
 
         if(!fileName || (fileDescription.length <= 12)){
@@ -121,19 +144,28 @@ assignmentLibraryModule.controller('assignmentUpdateController', function($scope
 
         if(numberOfRubrics > 0) {
             rubricUploadService.uploadRubrics($scope.rubricFiles[nR]).then(function(rubric) {
-                nR++;
 
+                nR++;
                 rubricAjaxData.push({
                    url: rubric.data.files[0].deleteUrl,
                    name: rubric.data.files[0].name
                 });
 
-                if(nR < numberOfRubrics)
+                if(nR < numberOfRubrics) {
                     return rubricUploadService.uploadRubrics($scope.rubricFiles[nR]);
-                else
+                }
+                else if (newAssignment) {
                     return assignmentUploadService.uploadAssignment($scope.file);
+                }
+                else if (!newAssignment) {
+                    fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
+                        assignmentUrl, citation, rubricAjaxData);
+                    assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
+                    return 0;
+                }
 
             }).then(function (data) {
+
                 if(nR >= numberOfRubrics && data != 0){
                     fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
                                                 data.data.files[0].deleteUrl, citation, rubricAjaxData);
@@ -146,14 +178,23 @@ assignmentLibraryModule.controller('assignmentUpdateController', function($scope
                     url: data.data.files[0].deleteUrl,
                     name: data.data.files[0].name
                 });
+
                 if(nR < numberOfRubrics)
-                    return rubricUploadService.uploadRubrics($rootScope.rubricFiles[nR]);
-                else
-                    return assignmentUploadService.uploadAssignment($rootScope.file);
+                    return rubricUploadService.uploadRubrics($scope.rubricFiles[nR]);
+                else if (newAssignment) {
+                    return assignmentUploadService.uploadAssignment($scope.file);
+                }
+                else if (!newAssignment) {
+                    fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
+                        assignmentUrl, citation, rubricAjaxData);
+                    assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
+                    return 0;
+                }
 
             }).then(function (data) {
+
                 if(data == 0)
-                    return 0 ;
+                    return 0;
 
                 if(nR >= numberOfRubrics){
                     fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
@@ -161,53 +202,77 @@ assignmentLibraryModule.controller('assignmentUpdateController', function($scope
                     assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
                     return 0;
                 }
-                console.log("This is "+(nR+1)+" time");
+
                 nR++;
                 rubricAjaxData.push({
                     url: data.data.files[0].deleteUrl,
                     name: data.data.files[0].name
                 });
+
                 if(nR < numberOfRubrics)
-                    return rubricUploadService.uploadRubrics($rootScope.rubricFiles[nR]);
-                else
-                    return assignmentUploadService.uploadAssignment($rootScope.file);
+                    return rubricUploadService.uploadRubrics($scope.rubricFiles[nR]);
+                else if (newAssignment) {
+                    return assignmentUploadService.uploadAssignment($scope.file);
+                }
+                else if (!newAssignment) {
+                    fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
+                        assignmentUrl, citation, rubricAjaxData);
+                    assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
+                    return 0;
+                }
+
             }).then(function (data) {
 
                 if(data == 0)
-                    return 0 ;
+                    return 0;
+
                 if(nR >= numberOfRubrics){
                     fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
                                                  data.data.files[0].deleteUrl, citation, rubricAjaxData);
                     assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
                     return 0;
                 }
+
                 nR++;
                 rubricAjaxData.push({
                     url: data.data.files[0].deleteUrl,
                     name: data.data.files[0].name
                 });
+
                 if(nR < numberOfRubrics)
-                    return rubricUploadService.uploadRubrics($rootScope.rubricFiles[nR]);
-                else
-                    return assignmentUploadService.uploadAssignment($rootScope.file);
+                    return rubricUploadService.uploadRubrics($scope.rubricFiles[nR]);
+                else if (newAssignment) {
+                    return assignmentUploadService.uploadAssignment($scope.file);
+                }
+                else if (!newAssignment) {
+                    fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
+                        assignmentUrl, citation, rubricAjaxData);
+                    assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
+                    return 0;
+                }
+
             }).then(function (data) {
-                if(data!=0){
+                if(data != 0){
                     fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
                                                  data.data.files[0].deleteUrl, citation, rubricAjaxData);
                     assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
                 }
             });
-
-        }else{
-            // if no rubrics are present, just upload the assignment to AWS
-            $scope.upload = $upload.upload({
-                url: '/upload',
-                file: file
-            }).success(function(data, status, headers, config) {
+        } else {
+            if (newAssignment) {
+                $scope.upload = $upload.upload({
+                    url: '/upload',
+                    file: file
+                }).success(function(data, status, headers, config) {
+                    fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
+                                                     data.files[0].deleteUrl, citation, rubricAjaxData);
+                    assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
+                });
+            } else {
                 fileDetailService.setFileDetailsForUpdate(id, fileName, author, fileDescription, tagDetails,
-                                                 data.data.files[0].deleteUrl, citation, rubricAjaxData);
+                    assignmentUrl, citation, rubricAjaxData);
                 assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
-            });
+            }
         }
     };
 });

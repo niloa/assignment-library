@@ -1,5 +1,5 @@
 <div class="jumbotrona" id="showUploadForma" ng-controller="assignmentUpdateController">
-    <div>
+    <br>
         <div class="col-sm-12 form-group">
             <label for="name">Name</label>
             <input type="text" ng-model="assignment.name" class="form-control " id="name">
@@ -24,6 +24,7 @@
             <label for="jqxComboBoxSecondary">Select Tags</label>
             <div ng-model="assignment.tags" style="margin-top: 5px;" id='jqxComboBoxSecondary'></div>
         </div>
+
         <div style="margin-top: 10px; font-size: 13px; font-family: Verdana; display: none" id="log"></div>
 
         <div class="col-sm-12">
@@ -37,7 +38,7 @@
             </div>
         </div>
 
-        <div class="col-sm-12">
+        <div ng-show="displayRubric" class="col-sm-12">
             <label>Update Rubric (Optional)</label>
             <div ng-repeat="rubric in assignment.rubricsData">
                 <input type="checkbox" name="rubrics[]" ng-click="toggleRubricSelection(rubric.name)"> {{rubric.name}}
@@ -46,14 +47,13 @@
 
         <div class="col-sm-12" style="padding-bottom: 1%">
             <br/>
-            <label for="inputRubric">Select Rubric (Optional)</label>
+            <label for="inputRubric">Select Rubrics (Optional - Maximum 4)</label>
             <input type="file" id="inputRubric" ng-file-select="onRubricSelect($files)" name="files[]" multiple>
         </div>
 
         <div class="col-sm-12">
-            <button class="btn btn-primary" ng-click="startUpload()">Upload</button>
+            <button class="btn btn-primary" ng-click="startUpload()">Update</button>
             <a class="btn btn-default" href="/">Cancel</a>
         </div>
-
     </div>
 </div>
