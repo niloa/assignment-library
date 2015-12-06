@@ -39,8 +39,7 @@ body{
 #welcome{
     font-size: 300%;
     padding-top: 2%;
-    color: white;
-
+    color: #F0F0F0;
 }
 
 /*Styles matching Irongate DQP website*/
@@ -85,13 +84,8 @@ footer {
     text-align: center;
 }
 
-.footerLink{
-    color: white;
-}
-
 #indexNav{
     background-color: white;
-    padding-left: 19%;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
@@ -99,7 +93,6 @@ footer {
     background-color: #2eaaa8;
 }
 
-/*Styles matching Irongate DQP website*/
 .customFileInput{
     width: 65%;
 }
@@ -194,3 +187,52 @@ span.icon-bar{
     }
 }
 
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+/* Styling for the home page */
+
+#peer-review {
+	padding: 10px 10px 10px 10px;
+	border: 2px solid;
+}
+
+#landing-content {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: justify;
+    text-justify: inter-word;
+    font-size: 100%;
+}
+
+.justified {
+    align: justify;
+}
+
+.footer-content {
+    color: #F0F0F0;
+}
+
+.footer-section {
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+
+#footer-1 {
+    float: left;
+}
+
+#footer-2 {
+    float: left;
+    margin-left: 10%;
+}
+
+#footer-3 {
+    float: right;
+}

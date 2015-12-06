@@ -1,10 +1,25 @@
 <div class="container" ng-controller="submitAssignmentController">
     <div class="col-sm-12">
-        <p><b>DQP Assignment Library: The Peer Review Process</b></p>
+        <p>
+            <b>DQP Assignment Library: The Peer Review Process</b>
+        </p>
 
-        <p align="justify">The materials in the DQP Assignment Library have gone through a three-stage review process.  The first stage of review is undertaken by the NILOA project team, which makes decisions about whether to accept the submission or not.  Those selected for a second stage of review are then shared with three to six faculty peers, typically from the same or related fields, who have experience with assignment design; their role is to provide written feedback and suggestions for revision.  After making revisions, authors resubmit their materials to NILOA, where they pass through a final review--to make sure that all required elements are included, and minor copy editing as needed.  The finished materials are then published to the site.</p>
+        <p align="justify">
+            The materials in the DQP Assignment Library have gone through a three-stage review process.
+            The first stage of review is undertaken by the NILOA project team, which makes decisions about whether to
+            accept the submission or not.  Those selected for a second stage of review are then shared with three to six
+            faculty peers, typically from the same or related fields, who have experience with assignment design; their
+            role is to provide written feedback and suggestions for revision.  After making revisions, authors resubmit
+            their materials to NILOA, where they pass through a final review--to make sure that all required elements
+            are included, and minor copy editing as needed. The finished materials are then published to the site.
+        </p>
 
-        <p align="justify">We recognize, however, that assignment design is an iterative process, and we expect that many of the materials posted here will undergo further revision and improvement.  Authors are encouraged to submit updated versions of their materials and to continue reporting how the assignment is being used in their classrooms.</p>
+        <p align="justify">
+            We recognize, however, that assignment design is an iterative process, and we expect that many of the
+            materials posted here will undergo further revision and improvement. Authors are encouraged to submit
+            updated versions of their materials and to continue reporting how the assignment is being used in their
+            classrooms.
+        </p>
     </div>
     <div class="col-sm-12">
         <h3 class="text-center">Assignment Submission Form</h3>
@@ -47,7 +62,7 @@
             <label for="jqxComboBoxSecondary">Select Tags (including DQP proficiencies)</label>
             <div style="margin-top: 5px;" id='jqxComboBoxSecondary' ></div>
         </div>
-        <div style="margin-top: 10px; font-size: 13px; font-family: Verdana; display: none" id="log"></div>
+        <div style="margin-top: 10px; font-size: 13px; Arial, Helvetica, sans-serif; display: none" id="log"></div>
         <!--<div class="col-sm-12 form-group">-->
             <!--<label for="tags">Indicate which DQP Proficiencies the assignment is intended to assess in the associated tags:</label>-->
             <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
@@ -68,13 +83,9 @@
         <div class="col-sm-12 form-group">
             <label for="reflections">Reflections
             </label><br/>
-            <!--<input type="text" ng-model="tags" class="form-control " id="tags" placeholder="Select Tags">-->
             <textarea name="reflections" id="reflections" cols="30" rows="5" class="col-sm-12" placeholder="Discuss your experience with the assignment to date.  Has it produced the results you hoped for?  What do students find most challenging about it?  Are there aspects of the assignment you’re especially pleased with—or puzzled about?  How has the assignment been revised over time, if at all?  How have student experiences with the assignment caused you to revise (or think about revising) the course?   Is there anything else Library users would find it helpful to know?  This section can be as long as it needs to be."></textarea>
         </div>
-        <!--<div class="col-sm-12" style="padding-bottom: 1%">-->
-            <!--<label for="inputAssignment">Assignment (upload file in the form that you present it to students)</label>-->
-            <!--<input type="file" id="inputAssignment" ng-file-select="onAssignmentSelect($files)" name="files[]" multiple>-->
-        <!--</div>-->
+
         <div class="col-sm-12">
             <label for="inputAssignment">Assignment (upload file in the form that you present it to students)</label>
             <div class="fileinput fileinput-new input-group customFileInput" data-provides="fileinput">
@@ -83,10 +94,7 @@
                 <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
             </div>
         </div>
-        <!--<div class="col-sm-12" style="padding-bottom: 1%">-->
-            <!--<label for="inputRubrics">Rubric (upload any associated rubrics or criteria used to evaluate the assignment)</label>-->
-            <!--<input type="file" id="inputRubrics"  multiple>-->
-        <!--</div>-->
+
         <div class="col-sm-12" style="padding-bottom: 1%">
             <label for="inputRubric">Rubric or criteria (Upload any rubrics or criteria used to evaluate the assignment)</label>
             <input type="file" id="inputRubrics" ng-file-select="onRubricSelectA($files)" name="files[]" multiple>

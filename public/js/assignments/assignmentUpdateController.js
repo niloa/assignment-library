@@ -5,7 +5,7 @@ assignmentLibraryModule.controller('assignmentUpdateController', function($scope
     var rubricsForUpdate = {};
     $scope.assignment = assignmentUpdateService.getToUpdate();
     $scope.displayRubric = false;
-    
+
     if ($scope.assignment !== undefined && $scope.assignment !== null) {
         if($scope.assignment.rubricsData.length === 0 || $scope.assignment.rubricsData[0] === "") {
             $scope.displayRubric = false;
