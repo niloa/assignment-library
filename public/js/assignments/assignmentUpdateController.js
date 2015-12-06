@@ -274,5 +274,7 @@ assignmentLibraryModule.controller('assignmentUpdateController', function($scope
                 assignmentUploadService.updateAssignment(fileDetailService.getfileDetails());
             }
         }
+
+
     };
 });

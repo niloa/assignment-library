@@ -23,6 +23,9 @@ assignmentLibraryModule.controller('assignmentsController', function($scope, $ro
         });
     }
 
+    assignmentsSearchService.resetAssignmentsSearch();
+    assignmentUpdateService.clearAssignment();
+
     $scope.searchPopulated = function() {
         return assignmentsSearchService.areAssignmentsSet();
     }
