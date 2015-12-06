@@ -12,7 +12,7 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/search', {
-                templateUrl: 'partials/searchAssignments.html'
+                templateUrl: 'partials/search-assignments.html'
             })
             .when('/resources', {
                 templateUrl: 'partials/resources.html'
@@ -45,7 +45,7 @@ assignmentLibraryModule.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'partials/tagdetails.html'
             })
             .when('/assignments/:assignmentId', {
-                templateUrl: 'partials/assignmentdetails.html'
+                templateUrl: 'partials/assignments/assignment-details.html'
             })
             .when('/admin', {
                 templateUrl: 'partials/niloa.html'

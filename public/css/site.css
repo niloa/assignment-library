@@ -236,3 +236,13 @@ span.icon-bar{
 #footer-3 {
     float: right;
 }
+
+/* Styling for the tag listings page */
+
+#search-assignments {
+    align-content: center;
+}
+
+.search-content {
+    text-align: center;
+}
