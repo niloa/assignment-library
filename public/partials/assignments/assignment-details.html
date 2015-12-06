@@ -18,40 +18,55 @@
 
 
     <div>
-		<label class="assignment-details">NAME:<span class="assignment-spacing"></span></label> 
-		<label class="assignment-desc">{{assignmentDetails.name}}</label></br>
+		<div><label class="assignment-details">Name</label></div>
+        <br/>
+		<div><label class="bordered">{{assignmentDetails.name}}</label></div>
 	</div>
-	</br>
+    <br/>
+
 	<div>
-		<label class="assignment-details">AUTHOR:<span class="assignment-spacing"></span></label> 
-		<label class="assignment-desc"> {{assignmentDetails.author}}</label></br>
+        <div><label class="assignment-details">Author</label></div>
+        <br/>
+        <div><label class="bordered">{{assignmentDetails.author}}</label></div>
 	</div>
-	</br>
+    <br/>
+
 	<div>
-		<label class="assignment-details">CITATION:<span class="assignment-spacing"></span></label>
-		<label class="assignment-desc"> {{assignmentDetails.citation}}</label></br>
-	</div>
-	</br>
+        <div><label class="assignment-details">Citation</label></div>
+        <br/>
+        <div><label class="bordered">{{assignmentDetails.citation}}</label></div>
+    </div>
+    <br/>
+
 	<div>
-		<label class="assignment-details">DESCRIPTION:<span class="assignment-spacing"></span></label></br>
-		<div class="assignment-desc" ng-bind-html="description"></div></br>
+        <div><label class="assignment-details">Description</label></div>
+        <br/>
+        <label class="bordered" ng-bind-html="description"></label>
 	</div>
-	</br>
-	<div>
-		<button ng-click="open()" class="btn btn-primary">Download Assignment Only</button>
-	</div>
-    </br>
+    <br/>
+
+    <div>
+        <div><label class="assignment-details">Assignment</label></div>
+        <br/>
+        <div><button class="download-assignment" ng-click="open()"><u>Download</u></button></div>
+    </div>
+    <br/>
+
     <div ng-show="displayRubric" class="rubrics">
-        <div ng-repeat="rubric in assignmentDetails.rubricsData">
-            <!--<a href="{{rubric.url}}" class="btn btn-primary">{{rubric.name}}</a></br>-->
-            <a href="{{rubric.url}}" class="btn btn-primary">Rubric</a></br>
+        <label class="assignment-details">Rubrics</label><br/>
+        <div class="bordered">
+            <ol>
+                <li style="padding-left:5px" ng-repeat="rubric in assignmentDetails.rubricsData">
+                    <a href="{{rubric.url}}">{{rubric.name}}</a>
+                </li>
+            </ol>
         </div>
     </div>
-    <!--<div class="jumbotron">{{assignmentDetails._id}}</div>-->
+
+    <br/>
+
     <dir-disqus disqus-shortname="assignmentlibrary"
                 disqus-identifier="{{assignmentDetails._id}}"
                 disqus-url="{{assignmentDetails._id}}">
     </dir-disqus>
 </div>
-<!--54592a7fd885f5790c000001-->
-<!--5460f5ee100dab50f1000001-->

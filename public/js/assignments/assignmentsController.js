@@ -23,6 +23,9 @@ assignmentLibraryModule.controller('assignmentsController', function($scope, $ro
         });
     }
 
+    assignmentsSearchService.resetAssignmentsSearch();
+    assignmentUpdateService.clearAssignment();
+
     $scope.searchPopulated = function() {
         return assignmentsSearchService.areAssignmentsSet();
     }
@@ -45,7 +48,7 @@ assignmentLibraryModule.controller('assignmentsController', function($scope, $ro
         if (assignmentUpdateService.isAssignmentSet()) {
             toastr.error("Select an assignment to update/delete.");
         } else {
-            var assignment = assignmentUpdateService.getForUpdate();
+            var assignment = assignmentUpdateService.getToUpdate();
             $http.delete('api/assignments/' + assignment._id)
                 .success(function(data){
                     toastr.success("Assignment has been deleted.");
