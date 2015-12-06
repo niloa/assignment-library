@@ -1,0 +1,82 @@
+<div class="container-fluid" id="search-assignments" ng-controller="SearchController">
+    <p class="search-content">
+        Search for an assignment by a keyword using the search box or by clicking on any specific tag.
+    </p>
+
+    <hr/>
+    <div class="panel">
+        <div class="panel-body">
+            <form novalidate class="search-form">
+                Search By:
+                <select name="searchType" ng-model="search_type">
+                    <option ng-repeat="option in searchTypes" value="{{option.value}}">{{option.name}}</option>
+                </select>
+                <input type="text" ng-model="search_key"/>
+                <button ng-click="search()" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+    <hr/>
+
+    <div class="row clearfix">
+        <div id="tags-list-1">
+            <div class="panel panel-default">
+                <div class="panel-heading"><label>Academic Disciplines and Assignment Characteristics</label></div>
+                <div class="row">
+                    <div class="col-md-4 academic-1">
+                        <ul>
+                            <li ng-repeat="sub_tag in academicDisciplines1 | orderBy:predicate:reverse">
+                                <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 academic-2">
+                        <ul>
+                            <li ng-repeat="sub_tag in academicDisciplines2 | orderBy:predicate:reverse">
+                                <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 academic-3">
+                        <ul>
+                            <li ng-repeat="sub_tag in academicDisciplines3 | orderBy:predicate:reverse">
+                                <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tags-list-2">
+            <div class="panel panel-default">
+                <div class="panel-heading"><label>DQP Proficiencies</label></div>
+                <div class="row">
+                    <div class="col-md-6 dqp-1">
+                        <ul>
+                            <li ng-repeat="sub_tag in dqpProficiencies1 | orderBy:predicate:reverse">
+                                <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 dqp-2">
+                        <ul>
+                            <li ng-repeat="sub_tag in dqpProficiencies2 | orderBy:predicate:reverse">
+                                <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tags-list-3">
+            <div class="panel panel-default">
+                <div class="panel-heading"><label>Degree and Course Levels</label></div>
+                <ul>
+                    <li ng-repeat="sub_tag in degreeAndCourseLevels | orderBy:predicate:reverse">
+                        <a href="/#/tags/{{sub_tag._id}}">{{sub_tag.secondary_tag}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

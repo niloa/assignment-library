@@ -1,12 +1,6 @@
 var assignmentLibraryControllers = angular.module('assignmentLibraryControllers', []);
 
 assignmentLibraryControllers.controller("SearchController", function($scope, $http, $routeParams, $location, assignmentsListService) {
-    //make search assignments tab highlighted when files are selected from search results
-    /*$scope.isActive = function (viewLocation) {
-        return true;
-        //return viewLocation === $location.path();
-    };*/
-
     assignmentsListService.setAssignments([]);
     assignmentsListService.setDataLoaded(false);
     assignmentsListService.setDisplayTable(false);
@@ -22,23 +16,37 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
 
     $http.get('api/tags', {
         cache: true
-    })
-        .success(function (tags) {
-            //console.log(tags);
+    }).success(function (tags) {
             $scope.academicDisciplines1 = [];
             $scope.academicDisciplines2 = [];
+            $scope.academicDisciplines3 = [];
+
+            $scope.dqpProficiencies1 = [];
+            $scope.dqpProficiencies2 = [];
+
             for (i = 0; i< tags.length; i++) {
                 if(tags[i]["primary_tag"] === "Academic Disciplines and Assignment Characteristics") {
                     var entries = tags[i]["secondary_tags"];
+
                     for (j = 0; j < entries.length; j++) {
-                        if (j <= (entries.length/2)) {
+                        if ((j % 3) == 0) {
                             $scope.academicDisciplines1.push(entries[j]);
-                        } else {
+                        } else if ((j % 3) == 1){
                             $scope.academicDisciplines2.push(entries[j]);
+                        } else {
+                            $scope.academicDisciplines3.push(entries[j]);
                         }
                     }
                 } else if (tags[i]["primary_tag"] === "DQP Proficiencies") {
-                    $scope.dqpProficiencies = tags[i]["secondary_tags"];
+                    var entries = tags[i]["secondary_tags"];
+
+                    for (j = 0; j < entries.length; j++) {
+                        if ((j % 2) == 0) {
+                            $scope.dqpProficiencies1.push(entries[j]);
+                        } else {
+                            $scope.dqpProficiencies2.push(entries[j]);
+                        }
+                    }
                 } else {
                     $scope.degreeAndCourseLevels = tags[i]["secondary_tags"];
                 }
