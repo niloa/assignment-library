@@ -1,5 +1,10 @@
 assignmentLibraryModule.controller('assignmentsController', function($scope, $route, $http, $location,
-    assignmentsSearchService, assignmentUpdateService) {
+    assignmentsSearchService, assignmentUpdateService, userIdentityService) {
+
+    if(userIdentityService.currentUser != undefined)
+        $location.path('/assignments/update');
+    else
+        $location.path('/upload');
 
     $scope.searchTypes = [{name: "Title", value:"name"},
                           {name: "Author", value:"author"},
