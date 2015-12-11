@@ -20,43 +20,47 @@
     <div>
 		<div><label class="assignment-details">Name</label></div>
         <br/>
-		<div><label class="bordered">{{assignmentDetails.name}}</label></div>
+		<div><label class="details-display">{{assignmentDetails.name}}</label></div>
 	</div>
     <br/>
 
 	<div>
         <div><label class="assignment-details">Author</label></div>
         <br/>
-        <div><label class="bordered">{{assignmentDetails.author}}</label></div>
+        <div><label class="details-display">{{assignmentDetails.author}}</label></div>
 	</div>
     <br/>
 
 	<div>
         <div><label class="assignment-details">Citation</label></div>
         <br/>
-        <div><label class="bordered">{{assignmentDetails.citation}}</label></div>
+        <div><label class="details-display">{{assignmentDetails.citation}}</label></div>
     </div>
     <br/>
 
 	<div>
         <div><label class="assignment-details">Description</label></div>
         <br/>
-        <label class="bordered" ng-bind-html="description"></label>
+        <div><label class="details-display" ng-bind-html="description"></label></div>
 	</div>
     <br/>
 
     <div>
         <div><label class="assignment-details">Assignment</label></div>
         <br/>
-        <div><button class="download-assignment" ng-click="open()"><u>Download</u></button></div>
+        <div>
+            <br/>
+            <button class="btn btn-primary" ng-click="open()">Download</button>
+        </div>
     </div>
     <br/>
 
     <div ng-show="displayRubric" class="rubrics">
         <label class="assignment-details">Rubrics</label><br/>
-        <div class="bordered">
+        <div class="details-display">
+            <br/>
             <ol>
-                <li style="padding-left:5px" ng-repeat="rubric in assignmentDetails.rubricsData">
+                <li ng-repeat="rubric in assignmentDetails.rubricsData">
                     <a href="{{rubric.url}}">{{rubric.name}}</a>
                 </li>
             </ol>

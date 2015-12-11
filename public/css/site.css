@@ -106,35 +106,9 @@ a {
     color: #f3775e;
 }
 
-.bordered {
+.details-display {
     font-weight:normal !important;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: #D8D8D8;
     width: 100%;
-    padding-left: 5px;
-    padding-right: 2px;
-    padding-top: 1px;
-    padding-bottom: 1px;
-}
-
-.download-assignment {
-     background:none!important;
-     border-style: solid;
-     border-width: 1px;
-     border-radius: 2px;
-     border-color: #D8D8D8;
-     width: 100%;
-     padding-left: 5px;
-     padding-right: 2px;
-     padding-top: 1px;
-     padding-bottom: 1px;
-     font: inherit;
-     text-align:left;
-
-     cursor: pointer;
-     color:#2eaaa8;
 }
 
 .assignment-spacing {
