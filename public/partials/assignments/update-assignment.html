@@ -39,7 +39,7 @@
         </div>
 
         <div ng-show="displayRubric" class="col-sm-12">
-            <label>Update Rubric (Optional)</label>
+            <label>Update Rubrics by selecting one or more below (Optional)</label>
             <div ng-repeat="rubric in assignment.rubricsData">
                 <input type="checkbox" name="rubrics[]" ng-click="toggleRubricSelection(rubric.name)"> {{rubric.name}}
             </div>
