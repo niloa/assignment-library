@@ -38,8 +38,8 @@ body{
 
 #welcome{
     font-size: 300%;
-    padding-top: 2%;
     color: #F0F0F0;
+    vertical-align: middle;
 }
 
 /*Styles matching Irongate DQP website*/
@@ -161,6 +161,17 @@ span.icon-bar{
     }
 }
 
+@media (min-width: 768px){
+    #mobilemenu{
+        display: none;
+    }
+}
+
+.lowresolution {
+    display: block;
+    visibility: visible;
+}
+
 .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -168,6 +179,26 @@ span.icon-bar{
 
 .navbar .navbar-collapse {
     text-align: center;
+}
+
+.menuStyle {
+    text-align: center;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    color: #2eaaa8;
+    border: 1px solid #FFF;
+    cursor: pointer;
+}
+
+
+@media (min-width: 0px) and (max-width: 767px) {
+.ulstyle {
+    list-style-type: none;
+    border: 2px solid #ddd;
+    border-top-width: 0;
+    text-align: center;
+    padding:0;
+}
 }
 
 /* Styling for the home page */
@@ -211,6 +242,12 @@ span.icon-bar{
     float: right;
 }
 
+@media (min-width: 0px) and (max-width: 767px) {
+    .removefooter {
+        display: none;
+}
+}
+
 /* Styling for the tag listings page */
 
 #search-assignments {
@@ -219,4 +256,9 @@ span.icon-bar{
 
 .search-content {
     text-align: center;
+}
+
+.whiteback {
+    text-align: center;    
+    background-color: #ffffff;
 }

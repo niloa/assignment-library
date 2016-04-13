@@ -9,6 +9,15 @@ assignmentLibraryModule.controller('indexController', function($scope, $rootScop
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
+
+ var menuExpanded = false;
+    $scope.isMenuExpanded = function() {
+	return menuExpanded;
+    };
+    $scope.toggleMenu = function() {
+	menuExpanded = !menuExpanded;
+    };
+    
 });
 
 
