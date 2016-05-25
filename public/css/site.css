@@ -40,6 +40,7 @@ body{
     font-size: 300%;
     color: #F0F0F0;
     vertical-align: middle;
+    padding-top:3%;
 }
 
 /*Styles matching Irongate DQP website*/
@@ -150,14 +151,21 @@ span.icon-bar{
     }
 }
 
-@media (min-width: 0px) and (max-width: 767px){
+@media (min-width: 267px) and (max-width: 767px){
     #indexNav{
         padding-left: 2%;
     }
 
     #welcome {
-        font-size: 250%;
-        padding-top: 7%;
+        font-size: 232%;
+        padding-top: 11%;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 267px){
+    #welcome {
+        font-size: 151%;
+        padding-top: 31%;
     }
 }
 
@@ -196,7 +204,7 @@ span.icon-bar{
     list-style-type: none;
     border: 2px solid #ddd;
     border-top-width: 0;
-    text-align: center;
+    text-align: right;
     padding:0;
 }
 }

@@ -10,14 +10,27 @@ assignmentLibraryModule.controller('indexController', function($scope, $rootScop
         return viewLocation === $location.path();
     };
 
- var menuExpanded = false;
-    $scope.isMenuExpanded = function() {
-	return menuExpanded;
-    };
-    $scope.toggleMenu = function() {
-	menuExpanded = !menuExpanded;
+    $(".a").click(function () {
+         if ($("#btnCollapse").css('display')!='none')
+            $("#btnCollapse").click();
+    });
+
+   var submenucheck = false;
+// To prevent the menu from closing on clicking Assignments
+    $scope.clickedAssignment = function(event) {
+	  event.stopPropagation();
+	  if (!submenucheck) {
+	      $(".displayblock").css('display','block');
+	  } else {
+	      $(".displayblock").css('display','none');
+	  }
+	  submenucheck = !submenucheck;
     };
     
+// To close the Assignments sub menu on clicking any of the options
+    $scope.closeSubmenu = function() {
+	  $(".displayblock").css('display','none');
+    };
 });
 
 
