@@ -3,3 +3,5 @@
 node_modules/*
 public/vendor/*
 assignment-library.iml
+app/routes.js
+config/database.js
