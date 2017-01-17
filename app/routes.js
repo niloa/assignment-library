@@ -3,15 +3,15 @@ var async = require('async');
 
 var options = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
-    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
-  //uploadUrl: 'https://test-niloa-assignment-library.s3.amazonaws.com/',
+//    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    uploadUrl: 'https://test-niloa-assignment-library.s3.amazonaws.com/',
 
     storage : {
         type : 'aws',
         aws : {
             accessKeyId :  '',
             secretAccessKey : '',
-            bucketName : 'niloa-assignment-library'
+            bucketName : 'test-niloa-assignment-library'
         }
     },
     copyImgAsThumb : true,
@@ -22,15 +22,15 @@ var options = {
 };
 var optionsSubmit = {
     tmpDir:  __dirname + '/../public/uploaded/tmp',
-    uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
-  //uploadUrl: 'https://test-niloa-assignment-library.s3.amazonaws.com/',
+    //uploadUrl:  'https://s3.amazonaws.com/niloa-assignment-library/',
+    uploadUrl: 'https://test-niloa-assignment-library.s3.amazonaws.com/',
 
     storage : {
         type : 'aws',
         aws : {
             accessKeyId :  '',
             secretAccessKey : '',
-            bucketName : 'niloa-assignment-library'
+            bucketName : 'test-niloa-assignment-library'
 //           bucketName : 'niloa-email-attachments'
         }
     },
@@ -243,6 +243,21 @@ module.exports = function (app, passport) {
 					}
 				}
 			);
+		});
+
+	router.route("/assignments")
+		.get(function(req, res) {
+			async.parallel([
+				function(callback) {
+					Assignments.find({}).exec(callback);
+					return;
+				}], function(error, assignmentDetails) {
+					if (error) {
+						res.send({"errorMessage" : "Oops something went wrong, please refresh and try again!"});
+					} else {
+						res.json(assignmentDetails[0]);
+					}
+				});
 		});
 
 	router.route("/assignments/name/:name")

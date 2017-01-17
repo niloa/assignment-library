@@ -68,6 +68,19 @@ assignmentLibraryControllers.controller("SearchController", function($scope, $ht
                 console.log(data);
             });
     }
+
+    $scope.viewAll = function() {
+        $http.get('api/assignments')
+            .success(function(assignments){
+                assignmentsListService.setDataLoaded(true);
+                assignmentsListService.setDisplayTable(assignments !== undefined && assignments.length > 0);
+                assignmentsListService.setAssignments(assignments);
+                $location.path("/assignments");
+            })
+            .error(function(data){
+                console.log(data);
+            });
+    }
 });
 
 assignmentLibraryControllers.controller("TagsController", function($scope, $routeParams, $http,  assignmentsListService){
@@ -90,6 +103,12 @@ assignmentLibraryControllers.controller("TagsController", function($scope, $rout
             console.log(data);
         });
     }
+});
+
+assignmentLibraryControllers.controller("AllAssignmentsController", function($scope, assignmentsListService){
+    $scope.dataLoaded = assignmentsListService.isDataLoaded();
+    $scope.displayTable = assignmentsListService.canDisplayTable();
+    $scope.assignments = assignmentsListService.getAssignments();
 });
 
 assignmentLibraryControllers.controller("AssignmentDetailsController", function($scope, $modal, $log, $routeParams, $http, $location, $sce, assignmentsLocationService) {
